@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/a/Documents/someProducts/monitor/widget-mode/core/native
+CMAKE_SOURCE_DIR = /home/a/Documents/products/monitor/widget-mode/core/native
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/a/Documents/someProducts/monitor/widget-mode/core/build/native
+CMAKE_BINARY_DIR = /home/a/Documents/products/monitor/widget-mode/core/build/native
 
 # Utility rule file for qt_internal_plugins.
 
@@ -81,6 +81,6 @@ CMakeFiles/qt_internal_plugins.dir/clean:
 .PHONY : CMakeFiles/qt_internal_plugins.dir/clean
 
 CMakeFiles/qt_internal_plugins.dir/depend:
-	cd /home/a/Documents/someProducts/monitor/widget-mode/core/build/native && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/Documents/someProducts/monitor/widget-mode/core/native /home/a/Documents/someProducts/monitor/widget-mode/core/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/qt_internal_plugins.dir/DependInfo.cmake "--color=$(COLOR)" qt_internal_plugins
+	cd /home/a/Documents/products/monitor/widget-mode/core/build/native && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/Documents/products/monitor/widget-mode/core/native /home/a/Documents/products/monitor/widget-mode/core/native /home/a/Documents/products/monitor/widget-mode/core/build/native /home/a/Documents/products/monitor/widget-mode/core/build/native /home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/qt_internal_plugins.dir/DependInfo.cmake "--color=$(COLOR)" qt_internal_plugins
 .PHONY : CMakeFiles/qt_internal_plugins.dir/depend
 

@@ -4,8 +4,8 @@
 CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.o: monitor_native_probe_autogen/mocs_compilation.cpp \
   /usr/include/stdc-predef.h
 
-CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o: /home/a/Documents/someProducts/monitor/widget-mode/core/native/native_probe.cpp \
-  /home/a/Documents/someProducts/monitor/widget-mode/core/native/desktopbridge.h \
+CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o: /home/a/Documents/products/monitor/widget-mode/core/native/native_probe.cpp \
+  /home/a/Documents/products/monitor/widget-mode/core/native/desktopbridge.h \
   /usr/include/KF6/KConfig/kconfig_version.h \
   /usr/include/KF6/KConfigCore/KConfigGroup \
   /usr/include/KF6/KConfigCore/KSharedConfig \
@@ -674,7 +674,7 @@ CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o: /home/a/Documents/somePr
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdint.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/syslimits.h
 
-monitor_native_probe: /home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornative.so \
+monitor_native_probe: /home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornative.so \
   /usr/lib/Scrt1.o \
   /usr/lib/crti.o \
   /usr/lib/crtn.o \
@@ -1372,7 +1372,7 @@ CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilatio
 
 /usr/include/bits/types/__sigset_t.h:
 
-/home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornative.so:
+/home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornative.so:
 
 /usr/include/c++/16/bits/exception_defines.h:
 
@@ -1556,7 +1556,7 @@ CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilatio
 
 /usr/include/qt6/QtCore/QMetaType:
 
-/home/a/Documents/someProducts/monitor/widget-mode/core/native/native_probe.cpp:
+/home/a/Documents/products/monitor/widget-mode/core/native/native_probe.cpp:
 
 /usr/include/c++/16/bits/memoryfwd.h:
 
@@ -1660,7 +1660,7 @@ CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilatio
 
 /usr/include/Plasma/plasma/plasma.h:
 
-/home/a/Documents/someProducts/monitor/widget-mode/core/native/desktopbridge.h:
+/home/a/Documents/products/monitor/widget-mode/core/native/desktopbridge.h:
 
 /usr/include/stdc-predef.h:
 

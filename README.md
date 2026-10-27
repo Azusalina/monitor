@@ -28,3 +28,5 @@ Both modes retain their existing installation and configuration locations. Their
 linked READMEs cover module controls, optional tools, preview configuration, and
 the available configuration profiles. Commit and push changes through the
 parent `someProducts` workspace; both modes publish to `Azusalina/monitor`.
+
+This is an independent repository at `/home/a/Documents/products/monitor`, published as [Azusalina/monitor](https://github.com/Azusalina/monitor). Run `git add`, `git commit`, and `git push` here. Its source has moved out of `someProducts`; hub pushes no longer publish this project.

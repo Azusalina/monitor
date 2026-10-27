@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/a/Documents/someProducts/monitor/widget-mode/core/native
+CMAKE_SOURCE_DIR = /home/a/Documents/products/monitor/widget-mode/core/native
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/a/Documents/someProducts/monitor/widget-mode/core/build/native
+CMAKE_BINARY_DIR = /home/a/Documents/products/monitor/widget-mode/core/build/native
 
 # Utility rule file for monitornative_autogen_timestamp_deps.
 
@@ -81,6 +81,6 @@ CMakeFiles/monitornative_autogen_timestamp_deps.dir/clean:
 .PHONY : CMakeFiles/monitornative_autogen_timestamp_deps.dir/clean
 
 CMakeFiles/monitornative_autogen_timestamp_deps.dir/depend:
-	cd /home/a/Documents/someProducts/monitor/widget-mode/core/build/native && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/Documents/someProducts/monitor/widget-mode/core/native /home/a/Documents/someProducts/monitor/widget-mode/core/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/monitornative_autogen_timestamp_deps.dir/DependInfo.cmake "--color=$(COLOR)" monitornative_autogen_timestamp_deps
+	cd /home/a/Documents/products/monitor/widget-mode/core/build/native && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/Documents/products/monitor/widget-mode/core/native /home/a/Documents/products/monitor/widget-mode/core/native /home/a/Documents/products/monitor/widget-mode/core/build/native /home/a/Documents/products/monitor/widget-mode/core/build/native /home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/monitornative_autogen_timestamp_deps.dir/DependInfo.cmake "--color=$(COLOR)" monitornative_autogen_timestamp_deps
 .PHONY : CMakeFiles/monitornative_autogen_timestamp_deps.dir/depend
 

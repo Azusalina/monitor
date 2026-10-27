@@ -6,7 +6,7 @@ monitornativeplugin_autogen/timestamp: CMakeFiles/4.4.4/CMakeCXXCompiler.cmake \
   monitornativeplugin_Monitor_NativePlugin.cpp \
   monitornativeplugin_Monitor_NativePlugin_in.cpp \
   monitornativeplugin_autogen/moc_predefs.h \
-  /home/a/Documents/someProducts/monitor/widget-mode/core/native/CMakeLists.txt \
+  /home/a/Documents/products/monitor/widget-mode/core/native/CMakeLists.txt \
   /usr/bin/cmake \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
@@ -2938,7 +2938,7 @@ monitornativeplugin_Monitor_NativePlugin_in.cpp:
 
 /usr/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginAdditionalTargetInfo.cmake:
 
-/home/a/Documents/someProducts/monitor/widget-mode/core/native/CMakeLists.txt:
+/home/a/Documents/products/monitor/widget-mode/core/native/CMakeLists.txt:
 
 /usr/include/c++/16/clocale:
 

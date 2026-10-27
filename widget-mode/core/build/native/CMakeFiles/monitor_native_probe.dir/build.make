@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/a/Documents/someProducts/monitor/widget-mode/core/native
+CMAKE_SOURCE_DIR = /home/a/Documents/products/monitor/widget-mode/core/native
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/a/Documents/someProducts/monitor/widget-mode/core/build/native
+CMAKE_BINARY_DIR = /home/a/Documents/products/monitor/widget-mode/core/build/native
 
 # Include any dependencies generated for this target.
 include CMakeFiles/monitor_native_probe.dir/depend.make
@@ -75,30 +75,30 @@ CMakeFiles/monitor_native_probe.dir/codegen:
 CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.o: CMakeFiles/monitor_native_probe.dir/flags.make
 CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.o: monitor_native_probe_autogen/mocs_compilation.cpp
 CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.o: CMakeFiles/monitor_native_probe.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.o -MF CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.o -c /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitor_native_probe_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.o -MF CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.o -c /home/a/Documents/products/monitor/widget-mode/core/build/native/monitor_native_probe_autogen/mocs_compilation.cpp
 
 CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitor_native_probe_autogen/mocs_compilation.cpp > CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/a/Documents/products/monitor/widget-mode/core/build/native/monitor_native_probe_autogen/mocs_compilation.cpp > CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitor_native_probe_autogen/mocs_compilation.cpp -o CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/a/Documents/products/monitor/widget-mode/core/build/native/monitor_native_probe_autogen/mocs_compilation.cpp -o CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.s
 
 CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o: CMakeFiles/monitor_native_probe.dir/flags.make
-CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o: /home/a/Documents/someProducts/monitor/widget-mode/core/native/native_probe.cpp
+CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o: /home/a/Documents/products/monitor/widget-mode/core/native/native_probe.cpp
 CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o: CMakeFiles/monitor_native_probe.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o -MF CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o.d -o CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o -c /home/a/Documents/someProducts/monitor/widget-mode/core/native/native_probe.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o -MF CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o.d -o CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o -c /home/a/Documents/products/monitor/widget-mode/core/native/native_probe.cpp
 
 CMakeFiles/monitor_native_probe.dir/native_probe.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/monitor_native_probe.dir/native_probe.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/a/Documents/someProducts/monitor/widget-mode/core/native/native_probe.cpp > CMakeFiles/monitor_native_probe.dir/native_probe.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/a/Documents/products/monitor/widget-mode/core/native/native_probe.cpp > CMakeFiles/monitor_native_probe.dir/native_probe.cpp.i
 
 CMakeFiles/monitor_native_probe.dir/native_probe.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/monitor_native_probe.dir/native_probe.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/a/Documents/someProducts/monitor/widget-mode/core/native/native_probe.cpp -o CMakeFiles/monitor_native_probe.dir/native_probe.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/a/Documents/products/monitor/widget-mode/core/native/native_probe.cpp -o CMakeFiles/monitor_native_probe.dir/native_probe.cpp.s
 
 # Object files for target monitor_native_probe
 monitor_native_probe_OBJECTS = \
@@ -112,7 +112,7 @@ monitor_native_probe: CMakeFiles/monitor_native_probe.dir/monitor_native_probe_a
 monitor_native_probe: CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o
 monitor_native_probe: CMakeFiles/monitor_native_probe.dir/build.make
 monitor_native_probe: CMakeFiles/monitor_native_probe.dir/compiler_depend.ts
-monitor_native_probe: /home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornative.so
+monitor_native_probe: /home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornative.so
 monitor_native_probe: /usr/lib/libKF6GlobalAccel.so.6.31.0
 monitor_native_probe: /usr/lib/libQt6Quick.so.6.12.0
 monitor_native_probe: /usr/lib/libQt6Widgets.so.6.12.0
@@ -128,7 +128,7 @@ monitor_native_probe: /usr/lib/libQt6Qml.so.6.12.0
 monitor_native_probe: /usr/lib/libQt6Network.so.6.12.0
 monitor_native_probe: /usr/lib/libQt6Core.so.6.12.0
 monitor_native_probe: CMakeFiles/monitor_native_probe.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable monitor_native_probe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable monitor_native_probe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/monitor_native_probe.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -140,6 +140,6 @@ CMakeFiles/monitor_native_probe.dir/clean:
 .PHONY : CMakeFiles/monitor_native_probe.dir/clean
 
 CMakeFiles/monitor_native_probe.dir/depend:
-	cd /home/a/Documents/someProducts/monitor/widget-mode/core/build/native && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/Documents/someProducts/monitor/widget-mode/core/native /home/a/Documents/someProducts/monitor/widget-mode/core/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/monitor_native_probe.dir/DependInfo.cmake "--color=$(COLOR)" monitor_native_probe
+	cd /home/a/Documents/products/monitor/widget-mode/core/build/native && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/Documents/products/monitor/widget-mode/core/native /home/a/Documents/products/monitor/widget-mode/core/native /home/a/Documents/products/monitor/widget-mode/core/build/native /home/a/Documents/products/monitor/widget-mode/core/build/native /home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/monitor_native_probe.dir/DependInfo.cmake "--color=$(COLOR)" monitor_native_probe
 .PHONY : CMakeFiles/monitor_native_probe.dir/depend
 

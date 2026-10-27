@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/a/Documents/someProducts/monitor/widget-mode/core/native
+CMAKE_SOURCE_DIR = /home/a/Documents/products/monitor/widget-mode/core/native
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/a/Documents/someProducts/monitor/widget-mode/core/build/native
+CMAKE_BINARY_DIR = /home/a/Documents/products/monitor/widget-mode/core/build/native
 
 # Utility rule file for clean_qml_context_properties.
 
@@ -67,8 +67,8 @@ include CMakeFiles/clean_qml_context_properties.dir/compiler_depend.make
 include CMakeFiles/clean_qml_context_properties.dir/progress.make
 
 CMakeFiles/clean_qml_context_properties:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Removing /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/.qt/contextPropertyDump.ini file"
-	/usr/bin/cmake -E rm /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/.qt/contextPropertyDump.ini
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Removing /home/a/Documents/products/monitor/widget-mode/core/build/native/.qt/contextPropertyDump.ini file"
+	/usr/bin/cmake -E rm /home/a/Documents/products/monitor/widget-mode/core/build/native/.qt/contextPropertyDump.ini
 
 CMakeFiles/clean_qml_context_properties.dir/codegen:
 .PHONY : CMakeFiles/clean_qml_context_properties.dir/codegen
@@ -86,6 +86,6 @@ CMakeFiles/clean_qml_context_properties.dir/clean:
 .PHONY : CMakeFiles/clean_qml_context_properties.dir/clean
 
 CMakeFiles/clean_qml_context_properties.dir/depend:
-	cd /home/a/Documents/someProducts/monitor/widget-mode/core/build/native && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/Documents/someProducts/monitor/widget-mode/core/native /home/a/Documents/someProducts/monitor/widget-mode/core/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/clean_qml_context_properties.dir/DependInfo.cmake "--color=$(COLOR)" clean_qml_context_properties
+	cd /home/a/Documents/products/monitor/widget-mode/core/build/native && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/Documents/products/monitor/widget-mode/core/native /home/a/Documents/products/monitor/widget-mode/core/native /home/a/Documents/products/monitor/widget-mode/core/build/native /home/a/Documents/products/monitor/widget-mode/core/build/native /home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/clean_qml_context_properties.dir/DependInfo.cmake "--color=$(COLOR)" clean_qml_context_properties
 .PHONY : CMakeFiles/clean_qml_context_properties.dir/depend
 

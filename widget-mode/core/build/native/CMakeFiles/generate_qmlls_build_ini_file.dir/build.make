@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/a/Documents/someProducts/monitor/widget-mode/core/native
+CMAKE_SOURCE_DIR = /home/a/Documents/products/monitor/widget-mode/core/native
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/a/Documents/someProducts/monitor/widget-mode/core/build/native
+CMAKE_BINARY_DIR = /home/a/Documents/products/monitor/widget-mode/core/build/native
 
 # Utility rule file for generate_qmlls_build_ini_file.
 
@@ -69,13 +69,13 @@ include CMakeFiles/generate_qmlls_build_ini_file.dir/progress.make
 CMakeFiles/generate_qmlls_build_ini_file: .qt/.qmlls.build.ini
 
 .qt/.qmlls.build.ini:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Populating .qmlls.build.ini file at /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/.qt/.qmlls.build.ini"
-	/usr/bin/cmake -E echo [General] > /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/.qt/.qmlls.build.ini
-	/usr/bin/cmake -E echo version=2 >> /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/.qt/.qmlls.build.ini
-	/usr/bin/cmake -E echo_append docDir= >> /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/.qt/.qmlls.build.ini
-	/usr/lib/qt6/bin/qtpaths --query QT_INSTALL_DOCS >> /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/.qt/.qmlls.build.ini
-	/usr/bin/cmake -E echo [workspaces] >> /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/.qt/.qmlls.build.ini
-	/usr/bin/cmake -E cat /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/.qt/.qmlls.build.ini.part >> /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/.qt/.qmlls.build.ini
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Populating .qmlls.build.ini file at /home/a/Documents/products/monitor/widget-mode/core/build/native/.qt/.qmlls.build.ini"
+	/usr/bin/cmake -E echo [General] > /home/a/Documents/products/monitor/widget-mode/core/build/native/.qt/.qmlls.build.ini
+	/usr/bin/cmake -E echo version=2 >> /home/a/Documents/products/monitor/widget-mode/core/build/native/.qt/.qmlls.build.ini
+	/usr/bin/cmake -E echo_append docDir= >> /home/a/Documents/products/monitor/widget-mode/core/build/native/.qt/.qmlls.build.ini
+	/usr/lib/qt6/bin/qtpaths --query QT_INSTALL_DOCS >> /home/a/Documents/products/monitor/widget-mode/core/build/native/.qt/.qmlls.build.ini
+	/usr/bin/cmake -E echo [workspaces] >> /home/a/Documents/products/monitor/widget-mode/core/build/native/.qt/.qmlls.build.ini
+	/usr/bin/cmake -E cat /home/a/Documents/products/monitor/widget-mode/core/build/native/.qt/.qmlls.build.ini.part >> /home/a/Documents/products/monitor/widget-mode/core/build/native/.qt/.qmlls.build.ini
 
 CMakeFiles/generate_qmlls_build_ini_file.dir/codegen:
 .PHONY : CMakeFiles/generate_qmlls_build_ini_file.dir/codegen
@@ -94,6 +94,6 @@ CMakeFiles/generate_qmlls_build_ini_file.dir/clean:
 .PHONY : CMakeFiles/generate_qmlls_build_ini_file.dir/clean
 
 CMakeFiles/generate_qmlls_build_ini_file.dir/depend:
-	cd /home/a/Documents/someProducts/monitor/widget-mode/core/build/native && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/Documents/someProducts/monitor/widget-mode/core/native /home/a/Documents/someProducts/monitor/widget-mode/core/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/generate_qmlls_build_ini_file.dir/DependInfo.cmake "--color=$(COLOR)" generate_qmlls_build_ini_file
+	cd /home/a/Documents/products/monitor/widget-mode/core/build/native && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/Documents/products/monitor/widget-mode/core/native /home/a/Documents/products/monitor/widget-mode/core/native /home/a/Documents/products/monitor/widget-mode/core/build/native /home/a/Documents/products/monitor/widget-mode/core/build/native /home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/generate_qmlls_build_ini_file.dir/DependInfo.cmake "--color=$(COLOR)" generate_qmlls_build_ini_file
 .PHONY : CMakeFiles/generate_qmlls_build_ini_file.dir/depend
 

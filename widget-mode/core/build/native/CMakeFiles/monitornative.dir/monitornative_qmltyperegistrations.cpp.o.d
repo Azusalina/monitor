@@ -1,5 +1,5 @@
 CMakeFiles/monitornative.dir/monitornative_qmltyperegistrations.cpp.o: \
- /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornative_qmltyperegistrations.cpp \
+ /home/a/Documents/products/monitor/widget-mode/core/build/native/monitornative_qmltyperegistrations.cpp \
  /usr/include/stdc-predef.h /usr/include/qt6/QtQml/qqml.h \
  /usr/include/qt6/QtQml/qqmlprivate.h \
  /usr/include/qt6/QtQml/qjsprimitivevalue.h \
@@ -326,7 +326,7 @@ CMakeFiles/monitornative.dir/monitornative_qmltyperegistrations.cpp.o: \
  /usr/include/qt6/QtQml/qqmlregistration.h \
  /usr/include/qt6/QtQmlIntegration/qqmlintegration.h \
  /usr/include/qt6/QtQml/qqmlmoduleregistration.h \
- /home/a/Documents/someProducts/monitor/widget-mode/core/native/desktopbridge.h \
+ /home/a/Documents/products/monitor/widget-mode/core/native/desktopbridge.h \
  /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/QPointer \
  /usr/include/qt6/QtQuick/QQuickItem \
  /usr/include/qt6/QtQuick/qquickitem.h \

@@ -1,5 +1,5 @@
-/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornative_autogen/EWIEGA46WW/moc_desktopbridge.cpp: /home/a/Documents/someProducts/monitor/widget-mode/core/native/desktopbridge.h \
-  /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornative_autogen/moc_predefs.h \
+/home/a/Documents/products/monitor/widget-mode/core/build/native/monitornative_autogen/EWIEGA46WW/moc_desktopbridge.cpp: /home/a/Documents/products/monitor/widget-mode/core/native/desktopbridge.h \
+  /home/a/Documents/products/monitor/widget-mode/core/build/native/monitornative_autogen/moc_predefs.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \

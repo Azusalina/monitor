@@ -4,8 +4,8 @@
 monitor_native_probe_autogen/timestamp: CMakeFiles/4.4.4/CMakeCXXCompiler.cmake \
   CMakeFiles/4.4.4/CMakeSystem.cmake \
   monitornativeplugin_Monitor_NativePlugin_in.cpp \
-  /home/a/Documents/someProducts/monitor/widget-mode/core/native/CMakeLists.txt \
-  /home/a/Documents/someProducts/monitor/widget-mode/core/native/native_probe.cpp \
+  /home/a/Documents/products/monitor/widget-mode/core/native/CMakeLists.txt \
+  /home/a/Documents/products/monitor/widget-mode/core/native/native_probe.cpp \
   /usr/bin/cmake \
   /usr/lib/cmake/KF6GlobalAccel/KF6GlobalAccelConfig.cmake \
   /usr/lib/cmake/KF6GlobalAccel/KF6GlobalAccelConfigVersion.cmake \
@@ -2176,7 +2176,7 @@ monitor_native_probe_autogen/timestamp: CMakeFiles/4.4.4/CMakeCXXCompiler.cmake 
 
 /usr/lib/cmake/Qt6Gui/Qt6QEglFSIntegrationPluginTargets.cmake:
 
-/home/a/Documents/someProducts/monitor/widget-mode/core/native/CMakeLists.txt:
+/home/a/Documents/products/monitor/widget-mode/core/native/CMakeLists.txt:
 
 /usr/lib/cmake/Qt6Gui/Qt6QWaylandBradientDecorationPluginTargets.cmake:
 
@@ -2434,7 +2434,7 @@ CMakeFiles/4.4.4/CMakeCXXCompiler.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QMinimalEglIntegrationPluginAdditionalTargetInfo.cmake:
 
-/home/a/Documents/someProducts/monitor/widget-mode/core/native/native_probe.cpp:
+/home/a/Documents/products/monitor/widget-mode/core/native/native_probe.cpp:
 
 /usr/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake:
 

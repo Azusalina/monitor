@@ -1,5 +1,5 @@
-/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornativeplugin_autogen/include/monitornativeplugin_Monitor_NativePlugin.moc: /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornativeplugin_Monitor_NativePlugin.cpp \
-  /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornativeplugin_autogen/moc_predefs.h \
+/home/a/Documents/products/monitor/widget-mode/core/build/native/monitornativeplugin_autogen/include/monitornativeplugin_Monitor_NativePlugin.moc: /home/a/Documents/products/monitor/widget-mode/core/build/native/monitornativeplugin_Monitor_NativePlugin.cpp \
+  /home/a/Documents/products/monitor/widget-mode/core/build/native/monitornativeplugin_autogen/moc_predefs.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \

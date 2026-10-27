@@ -1,5 +1,5 @@
 CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.o: \
- /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornativeplugin_Monitor_NativePlugin.cpp \
+ /home/a/Documents/products/monitor/widget-mode/core/build/native/monitornativeplugin_Monitor_NativePlugin.cpp \
  /usr/include/stdc-predef.h /usr/include/qt6/QtCore/qtsymbolmacros.h \
  /usr/include/qt6/QtCore/qcompilerdetection.h \
  /usr/include/qt6/QtCore/qprocessordetection.h \
@@ -325,6 +325,6 @@ CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.
  /usr/include/qt6/QtNetwork/qtnetwork-config.h \
  /usr/include/qt6/QtNetwork/qtnetworkexports.h \
  /usr/include/qt6/QtQml/qtqmlexports.h \
- /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornativeplugin_autogen/include/monitornativeplugin_Monitor_NativePlugin.moc \
+ /home/a/Documents/products/monitor/widget-mode/core/build/native/monitornativeplugin_autogen/include/monitornativeplugin_Monitor_NativePlugin.moc \
  /usr/include/qt6/QtCore/qtmochelpers.h \
  /usr/include/qt6/QtCore/qtmocconstants.h

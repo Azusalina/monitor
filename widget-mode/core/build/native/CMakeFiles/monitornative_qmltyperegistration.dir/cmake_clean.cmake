@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/monitornative.qmltypes"
+  "/home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/monitornative.qmltypes"
   "CMakeFiles/monitornative_qmltyperegistration"
   "meta_types/monitornative_json_file_list.txt"
   "meta_types/monitornative_json_file_list.txt.timestamp"

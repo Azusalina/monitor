@@ -1,7 +1,7 @@
 CMakeFiles/monitornative.dir/desktopbridge.cpp.o: \
- /home/a/Documents/someProducts/monitor/widget-mode/core/native/desktopbridge.cpp \
+ /home/a/Documents/products/monitor/widget-mode/core/native/desktopbridge.cpp \
  /usr/include/stdc-predef.h \
- /home/a/Documents/someProducts/monitor/widget-mode/core/native/desktopbridge.h \
+ /home/a/Documents/products/monitor/widget-mode/core/native/desktopbridge.h \
  /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/qobject.h \
  /usr/include/qt6/QtCore/qobjectdefs.h \
  /usr/include/qt6/QtCore/qnamespace.h /usr/include/qt6/QtCore/qglobal.h \

@@ -4,7 +4,7 @@ monitor_native_probe: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o \
   CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.o \
   CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o \
-  /home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornative.so \
+  /home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornative.so \
   /usr/lib/libKF6GlobalAccel.so.6.31.0 \
   /usr/lib/libQt6Quick.so.6.12.0 \
   /usr/lib/libQt6Widgets.so.6.12.0 \
@@ -212,7 +212,7 @@ CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilatio
 
 CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o:
 
-/home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornative.so:
+/home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornative.so:
 
 /usr/lib/libKF6GlobalAccel.so.6.31.0:
 

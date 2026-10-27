@@ -281,7 +281,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
       The CXX compiler identification is GNU, found in:
-        /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/4.4.4/CompilerIdCXX/a.out
+        /home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/4.4.4/CompilerIdCXX/a.out
       
   -
     kind: "find-v1"
@@ -1095,8 +1095,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-zveYxt"
-      binary: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-zveYxt"
+      source: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-zveYxt"
+      binary: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-zveYxt"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1107,11 +1107,11 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: false
       stdout: |
-        Change Dir: '/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-zveYxt'
+        Change Dir: '/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-zveYxt'
         
         Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4472a/fast
         /usr/bin/make  -f CMakeFiles/cmTC_4472a.dir/build.make CMakeFiles/cmTC_4472a.dir/build
-        make[1]: Entering directory '/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-zveYxt'
+        make[1]: Entering directory '/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-zveYxt'
         Building CXX object CMakeFiles/cmTC_4472a.dir/CMakeCXXCompilerABI.cpp.o
         /usr/bin/c++   -v -o CMakeFiles/cmTC_4472a.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
@@ -1164,7 +1164,7 @@ events:
         GNU ld (GNU Binutils) 2.47
         COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4472a' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4472a.'
         /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_4472a.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4472a
-        make[1]: Leaving directory '/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-zveYxt'
+        make[1]: Leaving directory '/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-zveYxt'
         
       exitCode: 0
   -
@@ -1203,11 +1203,11 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|wild|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|wild))("|,| |$)]
-        ignore line: [Change Dir: '/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-zveYxt']
+        ignore line: [Change Dir: '/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-zveYxt']
         ignore line: []
         ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4472a/fast]
         ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_4472a.dir/build.make CMakeFiles/cmTC_4472a.dir/build]
-        ignore line: [make[1]: Entering directory '/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-zveYxt']
+        ignore line: [make[1]: Entering directory '/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-zveYxt']
         ignore line: [Building CXX object CMakeFiles/cmTC_4472a.dir/CMakeCXXCompilerABI.cpp.o]
         ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_4472a.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
@@ -1345,8 +1345,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-y8prWB"
-      binary: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-y8prWB"
+      source: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-y8prWB"
+      binary: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-y8prWB"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1357,17 +1357,17 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-y8prWB'
+        Change Dir: '/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-y8prWB'
         
         Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_bd85e/fast
         /usr/bin/make  -f CMakeFiles/cmTC_bd85e.dir/build.make CMakeFiles/cmTC_bd85e.dir/build
-        make[1]: Entering directory '/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-y8prWB'
+        make[1]: Entering directory '/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-y8prWB'
         Building CXX object CMakeFiles/cmTC_bd85e.dir/src.cxx.o
-        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles/cmTC_bd85e.dir/src.cxx.o -c /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-y8prWB/src.cxx
+        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles/cmTC_bd85e.dir/src.cxx.o -c /home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-y8prWB/src.cxx
         Linking CXX executable cmTC_bd85e
         /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bd85e.dir/link.txt --verbose=1
         /usr/bin/c++ CMakeFiles/cmTC_bd85e.dir/src.cxx.o -o cmTC_bd85e
-        make[1]: Leaving directory '/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-y8prWB'
+        make[1]: Leaving directory '/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-y8prWB'
         
       exitCode: 0
   -
@@ -1421,27 +1421,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6QmlToolsConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6QmlToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6qmltools-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6qmltools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlTools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6qmltools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6qmltools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6QmlTools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6QmlTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6qmltools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6qmltools.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -1690,8 +1690,8 @@ events:
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-GkNo19"
-      binary: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-GkNo19"
+      source: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-GkNo19"
+      binary: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-GkNo19"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1702,17 +1702,17 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: '/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-GkNo19'
+        Change Dir: '/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-GkNo19'
         
         Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_06dca/fast
         /usr/bin/make  -f CMakeFiles/cmTC_06dca.dir/build.make CMakeFiles/cmTC_06dca.dir/build
-        make[1]: Entering directory '/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-GkNo19'
+        make[1]: Entering directory '/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-GkNo19'
         Building CXX object CMakeFiles/cmTC_06dca.dir/src.cxx.o
-        /usr/bin/c++ -DHAVE_STDATOMIC  -std=gnu++17 -o CMakeFiles/cmTC_06dca.dir/src.cxx.o -c /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-GkNo19/src.cxx
+        /usr/bin/c++ -DHAVE_STDATOMIC  -std=gnu++17 -o CMakeFiles/cmTC_06dca.dir/src.cxx.o -c /home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-GkNo19/src.cxx
         Linking CXX executable cmTC_06dca
         /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_06dca.dir/link.txt --verbose=1
         /usr/bin/c++ CMakeFiles/cmTC_06dca.dir/src.cxx.o -o cmTC_06dca
-        make[1]: Leaving directory '/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-GkNo19'
+        make[1]: Leaving directory '/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/CMakeScratch/TryCompile-GkNo19'
         
       exitCode: 0
   -
@@ -1771,27 +1771,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6CoreToolsConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6CoreToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6coretools-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6coretools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6CoreTools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6CoreTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6coretools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6coretools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6CoreTools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6CoreTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6coretools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6coretools.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -2072,27 +2072,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6CoreConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6CoreConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6core-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6core-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6Core.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6Core.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6core.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6core.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6Core.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6Core.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6core.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6core.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -2221,27 +2221,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6QmlIntegrationConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6QmlIntegrationConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6qmlintegration-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6qmlintegration-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlIntegration.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlIntegration.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6qmlintegration.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6qmlintegration.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6QmlIntegration.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6QmlIntegration.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6qmlintegration.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6qmlintegration.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -2338,27 +2338,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6NetworkConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6NetworkConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6network-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6network-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6Network.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6Network.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6network.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6network.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6Network.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6Network.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6network.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6network.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -2457,27 +2457,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6QmlCompilerPlusPrivateToolsConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6QmlCompilerPlusPrivateToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6qmlcompilerplusprivatetools-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6qmlcompilerplusprivatetools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlCompilerPlusPrivateTools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlCompilerPlusPrivateTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6qmlcompilerplusprivatetools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6qmlcompilerplusprivatetools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6QmlCompilerPlusPrivateTools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6QmlCompilerPlusPrivateTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6qmlcompilerplusprivatetools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6qmlcompilerplusprivatetools.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -2891,27 +2891,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6QmlConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6QmlConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6qml-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6qml-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6Qml.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6Qml.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6qml.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6qml.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6Qml.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6Qml.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6qml.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6qml.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -3254,27 +3254,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6QuickToolsConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6QuickToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6quicktools-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6quicktools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6QuickTools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6QuickTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6quicktools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6quicktools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6QuickTools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6QuickTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6quicktools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6quicktools.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -5451,27 +5451,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6GuiToolsConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6GuiToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6guitools-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6guitools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6GuiTools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6GuiTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6guitools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6guitools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6GuiTools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6GuiTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6guitools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6guitools.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -5760,27 +5760,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6DBusToolsConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6DBusToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6dbustools-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6dbustools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6DBusTools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6DBusTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6dbustools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6dbustools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6DBusTools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6DBusTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6dbustools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6dbustools.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -6066,27 +6066,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6DBusConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6DBusConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6dbus-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6dbus-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6DBus.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6DBus.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6dbus.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6dbus.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6DBus.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6DBus.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6dbus.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6dbus.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -6199,27 +6199,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6GuiConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6GuiConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6gui-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6gui-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6Gui.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6Gui.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6gui.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6gui.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6Gui.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6Gui.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6gui.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6gui.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -6332,27 +6332,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6QmlModelsConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6QmlModelsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6qmlmodels-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6qmlmodels-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlModels.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlModels.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6qmlmodels.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6qmlmodels.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6QmlModels.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6QmlModels.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6qmlmodels.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6qmlmodels.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -6462,27 +6462,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6QmlWorkerScriptConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6QmlWorkerScriptConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6qmlworkerscript-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6qmlworkerscript-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlWorkerScript.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlWorkerScript.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6qmlworkerscript.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6qmlworkerscript.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6QmlWorkerScript.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6QmlWorkerScript.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6qmlworkerscript.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6qmlworkerscript.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -6587,27 +6587,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6QmlMetaConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6QmlMetaConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6qmlmeta-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6qmlmeta-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlMeta.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlMeta.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6qmlmeta.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6qmlmeta.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6QmlMeta.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6QmlMeta.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6qmlmeta.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6qmlmeta.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -6712,27 +6712,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6OpenGLConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6OpenGLConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6opengl-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6opengl-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6OpenGL.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6OpenGL.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6opengl.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6opengl.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6OpenGL.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6OpenGL.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6opengl.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6opengl.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -6837,27 +6837,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6QuickConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6QuickConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6quick-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6quick-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6Quick.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6Quick.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6quick.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6quick.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6Quick.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6Quick.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6quick.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6quick.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -7664,27 +7664,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6Config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6Config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -10337,27 +10337,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6WidgetsToolsConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6WidgetsToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6widgetstools-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6widgetstools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6WidgetsTools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6WidgetsTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6widgetstools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6widgetstools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6WidgetsTools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6WidgetsTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6widgetstools.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6widgetstools.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -10632,27 +10632,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6WidgetsConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/Qt6WidgetsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6widgets-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/qt6widgets-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6Widgets.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Qt6Widgets.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6widgets.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/qt6widgets.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6Widgets.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Qt6Widgets.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6widgets.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/qt6widgets.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -10942,27 +10942,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/KF6GlobalAccelConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/KF6GlobalAccelConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/kf6globalaccel-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/kf6globalaccel-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/KF6GlobalAccel.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/KF6GlobalAccel.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/kf6globalaccel.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/kf6globalaccel.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/KF6GlobalAccel.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/KF6GlobalAccel.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/kf6globalaccel.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/kf6globalaccel.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -11244,27 +11244,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/KF6CoreAddonsConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/KF6CoreAddonsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/kf6coreaddons-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/kf6coreaddons-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/KF6CoreAddons.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/KF6CoreAddons.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/kf6coreaddons.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/kf6coreaddons.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/KF6CoreAddons.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/KF6CoreAddons.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/kf6coreaddons.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/kf6coreaddons.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -11545,27 +11545,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/ECMConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/ECMConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/ecm-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/ecm-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/ECM.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/ECM.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/ecm.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/ecm.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/ECM.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/ECM.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/ecm.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/ecm.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -11979,27 +11979,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/KF6PackageConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/KF6PackageConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/kf6package-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/kf6package-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/KF6Package.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/KF6Package.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/kf6package.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/kf6package.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/KF6Package.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/KF6Package.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/kf6package.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/kf6package.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -12273,27 +12273,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/PlasmaConfig.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/PlasmaConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/plasma-config.cmake"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/plasma-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Plasma.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/Plasma.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/plasma.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/lib/cps/plasma.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Plasma.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/Plasma.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/plasma.cps"
+        path: "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/pkgRedirects/share/cps/plasma.cps"
         mode: "cps"
         reason: "no_exist"
       -

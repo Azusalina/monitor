@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/a/Documents/someProducts/monitor/widget-mode/core/native
+CMAKE_SOURCE_DIR = /home/a/Documents/products/monitor/widget-mode/core/native
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/a/Documents/someProducts/monitor/widget-mode/core/build/native
+CMAKE_BINARY_DIR = /home/a/Documents/products/monitor/widget-mode/core/build/native
 
 # Include any dependencies generated for this target.
 include CMakeFiles/monitornativeplugin.dir/depend.make
@@ -75,30 +75,30 @@ CMakeFiles/monitornativeplugin.dir/codegen:
 CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.o: CMakeFiles/monitornativeplugin.dir/flags.make
 CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.o: monitornativeplugin_autogen/mocs_compilation.cpp
 CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.o: CMakeFiles/monitornativeplugin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.o -MF CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.o -c /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornativeplugin_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.o -MF CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.o -c /home/a/Documents/products/monitor/widget-mode/core/build/native/monitornativeplugin_autogen/mocs_compilation.cpp
 
 CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornativeplugin_autogen/mocs_compilation.cpp > CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/a/Documents/products/monitor/widget-mode/core/build/native/monitornativeplugin_autogen/mocs_compilation.cpp > CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornativeplugin_autogen/mocs_compilation.cpp -o CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/a/Documents/products/monitor/widget-mode/core/build/native/monitornativeplugin_autogen/mocs_compilation.cpp -o CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.s
 
 CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.o: CMakeFiles/monitornativeplugin.dir/flags.make
 CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.o: monitornativeplugin_Monitor_NativePlugin.cpp
 CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.o: CMakeFiles/monitornativeplugin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.o -MF CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.o.d -o CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.o -c /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornativeplugin_Monitor_NativePlugin.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.o -MF CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.o.d -o CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.o -c /home/a/Documents/products/monitor/widget-mode/core/build/native/monitornativeplugin_Monitor_NativePlugin.cpp
 
 CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornativeplugin_Monitor_NativePlugin.cpp > CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/a/Documents/products/monitor/widget-mode/core/build/native/monitornativeplugin_Monitor_NativePlugin.cpp > CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.i
 
 CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornativeplugin_Monitor_NativePlugin.cpp -o CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/a/Documents/products/monitor/widget-mode/core/build/native/monitornativeplugin_Monitor_NativePlugin.cpp -o CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.s
 
 # Object files for target monitornativeplugin
 monitornativeplugin_OBJECTS = \
@@ -108,20 +108,20 @@ monitornativeplugin_OBJECTS = \
 # External object files for target monitornativeplugin
 monitornativeplugin_EXTERNAL_OBJECTS =
 
-/home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.o
-/home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.o
-/home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: CMakeFiles/monitornativeplugin.dir/build.make
-/home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: CMakeFiles/monitornativeplugin.dir/compiler_depend.ts
-/home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: /home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornative.so
-/home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: /usr/lib/libQt6Qml.so.6.12.0
-/home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: /usr/lib/libQt6Network.so.6.12.0
-/home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: /usr/lib/libQt6Core.so.6.12.0
-/home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: CMakeFiles/monitornativeplugin.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared module /home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so"
+/home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.o
+/home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.o
+/home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: CMakeFiles/monitornativeplugin.dir/build.make
+/home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: CMakeFiles/monitornativeplugin.dir/compiler_depend.ts
+/home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: /home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornative.so
+/home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: /usr/lib/libQt6Qml.so.6.12.0
+/home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: /usr/lib/libQt6Network.so.6.12.0
+/home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: /usr/lib/libQt6Core.so.6.12.0
+/home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: CMakeFiles/monitornativeplugin.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared module /home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/monitornativeplugin.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/monitornativeplugin.dir/build: /home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so
+CMakeFiles/monitornativeplugin.dir/build: /home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so
 .PHONY : CMakeFiles/monitornativeplugin.dir/build
 
 CMakeFiles/monitornativeplugin.dir/clean:
@@ -129,6 +129,6 @@ CMakeFiles/monitornativeplugin.dir/clean:
 .PHONY : CMakeFiles/monitornativeplugin.dir/clean
 
 CMakeFiles/monitornativeplugin.dir/depend:
-	cd /home/a/Documents/someProducts/monitor/widget-mode/core/build/native && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/Documents/someProducts/monitor/widget-mode/core/native /home/a/Documents/someProducts/monitor/widget-mode/core/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/monitornativeplugin.dir/DependInfo.cmake "--color=$(COLOR)" monitornativeplugin
+	cd /home/a/Documents/products/monitor/widget-mode/core/build/native && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/Documents/products/monitor/widget-mode/core/native /home/a/Documents/products/monitor/widget-mode/core/native /home/a/Documents/products/monitor/widget-mode/core/build/native /home/a/Documents/products/monitor/widget-mode/core/build/native /home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/monitornativeplugin.dir/DependInfo.cmake "--color=$(COLOR)" monitornativeplugin
 .PHONY : CMakeFiles/monitornativeplugin.dir/depend
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/a/Documents/someProducts/monitor/widget-mode/core/native
+CMAKE_SOURCE_DIR = /home/a/Documents/products/monitor/widget-mode/core/native
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/a/Documents/someProducts/monitor/widget-mode/core/build/native
+CMAKE_BINARY_DIR = /home/a/Documents/products/monitor/widget-mode/core/build/native
 
 # Utility rule file for monitornative_autogen.
 
@@ -70,9 +70,9 @@ CMakeFiles/monitornative_autogen: monitornative_autogen/timestamp
 
 monitornative_autogen/timestamp: /usr/lib/qt6/moc
 monitornative_autogen/timestamp: CMakeFiles/monitornative_autogen.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target monitornative"
-	/usr/bin/cmake -E cmake_autogen /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/monitornative_autogen.dir/AutogenInfo.json Release
-	/usr/bin/cmake -E touch /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornative_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target monitornative"
+	/usr/bin/cmake -E cmake_autogen /home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/monitornative_autogen.dir/AutogenInfo.json Release
+	/usr/bin/cmake -E touch /home/a/Documents/products/monitor/widget-mode/core/build/native/monitornative_autogen/timestamp
 
 CMakeFiles/monitornative_autogen.dir/codegen:
 .PHONY : CMakeFiles/monitornative_autogen.dir/codegen
@@ -91,6 +91,6 @@ CMakeFiles/monitornative_autogen.dir/clean:
 .PHONY : CMakeFiles/monitornative_autogen.dir/clean
 
 CMakeFiles/monitornative_autogen.dir/depend:
-	cd /home/a/Documents/someProducts/monitor/widget-mode/core/build/native && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/Documents/someProducts/monitor/widget-mode/core/native /home/a/Documents/someProducts/monitor/widget-mode/core/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/monitornative_autogen.dir/DependInfo.cmake "--color=$(COLOR)" monitornative_autogen
+	cd /home/a/Documents/products/monitor/widget-mode/core/build/native && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/Documents/products/monitor/widget-mode/core/native /home/a/Documents/products/monitor/widget-mode/core/native /home/a/Documents/products/monitor/widget-mode/core/build/native /home/a/Documents/products/monitor/widget-mode/core/build/native /home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/monitornative_autogen.dir/DependInfo.cmake "--color=$(COLOR)" monitornative_autogen
 .PHONY : CMakeFiles/monitornative_autogen.dir/depend
 

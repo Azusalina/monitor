@@ -1,9 +1,9 @@
-/home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: \
+/home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornativeplugin.so: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o \
   CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.cpp.o \
   CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.o \
-  /home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornative.so \
+  /home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornative.so \
   /usr/lib/libQt6Qml.so.6.12.0 \
   /usr/lib/libQt6Network.so.6.12.0 \
   /usr/lib/libQt6Core.so.6.12.0 \
@@ -44,7 +44,7 @@ CMakeFiles/monitornativeplugin.dir/monitornativeplugin_autogen/mocs_compilation.
 
 CMakeFiles/monitornativeplugin.dir/monitornativeplugin_Monitor_NativePlugin.cpp.o:
 
-/home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornative.so:
+/home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornative.so:
 
 /usr/lib/libQt6Qml.so.6.12.0:
 

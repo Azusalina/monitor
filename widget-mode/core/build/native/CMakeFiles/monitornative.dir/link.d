@@ -1,4 +1,4 @@
-/home/a/Documents/someProducts/monitor/widget-mode/core/plasmoid/contents/native/libmonitornative.so: \
+/home/a/Documents/products/monitor/widget-mode/core/plasmoid/contents/native/libmonitornative.so: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o \
   CMakeFiles/monitornative.dir/monitornative_autogen/mocs_compilation.cpp.o \

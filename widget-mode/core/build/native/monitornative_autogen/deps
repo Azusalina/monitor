@@ -1,11 +1,11 @@
 monitornative_autogen/timestamp: \
-	/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/4.4.4/CMakeCXXCompiler.cmake \
-	/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/4.4.4/CMakeSystem.cmake \
-	/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornative_autogen/moc_predefs.h \
-	/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornativeplugin_Monitor_NativePlugin_in.cpp \
-	/home/a/Documents/someProducts/monitor/widget-mode/core/native/CMakeLists.txt \
-	/home/a/Documents/someProducts/monitor/widget-mode/core/native/desktopbridge.cpp \
-	/home/a/Documents/someProducts/monitor/widget-mode/core/native/desktopbridge.h \
+	/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/4.4.4/CMakeCXXCompiler.cmake \
+	/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/4.4.4/CMakeSystem.cmake \
+	/home/a/Documents/products/monitor/widget-mode/core/build/native/monitornative_autogen/moc_predefs.h \
+	/home/a/Documents/products/monitor/widget-mode/core/build/native/monitornativeplugin_Monitor_NativePlugin_in.cpp \
+	/home/a/Documents/products/monitor/widget-mode/core/native/CMakeLists.txt \
+	/home/a/Documents/products/monitor/widget-mode/core/native/desktopbridge.cpp \
+	/home/a/Documents/products/monitor/widget-mode/core/native/desktopbridge.h \
 	/usr/include/alloca.h \
 	/usr/include/asm-generic/bitsperlong.h \
 	/usr/include/asm-generic/errno-base.h \

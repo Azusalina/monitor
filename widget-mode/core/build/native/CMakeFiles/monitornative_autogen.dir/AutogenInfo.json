@@ -1,16 +1,16 @@
 {
-	"BUILD_DIR" : "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornative_autogen",
-	"CMAKE_BINARY_DIR" : "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native",
-	"CMAKE_CURRENT_BINARY_DIR" : "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/home/a/Documents/someProducts/monitor/widget-mode/core/native",
+	"BUILD_DIR" : "/home/a/Documents/products/monitor/widget-mode/core/build/native/monitornative_autogen",
+	"CMAKE_BINARY_DIR" : "/home/a/Documents/products/monitor/widget-mode/core/build/native",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/a/Documents/products/monitor/widget-mode/core/build/native",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/a/Documents/products/monitor/widget-mode/core/native",
 	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
 	"CMAKE_LIST_FILES" : 
 	[
-		"/home/a/Documents/someProducts/monitor/widget-mode/core/native/CMakeLists.txt",
-		"/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/4.4.4/CMakeSystem.cmake",
+		"/home/a/Documents/products/monitor/widget-mode/core/native/CMakeLists.txt",
+		"/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/4.4.4/CMakeSystem.cmake",
 		"/usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake",
 		"/usr/share/cmake/Modules/Platform/Linux-Initialize.cmake",
-		"/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/4.4.4/CMakeCXXCompiler.cmake",
+		"/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/4.4.4/CMakeCXXCompiler.cmake",
 		"/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake",
 		"/usr/share/cmake/Modules/CMakeGenericSystem.cmake",
 		"/usr/share/cmake/Modules/CMakeInitializeConfigs.cmake",
@@ -1659,24 +1659,24 @@
 		"/usr/lib/cmake/Qt6Qml/Qt6QmlPluginTemplate.cpp.in",
 		"/usr/lib/cmake/Qt6Qml/Qt6QmlModuleDirMappingTemplate.qrc.in",
 		"/usr/lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in",
-		"/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornativeplugin_Monitor_NativePlugin_in.cpp"
+		"/home/a/Documents/products/monitor/widget-mode/core/build/native/monitornativeplugin_Monitor_NativePlugin_in.cpp"
 	],
-	"CMAKE_SOURCE_DIR" : "/home/a/Documents/someProducts/monitor/widget-mode/core/native",
+	"CMAKE_SOURCE_DIR" : "/home/a/Documents/products/monitor/widget-mode/core/native",
 	"CROSS_CONFIG" : false,
-	"DEP_FILE" : "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornative_autogen/deps",
+	"DEP_FILE" : "/home/a/Documents/products/monitor/widget-mode/core/build/native/monitornative_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "monitornative_autogen/timestamp",
 	"HEADERS" : 
 	[
 		[
-			"/home/a/Documents/someProducts/monitor/widget-mode/core/native/desktopbridge.h",
+			"/home/a/Documents/products/monitor/widget-mode/core/native/desktopbridge.h",
 			"Mu",
 			"EWIEGA46WW/moc_desktopbridge.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornative_autogen/include",
-	"MOC_COMPILATION_FILE" : "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornative_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "/home/a/Documents/products/monitor/widget-mode/core/build/native/monitornative_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/a/Documents/products/monitor/widget-mode/core/build/native/monitornative_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"QT_CORE_LIB",
@@ -1700,7 +1700,7 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"/home/a/Documents/someProducts/monitor/widget-mode/core/native",
+		"/home/a/Documents/products/monitor/widget-mode/core/native",
 		"/usr/include/Plasma",
 		"/usr/include/PlasmaQuick",
 		"/usr/include/KF6/KConfigCore",
@@ -1746,25 +1746,25 @@
 		"-E",
 		"/usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornative_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "/home/a/Documents/products/monitor/widget-mode/core/build/native/monitornative_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : 
 	[
-		"/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/.qt/rcc/qrc_qmake_Monitor_Native.cpp",
-		"/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornative_qmltyperegistrations.cpp"
+		"/home/a/Documents/products/monitor/widget-mode/core/build/native/.qt/rcc/qrc_qmake_Monitor_Native.cpp",
+		"/home/a/Documents/products/monitor/widget-mode/core/build/native/monitornative_qmltyperegistrations.cpp"
 	],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 14,
-	"PARSE_CACHE_FILE" : "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/monitornative_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/monitornative_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/usr/lib/qt6/moc",
 	"QT_UIC_EXECUTABLE" : "",
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 12,
-	"SETTINGS_FILE" : "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/monitornative_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/monitornative_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
 		[
-			"/home/a/Documents/someProducts/monitor/widget-mode/core/native/desktopbridge.cpp",
+			"/home/a/Documents/products/monitor/widget-mode/core/native/desktopbridge.cpp",
 			"Mu",
 			null
 		]

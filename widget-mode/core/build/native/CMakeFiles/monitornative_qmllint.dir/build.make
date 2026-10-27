@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/a/Documents/someProducts/monitor/widget-mode/core/native
+CMAKE_SOURCE_DIR = /home/a/Documents/products/monitor/widget-mode/core/native
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/a/Documents/someProducts/monitor/widget-mode/core/build/native
+CMAKE_BINARY_DIR = /home/a/Documents/products/monitor/widget-mode/core/build/native
 
 # Utility rule file for monitornative_qmllint.
 
@@ -68,7 +68,7 @@ include CMakeFiles/monitornative_qmllint.dir/progress.make
 
 CMakeFiles/monitornative_qmllint: /usr/lib/qt6/bin/qmllint
 CMakeFiles/monitornative_qmllint: .rcc/qmllint/monitornative.rsp
-	cd /home/a/Documents/someProducts/monitor/widget-mode/core/native && /usr/bin/cmake -E echo Nothing\ to\ do\ for\ target\ monitornative_qmllint.
+	cd /home/a/Documents/products/monitor/widget-mode/core/native && /usr/bin/cmake -E echo Nothing\ to\ do\ for\ target\ monitornative_qmllint.
 
 CMakeFiles/monitornative_qmllint.dir/codegen:
 .PHONY : CMakeFiles/monitornative_qmllint.dir/codegen
@@ -86,6 +86,6 @@ CMakeFiles/monitornative_qmllint.dir/clean:
 .PHONY : CMakeFiles/monitornative_qmllint.dir/clean
 
 CMakeFiles/monitornative_qmllint.dir/depend:
-	cd /home/a/Documents/someProducts/monitor/widget-mode/core/build/native && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/Documents/someProducts/monitor/widget-mode/core/native /home/a/Documents/someProducts/monitor/widget-mode/core/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/monitornative_qmllint.dir/DependInfo.cmake "--color=$(COLOR)" monitornative_qmllint
+	cd /home/a/Documents/products/monitor/widget-mode/core/build/native && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/Documents/products/monitor/widget-mode/core/native /home/a/Documents/products/monitor/widget-mode/core/native /home/a/Documents/products/monitor/widget-mode/core/build/native /home/a/Documents/products/monitor/widget-mode/core/build/native /home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/monitornative_qmllint.dir/DependInfo.cmake "--color=$(COLOR)" monitornative_qmllint
 .PHONY : CMakeFiles/monitornative_qmllint.dir/depend
 

@@ -1,8 +1,8 @@
 CMakeFiles/monitornative.dir/monitornative_autogen/mocs_compilation.cpp.o: \
- /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornative_autogen/mocs_compilation.cpp \
+ /home/a/Documents/products/monitor/widget-mode/core/build/native/monitornative_autogen/mocs_compilation.cpp \
  /usr/include/stdc-predef.h \
- /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornative_autogen/EWIEGA46WW/moc_desktopbridge.cpp \
- /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornative_autogen/EWIEGA46WW/../../../../native/desktopbridge.h \
+ /home/a/Documents/products/monitor/widget-mode/core/build/native/monitornative_autogen/EWIEGA46WW/moc_desktopbridge.cpp \
+ /home/a/Documents/products/monitor/widget-mode/core/build/native/monitornative_autogen/EWIEGA46WW/../../../../native/desktopbridge.h \
  /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/qobject.h \
  /usr/include/qt6/QtCore/qobjectdefs.h \
  /usr/include/qt6/QtCore/qnamespace.h /usr/include/qt6/QtCore/qglobal.h \

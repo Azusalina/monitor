@@ -79,3 +79,7 @@ not rerun live Qt/Plasma preview checks or reinstall either mode.
 
 2026-10-12: Combined the local and GitHub Monitor products into widget and CLI
 modes in one repository, preserving both runtime configurations and histories.
+
+## Independent repository migration (2026-10-27)
+
+Source and existing local data moved to `/home/a/Documents/products/monitor`, retaining the product commit history. This checkout now owns its `.git` and `origin`; commit and push here independently. This supersedes the earlier hub-only or root-forwarded publication arrangement. Existing configuration locations, command names, and user data are preserved.

@@ -5,9 +5,9 @@ monitornative_autogen/timestamp: CMakeFiles/4.4.4/CMakeCXXCompiler.cmake \
   CMakeFiles/4.4.4/CMakeSystem.cmake \
   monitornative_autogen/moc_predefs.h \
   monitornativeplugin_Monitor_NativePlugin_in.cpp \
-  /home/a/Documents/someProducts/monitor/widget-mode/core/native/CMakeLists.txt \
-  /home/a/Documents/someProducts/monitor/widget-mode/core/native/desktopbridge.cpp \
-  /home/a/Documents/someProducts/monitor/widget-mode/core/native/desktopbridge.h \
+  /home/a/Documents/products/monitor/widget-mode/core/native/CMakeLists.txt \
+  /home/a/Documents/products/monitor/widget-mode/core/native/desktopbridge.cpp \
+  /home/a/Documents/products/monitor/widget-mode/core/native/desktopbridge.h \
   /usr/bin/cmake \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
@@ -3118,7 +3118,7 @@ monitornative_autogen/timestamp: CMakeFiles/4.4.4/CMakeCXXCompiler.cmake \
 
 /usr/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginAdditionalTargetInfo.cmake:
 
-/home/a/Documents/someProducts/monitor/widget-mode/core/native/CMakeLists.txt:
+/home/a/Documents/products/monitor/widget-mode/core/native/CMakeLists.txt:
 
 /usr/include/qt6/QtCore/qlist.h:
 
@@ -3208,7 +3208,7 @@ monitornativeplugin_Monitor_NativePlugin_in.cpp:
 
 /usr/lib/cmake/Qt6Gui/Qt6DmaBufServerBufferPluginTargets-relwithdebinfo.cmake:
 
-/home/a/Documents/someProducts/monitor/widget-mode/core/native/desktopbridge.h:
+/home/a/Documents/products/monitor/widget-mode/core/native/desktopbridge.h:
 
 /usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargetsPrecheck.cmake:
 
@@ -3756,7 +3756,7 @@ CMakeFiles/4.4.4/CMakeSystem.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6effectspluginAdditionalTargetInfo.cmake:
 
-/home/a/Documents/someProducts/monitor/widget-mode/core/native/desktopbridge.cpp:
+/home/a/Documents/products/monitor/widget-mode/core/native/desktopbridge.cpp:
 
 /usr/lib/cmake/Qt6/QtPublicSbomExternalReferenceHelpers.cmake:
 

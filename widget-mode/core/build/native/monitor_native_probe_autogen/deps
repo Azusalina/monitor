@@ -1,9 +1,9 @@
 monitor_native_probe_autogen/timestamp: \
-	/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/4.4.4/CMakeCXXCompiler.cmake \
-	/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/4.4.4/CMakeSystem.cmake \
-	/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitornativeplugin_Monitor_NativePlugin_in.cpp \
-	/home/a/Documents/someProducts/monitor/widget-mode/core/native/CMakeLists.txt \
-	/home/a/Documents/someProducts/monitor/widget-mode/core/native/native_probe.cpp \
+	/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/4.4.4/CMakeCXXCompiler.cmake \
+	/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/4.4.4/CMakeSystem.cmake \
+	/home/a/Documents/products/monitor/widget-mode/core/build/native/monitornativeplugin_Monitor_NativePlugin_in.cpp \
+	/home/a/Documents/products/monitor/widget-mode/core/native/CMakeLists.txt \
+	/home/a/Documents/products/monitor/widget-mode/core/native/native_probe.cpp \
 	/usr/lib/cmake/KF6GlobalAccel/KF6GlobalAccelConfig.cmake \
 	/usr/lib/cmake/KF6GlobalAccel/KF6GlobalAccelConfigVersion.cmake \
 	/usr/lib/cmake/KF6GlobalAccel/KF6GlobalAccelTargets-noconfig.cmake \

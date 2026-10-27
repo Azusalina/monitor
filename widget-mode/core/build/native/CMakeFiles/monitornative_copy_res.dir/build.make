@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/a/Documents/someProducts/monitor/widget-mode/core/native
+CMAKE_SOURCE_DIR = /home/a/Documents/products/monitor/widget-mode/core/native
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/a/Documents/someProducts/monitor/widget-mode/core/build/native
+CMAKE_BINARY_DIR = /home/a/Documents/products/monitor/widget-mode/core/build/native
 
 # Utility rule file for monitornative_copy_res.
 
@@ -69,8 +69,8 @@ include CMakeFiles/monitornative_copy_res.dir/progress.make
 CMakeFiles/monitornative_copy_res: .qt/monitornative_res.txt
 
 .qt/monitornative_res.txt: /usr/lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Copying monitornative qml resources into build dir"
-	/usr/bin/cmake -DFILES_INFO_PATH=/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/.qt/monitornative_res.cmake -P /usr/lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Copying monitornative qml resources into build dir"
+	/usr/bin/cmake -DFILES_INFO_PATH=/home/a/Documents/products/monitor/widget-mode/core/build/native/.qt/monitornative_res.cmake -P /usr/lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake
 
 CMakeFiles/monitornative_copy_res.dir/codegen:
 .PHONY : CMakeFiles/monitornative_copy_res.dir/codegen
@@ -89,6 +89,6 @@ CMakeFiles/monitornative_copy_res.dir/clean:
 .PHONY : CMakeFiles/monitornative_copy_res.dir/clean
 
 CMakeFiles/monitornative_copy_res.dir/depend:
-	cd /home/a/Documents/someProducts/monitor/widget-mode/core/build/native && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/Documents/someProducts/monitor/widget-mode/core/native /home/a/Documents/someProducts/monitor/widget-mode/core/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native /home/a/Documents/someProducts/monitor/widget-mode/core/build/native/CMakeFiles/monitornative_copy_res.dir/DependInfo.cmake "--color=$(COLOR)" monitornative_copy_res
+	cd /home/a/Documents/products/monitor/widget-mode/core/build/native && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/Documents/products/monitor/widget-mode/core/native /home/a/Documents/products/monitor/widget-mode/core/native /home/a/Documents/products/monitor/widget-mode/core/build/native /home/a/Documents/products/monitor/widget-mode/core/build/native /home/a/Documents/products/monitor/widget-mode/core/build/native/CMakeFiles/monitornative_copy_res.dir/DependInfo.cmake "--color=$(COLOR)" monitornative_copy_res
 .PHONY : CMakeFiles/monitornative_copy_res.dir/depend
 

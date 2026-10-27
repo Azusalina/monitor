@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/a/Documents/someProducts/monitor/widget-mode/core/build/native/monitor_native_probe_autogen/mocs_compilation.cpp" "CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.o.d"
-  "/home/a/Documents/someProducts/monitor/widget-mode/core/native/native_probe.cpp" "CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o" "gcc" "CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o.d"
+  "/home/a/Documents/products/monitor/widget-mode/core/build/native/monitor_native_probe_autogen/mocs_compilation.cpp" "CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/monitor_native_probe.dir/monitor_native_probe_autogen/mocs_compilation.cpp.o.d"
+  "/home/a/Documents/products/monitor/widget-mode/core/native/native_probe.cpp" "CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o" "gcc" "CMakeFiles/monitor_native_probe.dir/native_probe.cpp.o.d"
   "" "monitor_native_probe" "gcc" "CMakeFiles/monitor_native_probe.dir/link.d"
   )
 
