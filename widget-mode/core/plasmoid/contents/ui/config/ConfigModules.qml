@@ -5,6 +5,7 @@ import QtQuick.Layouts
 import "../LayoutTools.js" as LayoutTools
 
 ScrollView {
+    ScrollBar.vertical.policy: ScrollBar.AlwaysOff
     id: page
     property string cfg_moduleOrder: LayoutTools.modules.join(",")
     property string cfg_enabledModules: LayoutTools.modules.join(",")

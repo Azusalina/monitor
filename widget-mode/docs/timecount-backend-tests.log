@@ -1,0 +1,28 @@
+...................../usr/lib/python3.14/unittest/mock.py:2259: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7feff6f655d0>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.14/unittest/mock.py:2259: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7feff6f64a90>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.14/unittest/mock.py:2259: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7feff6f66a70>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+................................../tmp/monitor-timecount/core/backend/timecount.py:108: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7feff6f66d40>
+  day = first+timedelta(days=offset)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/tmp/monitor-timecount/core/backend/timecount.py:108: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7feff6f65120>
+  day = first+timedelta(days=offset)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/tmp/monitor-timecount/core/backend/timecount.py:108: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7feff44747c0>
+  day = first+timedelta(days=offset)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/tmp/monitor-timecount/core/backend/timecount.py:108: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7feff4475a80>
+  day = first+timedelta(days=offset)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+....................
+----------------------------------------------------------------------
+Ran 75 tests in 4.849s
+
+OK
+Reloaded Plasma for 1 monitor instance(s). Private settings backup: /tmp/tmpiflt3ypo/monitor-dashboard/widget-refresh-20261030-001336-706016.json
+<sys>:0: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7feff719f5b0>

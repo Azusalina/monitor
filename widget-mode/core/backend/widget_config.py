@@ -9,6 +9,7 @@ import re
 import tempfile
 import threading
 import xml.etree.ElementTree as ET
+from timecount import projects_list
 
 MAX_BYTES = 262144
 
@@ -72,6 +73,8 @@ def validate(settings):
                 raise ValueError('Use bounded rectangular split ratios')
         if key in ('todoPendingTitle', 'todoUrgentTitle') and len(value) > 64:
             raise ValueError(f'{key} must contain at most 64 characters')
+        if key == 'timecountProjects':
+            projects_list(json.loads(value))
         if key == 'todoItems':
             try:
                 tasks = json.loads(value)

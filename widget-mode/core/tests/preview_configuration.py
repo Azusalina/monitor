@@ -1,5 +1,6 @@
 """Exercise the preview's real Apply/Cancel wiring with isolated saved settings."""
 import os
+import json
 from pathlib import Path
 import tempfile
 
@@ -26,6 +27,12 @@ with tempfile.TemporaryDirectory(prefix='monitor-preview-config-') as temp:
     appearance = root.findChild(QObject, 'previewAppearancePage')
     flows = root.findChild(QObject, 'previewFlowsPage')
     timers = root.findChild(QObject, 'previewTimersPage')
+    media = root.findChild(QObject, 'previewMediaPage')
+    timecount = root.findChild(QObject, 'previewTimecountPage')
+    original_projects = preferences.property('timecountProjects')
+    renamed_projects = json.loads(original_projects)
+    renamed_projects[0]['name'] = 'BAFS study'
+    renamed_projects = json.dumps(renamed_projects)
     todos = root.findChild(QObject, 'previewTodosPage')
     buttons = root.findChild(QObject, 'previewConfigurationButtons')
     config_window = root.findChild(QObject, 'previewConfiguration')
@@ -41,17 +48,27 @@ with tempfile.TemporaryDirectory(prefix='monitor-preview-config-') as temp:
     flows.setProperty('cfg_flowRefreshMs', 750)
     flows.setProperty('cfg_flowHistorySeconds', 60)
     flows.setProperty('cfg_audioRefreshMs', 50)
+    media.setProperty('cfg_cavaBarCount', 64)
+    media.setProperty('cfg_cavaBarColor', '#dd8844')
+    media.setProperty('cfg_cavaHeadroom', 35)
+    timecount.setProperty('cfg_timecountProjects', renamed_projects)
+    timecount.setProperty('cfg_timecountColor', '#66ddaa')
     timers.setProperty('cfg_countdownSeconds', 42)
     timers.setProperty('cfg_stopwatchColor', '#55cc88')
     timers.setProperty('cfg_countdownStyle', 'ring')
     todos.setProperty('cfg_todoPendingTitle', 'Later')
     todos.setProperty('cfg_todoItems', '{"pending":[{"id":"p1","text":"Test task","done":true}],"urgent":[]}')
+    assert preferences.property('timecountProjects') == original_projects
+    assert preferences.property('timecountColor') == ''
     assert preferences.property('enabledModules') == original
     assert preferences.property('backgroundOpacity') == 0
     assert preferences.property('cpuFlowColor') == ''
     assert preferences.property('flowRefreshMs') == 200
     assert preferences.property('flowHistorySeconds') == 30
     assert preferences.property('audioRefreshMs') == 100
+    assert preferences.property('cavaBarCount') == 32
+    assert preferences.property('cavaBarColor') == ''
+    assert preferences.property('cavaHeadroom') == 20
     assert QMetaObject.invokeMethod(buttons, 'rejected')
     assert not config_window.property('visible')
     assert QMetaObject.invokeMethod(root, 'configure')
@@ -62,6 +79,11 @@ with tempfile.TemporaryDirectory(prefix='monitor-preview-config-') as temp:
     assert flows.property('cfg_flowRefreshMs') == 200
     assert flows.property('cfg_flowHistorySeconds') == 30
     assert flows.property('cfg_audioRefreshMs') == 100
+    assert media.property('cfg_cavaBarCount') == 32
+    assert media.property('cfg_cavaBarColor') == ''
+    assert media.property('cfg_cavaHeadroom') == 20
+    assert timecount.property('cfg_timecountProjects') == original_projects
+    assert timecount.property('cfg_timecountColor') == ''
     assert timers.property('cfg_countdownSeconds') == 300
     assert timers.property('cfg_stopwatchColor') == ''
     assert timers.property('cfg_countdownStyle') == 'minimal'
@@ -76,6 +98,11 @@ with tempfile.TemporaryDirectory(prefix='monitor-preview-config-') as temp:
     flows.setProperty('cfg_flowRefreshMs', 750)
     flows.setProperty('cfg_flowHistorySeconds', 60)
     flows.setProperty('cfg_audioRefreshMs', 50)
+    media.setProperty('cfg_cavaBarCount', 64)
+    media.setProperty('cfg_cavaBarColor', '#dd8844')
+    media.setProperty('cfg_cavaHeadroom', 35)
+    timecount.setProperty('cfg_timecountProjects', renamed_projects)
+    timecount.setProperty('cfg_timecountColor', '#66ddaa')
     timers.setProperty('cfg_countdownSeconds', 42)
     timers.setProperty('cfg_stopwatchColor', '#55cc88')
     timers.setProperty('cfg_countdownStyle', 'ring')
@@ -89,6 +116,11 @@ with tempfile.TemporaryDirectory(prefix='monitor-preview-config-') as temp:
     assert preferences.property('flowRefreshMs') == 750
     assert preferences.property('flowHistorySeconds') == 60
     assert preferences.property('audioRefreshMs') == 50
+    assert preferences.property('cavaBarCount') == 64
+    assert preferences.property('cavaBarColor') == '#dd8844'
+    assert preferences.property('cavaHeadroom') == 35
+    assert preferences.property('timecountProjects') == renamed_projects
+    assert preferences.property('timecountColor') == '#66ddaa'
     assert preferences.property('countdownSeconds') == 42
     assert preferences.property('stopwatchColor') == '#55cc88'
     assert preferences.property('countdownStyle') == 'ring'

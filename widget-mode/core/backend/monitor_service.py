@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Local, unprivileged telemetry bridge for the Monitor Plasma widget."""
 from __future__ import annotations
+import sqlite3
 import argparse
 from collections import OrderedDict
 import copy
@@ -25,6 +26,7 @@ from cava_audio import AudioCollector
 from terminal_sessions import TerminalManager
 from power import PowerCollector
 from timers import TimerManager
+from timecount import TimecountStore
 from widget_config import WidgetConfig, Conflict, MAX_BYTES
 
 MPRIS = 'org.mpris.MediaPlayer2'
@@ -269,6 +271,7 @@ class Telemetry:
         self.terminals = TerminalManager()
         self.power = PowerCollector()
         self.timers = TimerManager()
+        self._timecount = None
         self.snapshot = {'cpu': {}, 'ram': {}, 'gpus': [], 'media': {'players': []}}
         self.pings = OrderedDict()
         self.sample_clients = {}
@@ -277,6 +280,13 @@ class Telemetry:
         self.thread = threading.Thread(target=self.collect, daemon=True)
         self.media_thread = threading.Thread(target=self.collect_media, daemon=True)
         self.ping_thread = threading.Thread(target=self.collect_pings, daemon=True)
+
+    @property
+    def timecount(self):
+        with self.lock:
+            if self._timecount is None:
+                self._timecount = TimecountStore()
+            return self._timecount
 
     def sample_interval(self, target=None):
         with self.lock:
@@ -518,6 +528,17 @@ class Handler(BaseHTTPRequestHandler):
             except OSError:
                 self.reply(503, {'error': 'Config file could not be saved'})
             return
+        if self.path == '/timecount':
+            try:
+                length = int(self.headers.get('Content-Length', '0'))
+                if not 0 < length <= 16384:
+                    raise ValueError('Invalid payload size')
+                self.reply(200, self.server.telemetry.timecount.control(json.loads(self.rfile.read(length))))
+            except (ValueError, TypeError) as error:
+                self.reply(400, {'error': str(error)})
+            except (OSError, RuntimeError, sqlite3.Error):
+                self.reply(503, {'error': 'Timecount storage unavailable'})
+            return
         if self.path.startswith(('/power/', '/timers/')):
             try:
                 length = int(self.headers.get('Content-Length', '0'))
@@ -635,6 +656,7 @@ def main():
     telemetry.connectivity.thread.start()
     telemetry.audio.thread.start()
     telemetry.power.thread.start()
+    telemetry.timecount.thread.start()
     telemetry.terminals.thread.start()
     def stop_requested(*_):
         raise KeyboardInterrupt()
@@ -646,6 +668,7 @@ def main():
         pass
     finally:
         telemetry.stop.set()
+        telemetry.timecount.shutdown()
         telemetry.connectivity.stop.set()
         telemetry.audio.stop.set()
         telemetry.terminals.shutdown()

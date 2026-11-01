@@ -132,6 +132,29 @@ int main(int argc,char** argv){
     CHECK(until([&]{return child->destroyed();}));bridge->refresh();
     CHECK(!bridge->detachedModules().contains("cpu"));
     CHECK(timer->property("session").toString()==session);
+    if (argc>2) {
+        auto tracking=object(board->property("timecountControls"));CHECK(tracking);
+        tracking->setProperty("serviceUrl",QString::fromLocal8Bit(argv[2]));
+        QMetaObject::invokeMethod(root,"applyNativeSettings",Q_ARG(QVariant,QVariant(QVariantMap{{"enabledModules","cpu,ram,timers,timecount"}})));
+        CHECK(until([&]{return tracking->property("snapshot").value<QJSValue>().property("projects").property("length").toInt()==3;}));
+        CHECK(QMetaObject::invokeMethod(tracking,"command",Q_ARG(QVariant,QVariant("start")),Q_ARG(QVariant,QVariant("project"))));
+        CHECK(until([&]{return tracking->property("snapshot").value<QJSValue>().property("running").toString()=="project";}));
+        bridge->release("timecount",window.mapToGlobal(QPoint(1000,400)));
+        Plasma::Applet* trackingChild=nullptr;
+        for(auto candidate:containment->applets())if(!candidate->destroyed() && candidate->config().group("General").readEntry("detachedModule",QString())=="timecount")trackingChild=candidate;
+        CHECK(trackingChild);
+        auto trackingRoot=PlasmaQuick::AppletQuickItem::itemForApplet(trackingChild);CHECK(trackingRoot);trackingRoot->setProperty("profileSyncEnabled",false);
+        CHECK(until([&]{return trackingRoot->property("nativeReady").toBool();}));
+        auto trackingBoard=object(trackingRoot->property("dashboardControls"));CHECK(trackingBoard);
+        CHECK(object(trackingBoard->property("timecountControls"))==tracking);
+        auto trackingBridge=trackingRoot->findChild<DesktopBridge*>();CHECK(trackingBridge);
+        trackingBridge->release("timecount",root->mapToGlobal(QPointF(50,50)));
+        CHECK(until([&]{return trackingChild->destroyed();}));
+        CHECK(tracking->property("snapshot").value<QJSValue>().property("running").toString()=="project");
+        CHECK(QMetaObject::invokeMethod(tracking,"command",Q_ARG(QVariant,QVariant("pause")),Q_ARG(QVariant,QVariant("project"))));
+        CHECK(until([&]{return tracking->property("snapshot").value<QJSValue>().property("running").toString().isEmpty();}));
+        std::cout<<"Timecount native split/merge shares one running durable counter."<<std::endl;
+    }
     std::cout<<"Native desktop split/free-move/cancel/merge, shortcut registration and fullscreen dispatch, module routing and shared timer session passed."<<std::endl;
     return 0;
 }

@@ -51,6 +51,13 @@ def focus_media(window, full_check=False):
     assert root.property('lastMediaService') == 'org.mpris.MediaPlayer2.FocusTest'
     ambient = window.findChild(QObject, 'focusAmbient')
     assert ambient.property('refreshInterval') == 75
+    assert ambient.property('blockCount') == 48
+    assert ambient.property('blockInk').name() == '#99cc55'
+    assert ambient.property('headroomPercent') == 30
+    wave = ambient.findChild(QObject, 'focusCavaWave')
+    assert wave is not None
+    assert wave.property('width') <= 960 and wave.property('height') <= 540
+    assert abs(wave.property('topGap') * wave.property('scale') - window.height() * 0.3) < 1
     if full_check:
         wait_for(lambda: len(ambient.property('audioBars').toVariant()) > 0)
         # Deterministic rendering fixture: quiet input is lifted, silence is zero.

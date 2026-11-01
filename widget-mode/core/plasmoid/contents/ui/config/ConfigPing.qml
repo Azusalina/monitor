@@ -10,6 +10,8 @@ ColumnLayout {
     Label { text: "Ping targets"; font.bold: true }
     Label { Layout.fillWidth: true; text: "One target per line: label | URL or hostname | icon | optional #rrggbb. Up to eight targets. Each optional color overrides the default Ping flow color."; wrapMode: Text.Wrap }
     ScrollView {
+        objectName: "pingTargetsScroll"
+        ScrollBar.vertical.policy: ScrollBar.AlwaysOff
         Layout.fillWidth: true
         Layout.fillHeight: true
         Layout.minimumHeight: 180

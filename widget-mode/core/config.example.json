@@ -4,8 +4,8 @@
     "layoutSplits": "{}",
     "layoutHeights": "{}",
     "layoutColumnWeights": "[1,1,1]",
-    "moduleOrder": "cpu,ram,ping,gpu,media,note,proton,wifi,bluetooth,terminal,battery,timers",
-    "enabledModules": "cpu,ram,ping,gpu,media,note,proton,wifi,bluetooth,terminal,battery,timers",
+    "moduleOrder": "cpu,ram,ping,gpu,media,note,proton,wifi,bluetooth,terminal,battery,timers,timecount",
+    "enabledModules": "cpu,ram,ping,gpu,media,note,proton,wifi,bluetooth,terminal,battery,timers,timecount",
     "columns": 2,
     "targetsText": "",
     "todoEnabled": true,
@@ -40,6 +40,11 @@
     "countdownColor": "",
     "stopwatchColor": "",
     "countdownStyle": "minimal",
-    "stopwatchStyle": "minimal"
+    "stopwatchStyle": "minimal",
+    "timecountProjects": "[{\"id\":\"project\",\"name\":\"Project\"},{\"id\":\"bafs\",\"name\":\"BAFS\"},{\"id\":\"econ\",\"name\":\"Econ\"}]",
+    "timecountColor": "",
+    "cavaBarCount": 32,
+    "cavaBarColor": "",
+    "cavaHeadroom": 20
   }
 }

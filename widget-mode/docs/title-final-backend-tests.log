@@ -1,0 +1,15 @@
+test_accumulates_pause_switch_and_renames_without_reset (test_timecount.TimecountTests.test_accumulates_pause_switch_and_renames_without_reset) ... ok
+test_configuration_validation_rejects_bad_and_duplicate_ids (test_timecount.TimecountTests.test_configuration_validation_rejects_bad_and_duplicate_ids) ... ok
+test_dst_day_boundary_and_wall_rollback_do_not_subtract (test_timecount.TimecountTests.test_dst_day_boundary_and_wall_rollback_do_not_subtract) ... ok
+test_empty_project_list_pauses_without_erasing_history (test_timecount.TimecountTests.test_empty_project_list_pauses_without_erasing_history) ... ok
+test_fractional_time_and_profiles_are_isolated (test_timecount.TimecountTests.test_fractional_time_and_profiles_are_isolated) ... ok
+test_inactive_view_release_cannot_remove_another_views_project (test_timecount.TimecountTests.test_inactive_view_release_cannot_remove_another_views_project) ... ok
+test_midnight_statistics_and_heatmap_are_real_days (test_timecount.TimecountTests.test_midnight_statistics_and_heatmap_are_real_days) ... ok
+test_release_and_expiry_stop_unattended_recording (test_timecount.TimecountTests.test_release_and_expiry_stop_unattended_recording) ... ok
+test_shutdown_and_offline_do_not_add_time (test_timecount.TimecountTests.test_shutdown_and_offline_do_not_add_time) ... ok
+test_two_views_share_one_counter_and_last_close_pauses (test_timecount.TimecountTests.test_two_views_share_one_counter_and_last_close_pauses) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.197s
+
+OK

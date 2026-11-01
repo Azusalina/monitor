@@ -6,6 +6,12 @@ Item {
     id: ambient
     property int refreshInterval: 100
     property color ink: "#f5f5f4"
+    property color blockInk: ink
+    property int blockCount: 32
+    property int headroomPercent: 20
+    readonly property real rasterScale: Math.min(1,960/Math.max(1,width),540/Math.max(1,height))
+    property real glow: 0.35+energy*0.65
+    Behavior on glow { NumberAnimation { duration: Math.round(ambient.refreshInterval*1.8) } }
     property var audioBars: []
     readonly property var levels: AudioTools.enhance(audioBars)
     readonly property real energy: levels.length ? levels.reduce((sum, value) => sum + value, 0) / levels.length : 0
@@ -45,22 +51,22 @@ Item {
         }
     }
     Component.onDestruction: if (request) request.abort()
-    Repeater {
-        model: ambient.levels
-        Rectangle {
-            required property int index
-            required property real modelData
-            x: index * ambient.width / Math.max(1, ambient.levels.length)
-            anchors.bottom: parent.bottom
-            width: Math.max(1, ambient.width / Math.max(1, ambient.levels.length) - 3)
-            height: ambient.height * modelData * 0.65
-            opacity: 0.35 + ambient.energy * 0.65
-            Behavior on height { NumberAnimation { duration: Math.round(ambient.refreshInterval * 1.2) } }
-            Behavior on opacity { NumberAnimation { duration: Math.round(ambient.refreshInterval * 1.8) } }
-            gradient: Gradient {
-                GradientStop { position: 0; color: "transparent" }
-                GradientStop { position: 1; color: ambient.ink }
-            }
-        }
+    CavaWave {
+        objectName: "focusCavaWave"
+        width: ambient.width*ambient.rasterScale
+        height: ambient.height*ambient.rasterScale
+        scale: 1/ambient.rasterScale
+        transformOrigin: Item.TopLeft
+        strokeWidth: 1.25
+        values: ambient.levels
+        ink: ambient.ink
+        blockInk: ambient.blockInk
+        blockCount: ambient.blockCount
+        headroomPercent: ambient.headroomPercent
+        opacity: ambient.glow
+        blockOpacity: 1
+        curveOpacity: 0.4
+        gradientBlocks: true
+        transitionDuration: Math.round(ambient.refreshInterval*0.9)
     }
 }

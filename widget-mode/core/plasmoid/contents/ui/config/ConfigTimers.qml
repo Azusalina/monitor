@@ -4,6 +4,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 ScrollView {
+    ScrollBar.vertical.policy: ScrollBar.AlwaysOff
     id: page
     property string cfg_countdownShortcut: "Meta+Ctrl+Alt+C"
     property string cfg_stopwatchShortcut: "Meta+Ctrl+Alt+S"

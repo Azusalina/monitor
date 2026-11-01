@@ -1,0 +1,15 @@
+********* Start testing of qmltestrunner *********
+Config: Using QtTest library 6.12.0, Qt 6.12.0 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.2.1 20260810), arch unknown
+PASS   : qmltestrunner::Timecount::initTestCase()
+PASS   : qmltestrunner::Timecount::test_01_defaultIsCumulativeStopwatchAndDetails()
+PASS   : qmltestrunner::Timecount::test_02_startPauseAndSwitchDoNotResetTotals()
+PASS   : qmltestrunner::Timecount::test_03_renameKeepsHistoryAndConfigurationStages()
+PASS   : qmltestrunner::Timecount::test_04_closeReopenPreservesAndPauses()
+PASS   : qmltestrunner::Timecount::cleanupTestCase()
+Totals: 6 passed, 0 failed, 0 skipped, 0 blacklisted, 3336ms
+********* Finished testing of qmltestrunner *********
+Parent geometry 0,0 304x496 immutable 0 module 
+Release status  count 2
+Timecount native split/merge shares one running durable counter.
+Native desktop split/free-move/cancel/merge, shortcut registration and fullscreen dispatch, module routing and shared timer session passed.
+Timecount HTTP/QML navigation, exclusive cumulative recording, configuration and close/reopen passed.

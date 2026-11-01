@@ -15,8 +15,8 @@ ApplicationWindow {
         id: savedPreferences
         objectName: "previewPreferences"
         category: "MonitorPreview"
-        property string moduleOrder: "cpu,ram,ping,gpu,media,note,proton,wifi,bluetooth,terminal,battery,timers"
-        property string enabledModules: "cpu,ram,ping,gpu,media,note,proton,wifi,bluetooth,terminal,battery,timers"
+        property string moduleOrder: "cpu,ram,ping,gpu,media,note,proton,wifi,bluetooth,terminal,battery,timers,timecount"
+        property string enabledModules: "cpu,ram,ping,gpu,media,note,proton,wifi,bluetooth,terminal,battery,timers,timecount"
         property int columns: 2
         property string targetsText: ""
         property bool todoEnabled: true
@@ -50,11 +50,17 @@ ApplicationWindow {
         property string mediaService: ""
         property bool cavaEnabled: true
         property int cavaOpacity: 40
+        property int cavaBarCount: 32
+        property string cavaBarColor: ""
+        property int cavaHeadroom: 20
         property int terminalHeight: 230
         property int terminalFontSize: 11
         property string countdownShortcut: "Meta+Ctrl+Alt+C"
         property string stopwatchShortcut: "Meta+Ctrl+Alt+S"
         property int countdownSeconds: 300
+        property string timecountProjects: '[{"id":"project","name":"Project"},{"id":"bafs","name":"BAFS"},{"id":"econ","name":"Econ"}]'
+        property string timecountColor: ""
+        property string settingsProfile: "preview"
         property int stopwatchSeconds: 0
         property string countdownColor: ""
         property string stopwatchColor: ""
@@ -72,7 +78,8 @@ ApplicationWindow {
         transfer(appearancePage, ["textColorHex", "borderColorHex", "backgroundColorHex", "borderWidth", "backgroundOpacity", "darkInk"], save)
         transfer(flowsPage, ["flowHistorySeconds", "flowRefreshMs", "audioRefreshMs", "cpuFlowColor", "ramFlowColor", "gpuFlowColor", "pingFlowColor", "cavaFlowColor"], save)
         transfer(pingPage, ["targetsText"], save)
-        transfer(mediaPage, ["mediaService", "cavaEnabled", "cavaOpacity"], save)
+        transfer(mediaPage, ["mediaService", "cavaEnabled", "cavaOpacity", "cavaBarCount", "cavaBarColor", "cavaHeadroom"], save)
+        transfer(timecountPage, ["timecountProjects", "timecountColor"], save)
         transfer(timersPage, ["countdownShortcut", "stopwatchShortcut", "countdownSeconds", "stopwatchSeconds", "countdownColor", "stopwatchColor", "countdownStyle", "stopwatchStyle"], save)
         transfer(todosPage, ["todoEnabled", "todoPendingTitle", "todoUrgentTitle", "todoPendingColor", "todoUrgentColor", "todoFontSize", "todoHeight", "todoItems"], save)
         transfer(terminalPage, ["terminalHeight", "terminalFontSize"], save)
@@ -113,6 +120,7 @@ ApplicationWindow {
             TabButton { text: "Ping" }
             TabButton { text: "Media" }
             TabButton { text: "Terminal" }
+            TabButton { text: "Timecount" }
             TabButton { text: "Timers" }
             TabButton { text: "To-do lists" }
         }
@@ -124,8 +132,9 @@ ApplicationWindow {
             ConfigAppearance { id: appearancePage; objectName: "previewAppearancePage" }
             ConfigFlows { id: flowsPage; objectName: "previewFlowsPage" }
             ConfigPing { id: pingPage; objectName: "previewPingPage" }
-            ConfigMedia { id: mediaPage }
+            ConfigMedia { id: mediaPage; objectName: "previewMediaPage" }
             ConfigTerminal { id: terminalPage }
+            ConfigTimecount { id: timecountPage; objectName: "previewTimecountPage" }
             ConfigTimers { id: timersPage; objectName: "previewTimersPage" }
             ConfigTodos { id: todosPage; objectName: "previewTodosPage" }
         }

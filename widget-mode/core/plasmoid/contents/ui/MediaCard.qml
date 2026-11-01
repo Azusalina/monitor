@@ -13,6 +13,9 @@ Item {
     readonly property var player: players.find(p => p.service === selectedService) || players[0] || null
     property bool cavaEnabled: true
     property real cavaOpacity: 0.4
+    property int cavaBarCount: 32
+    property color cavaBarColor: flowInk
+    property int cavaHeadroom: 20
     property var audioBars: []
     readonly property var audioLevels: AudioTools.enhance(audioBars)
     property var audioRequest: null
@@ -66,28 +69,15 @@ Item {
         anchors.fill: parent
         visible: card.cavaEnabled && card.audioBars.length > 0
         opacity: card.cavaOpacity
-        Repeater {
-            model: card.audioLevels
-            Rectangle {
-                required property int index
-                required property real modelData
-                x: index * card.width / Math.max(1, card.audioLevels.length)
-                anchors.bottom: parent.bottom
-                width: Math.max(1, card.width / Math.max(1, card.audioLevels.length) - 1)
-                height: card.height * modelData
-                color: card.flowInk; opacity: 0.35
-                Behavior on height { NumberAnimation { duration: Math.round(card.audioRefreshInterval * 0.8) } }
-            }
-        }
-        Sparkline {
+        CavaWave {
             objectName: "cavaFlow"
             anchors.fill: parent
             ink: card.flowInk
+            blockInk: card.cavaBarColor
+            blockCount: card.cavaBarCount
+            headroomPercent: card.cavaHeadroom
             values: card.audioLevels
-            sampleCount: 0
-            maximum: 1
-            strokeWidth: 2.5
-            transitionDuration: Math.round(card.audioRefreshInterval * 0.9)
+            transitionDuration: Math.round(card.audioRefreshInterval*0.9)
         }
     }
     RowLayout {

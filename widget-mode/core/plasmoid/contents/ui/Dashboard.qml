@@ -13,6 +13,8 @@ Item {
     property bool runtimeReady: true
     property string detachedModule: ""
     property var detachedModules: []
+    property var inheritedTimecountOwner: null
+    readonly property var timecountControls: inheritedTimecountOwner || localTimecountOwner
     property var inheritedTimerOwner: null
     property var inheritedTerminalOwner: null
     property var inheritedPowerOwner: null
@@ -37,8 +39,8 @@ Item {
     readonly property color ink: validHex(preferences.textColorHex) ? preferences.textColorHex : preferences.darkInk ? "#242424" : "#f5f5f4"
     readonly property color backgroundColor: validHex(preferences.backgroundColorHex) ? preferences.backgroundColorHex : "#1b1b1b"
     readonly property color borderColor: validHex(preferences.borderColorHex) ? preferences.borderColorHex : "#aabbcc"
-    readonly property int backgroundOpacity: Math.max(0, Math.min(100, preferences.backgroundOpacity || 0))
-    readonly property int borderWidth: Math.max(0, Math.min(4, preferences.borderWidth || 0))
+    readonly property int backgroundOpacity: detachedModule ? 0 : Math.max(0, Math.min(100, preferences.backgroundOpacity || 0))
+    readonly property int borderWidth: detachedModule ? 0 : Math.max(0, Math.min(4, preferences.borderWidth || 0))
     readonly property int surfaceInset: backgroundOpacity > 0 || borderWidth > 0 ? 12 : 0
     function validHex(value) { return typeof value === "string" && /^#[0-9a-fA-F]{6}$/.test(value) }
     function flowColor(key) { const value = preferences[key + "FlowColor"]; return validHex(value) ? value : ink }
@@ -72,7 +74,8 @@ Item {
             return "radios"
         }).filter(Boolean)
     }
-    BorderGrip { anchors.fill: parent; z: 50; ink: board.ink; onFinished: (edge,delta) => board.outerResize(edge,delta) }
+    BorderGrip { objectName: "dashboardResizeGrip"; anchors.fill: parent; z: 50; ink: board.ink; onFinished: (edge,delta) => board.outerResize(edge,delta) }
+    TimecountOwner { id: localTimecountOwner; preferences: board.preferences; active: board.runtimeReady && !board.inheritedTimecountOwner && (board.detachedModule ? board.detachedModule === "timecount" : board.preferences.enabledModules.split(",").includes("timecount")) }
     TerminalOwner { id: localTerminalOwner; active: board.runtimeReady && !board.inheritedTerminalOwner && (board.detachedModule ? board.detachedModule === "terminal" : board.preferences.enabledModules.split(",").includes("terminal")) }
     PowerOwner { id: localPowerOwner; active: board.runtimeReady && !board.inheritedPowerOwner && (board.detachedModule ? board.detachedModule === "battery" : board.preferences.enabledModules.split(",").includes("battery")) }
     TimerOwner { id: localTimerOwner; active: board.runtimeReady && !board.inheritedTimerOwner && (board.detachedModule ? board.detachedModule === "timers" : board.preferences.enabledModules.split(",").includes("timers")); preferences: board.preferences; mediaPlayers: board.connected ? board.snapshot.media.players : []; onMediaToggleRequested: service => board.toggleMedia(service) }
@@ -212,7 +215,10 @@ Item {
         border.color: board.borderColor
     }
     ScrollView {
+        ScrollBar.vertical.policy: ScrollBar.AlwaysOff
         id: scroll
+        objectName: "dashboardScroll"
+        background: null
         anchors.fill: parent
         anchors.margins: board.surfaceInset
         clip: true
@@ -222,6 +228,8 @@ Item {
             width: scroll.availableWidth
             spacing: 6
             RowLayout {
+                objectName: "dashboardBrandHeader"
+                visible: !board.detachedModule
                 Layout.fillWidth: true
                 spacing: 10
                 Text {
@@ -265,7 +273,7 @@ Item {
                         objectName: "tile_" + modelData
                         required property string modelData
                         required property int index
-                        readonly property bool wide: ["media", "note", "terminal", "radios", "battery", "timers", "powertimers"].includes(modelData)
+                        readonly property bool wide: ["media", "note", "terminal", "radios", "battery", "timers", "timecount", "powertimers"].includes(modelData)
                         readonly property bool metric: ["cpu", "ram", "ping", "gpu"].includes(modelData)
                         Layout.columnSpan: wide ? board.columnCount : 1
                         Layout.fillWidth: true
@@ -362,7 +370,7 @@ Item {
                             anchors.top: tileHeading.bottom
                             width: parent.width
                             height: tile.height - tileHeading.height - (tile.metric ? 0 : 6)
-                            sourceComponent: tile.modelData === "powertimers" ? powerTimersComponent : tile.modelData === "battery" ? batteryComponent : tile.modelData === "timers" ? timersComponent : tile.modelData === "radios" ? radioPairComponent : ["proton", "wifi", "bluetooth"].includes(tile.modelData) ? connectivityComponent : tile.modelData === "terminal" ? terminalComponent : tile.modelData === "media" ? mediaComponent : tile.modelData === "note" ? noteComponent : tile.modelData === "ping" ? pingComponent : metricComponent
+                            sourceComponent: tile.modelData === "timecount" ? timecountComponent : tile.modelData === "powertimers" ? powerTimersComponent : tile.modelData === "battery" ? batteryComponent : tile.modelData === "timers" ? timersComponent : tile.modelData === "radios" ? radioPairComponent : ["proton", "wifi", "bluetooth"].includes(tile.modelData) ? connectivityComponent : tile.modelData === "terminal" ? terminalComponent : tile.modelData === "media" ? mediaComponent : tile.modelData === "note" ? noteComponent : tile.modelData === "ping" ? pingComponent : metricComponent
                         }
                         Component {
                             id: metricComponent
@@ -385,12 +393,13 @@ Item {
                             }
                         }
                         Component { id: pingComponent; PingCard { objectName: "pingCard"; historySeconds: board.flowHistorySeconds; timedHistories: board.timedPingHistories; refreshInterval: board.flowRefreshInterval; ink: board.ink; flowInk: board.flowColor("ping"); targets: board.targets; readings: board.connected ? board.snapshot.pings : []; histories: board.connected ? board.pingHistories : ({}) } }
-                        Component { id: mediaComponent; MediaCard { objectName: "mediaCard"; audioRefreshInterval: board.audioRefreshInterval; ink: board.ink; flowInk: board.flowColor("cava"); players: board.connected ? board.snapshot.media.players : []; selectedService: board.preferences.mediaService || ""; cavaEnabled: board.preferences.cavaEnabled !== false; cavaOpacity: (board.preferences.cavaOpacity === undefined ? 40 : board.preferences.cavaOpacity) / 100; onToggleRequested: service => board.toggleMedia(service) } }
+                        Component { id: mediaComponent; MediaCard { objectName: "mediaCard"; audioRefreshInterval: board.audioRefreshInterval; ink: board.ink; flowInk: board.flowColor("cava"); players: board.connected ? board.snapshot.media.players : []; selectedService: board.preferences.mediaService || ""; cavaBarCount: board.preferences.cavaBarCount === undefined ? 32 : board.preferences.cavaBarCount; cavaBarColor: board.validHex(board.preferences.cavaBarColor) ? board.preferences.cavaBarColor : board.flowColor("cava"); cavaHeadroom: board.preferences.cavaHeadroom === undefined ? 20 : board.preferences.cavaHeadroom; cavaEnabled: board.preferences.cavaEnabled !== false; cavaOpacity: (board.preferences.cavaOpacity === undefined ? 40 : board.preferences.cavaOpacity) / 100; onToggleRequested: service => board.toggleMedia(service) } }
                         Component { id: radioPairComponent; RadioPair { preferences: board.preferences; ink: board.ink; wifiStatus: (board.snapshot.connectivity || {}).wifi || ({}); bluetoothStatus: (board.snapshot.connectivity || {}).bluetooth || ({}); stale: !board.connected || !!(board.snapshot.connectivity || {}).stale; openingSettings: board.openingSettings; onOpenRequested: target => board.openSettings(target) } }
                         Component { id: connectivityComponent; ConnectivityCard { objectName: "connectivity_" + tile.modelData; ink: board.ink; kind: tile.modelData; status: (board.snapshot.connectivity || {})[tile.modelData] || ({}); stale: !board.connected || !!(board.snapshot.connectivity || {}).stale; opening: board.openingSettings === tile.modelData; onOpenRequested: target => board.openSettings(target) } }
                         Component { id: terminalComponent; TerminalCard { objectName: "terminalCard"; owner: board.terminalControls; ink: board.ink; fontSize: board.preferences.terminalFontSize || 11; terminalHeight: board.preferences.terminalHeight || 230 } }
                         Component { id: powerTimersComponent; PowerTimersCard { objectName: "powerTimersCard"; powerControls: board.powerControls; timerControls: board.timerControls; preferences: board.preferences; ink: board.ink; status: board.snapshot.power || ({}); stale: !board.connected || !!(board.snapshot.power || {}).stale } }
                         Component { id: batteryComponent; BatteryCard { objectName: "batteryCard"; owner: board.powerControls; ink: board.ink; status: board.snapshot.power || ({}); stale: !board.connected || !!(board.snapshot.power || {}).stale } }
+                        Component { id: timecountComponent; TimecountCard { objectName: "timecountCard"; owner: board.timecountControls; preferences: board.preferences; ink: board.ink } }
                         Component { id: timersComponent; TimersCard { objectName: "timersCard"; owner: board.timerControls; preferences: board.preferences; ink: board.ink } }
                         Component { id: noteComponent; NoteBoard { ink: board.ink; preferences: board.preferences } }
                     }

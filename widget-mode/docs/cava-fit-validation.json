@@ -1,0 +1,41 @@
+{
+  "widgets": [
+    {
+      "id": 163,
+      "version": "1.22.0",
+      "prior_settings_preserved": true,
+      "geometry_preserved": true
+    },
+    {
+      "id": 167,
+      "version": "1.22.0",
+      "prior_settings_preserved": true,
+      "geometry_preserved": true
+    },
+    {
+      "id": 169,
+      "version": "1.22.0",
+      "prior_settings_preserved": true,
+      "geometry_preserved": true
+    }
+  ],
+  "installed_matches_source": true,
+  "history_rows_retained": true,
+  "database_integrity": "ok",
+  "services": [
+    "active",
+    "active"
+  ],
+  "new_cava_settings_in_config_api": true,
+  "backend_checks": 78,
+  "full_suite_qml_checks": 103,
+  "final_wave_checks": 8,
+  "pixel_alignment_headroom_color_checks": "passed",
+  "fullscreen_and_preview_configuration": "passed",
+  "qml_runtime_errors": [],
+  "effective_profile_cava_settings": {
+    "cavaBarCount": 32,
+    "cavaBarColor": "",
+    "cavaHeadroom": 20
+  }
+}

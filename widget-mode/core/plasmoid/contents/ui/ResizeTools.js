@@ -4,7 +4,7 @@ function weights(saved) { try { const w=JSON.parse(saved||"[1,1,1]");return w.le
 function columns(modules,count) {
     let next=0
     return modules.map(key => {
-        if (["media","note","terminal","radios","battery","timers","powertimers"].includes(key)) { next=0;return -1 }
+        if (["media","note","terminal","radios","battery","timers","timecount","powertimers"].includes(key)) { next=0;return -1 }
         const result=next;next=(next+1)%count;return result
     })
 }
@@ -61,4 +61,12 @@ function placeFree(item,x,y) {
     layout.positionItem(item)
     item.x=exactX;item.y=exactY
     layout.save()
+}
+
+function isDetached(item) {
+    while(item) {
+        if(item.detachedModule !== undefined)return !!item.detachedModule
+        item=item.parent
+    }
+    return false
 }

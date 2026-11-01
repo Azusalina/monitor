@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Dialogs
 import QtCore
+import "ResizeTools.js" as ResizeTools
 
 Item {
     id: card
@@ -100,13 +101,14 @@ Item {
     }
     Flickable {
         id: viewport
+        objectName: "noteViewport"
         anchors.fill: parent
         anchors.bottomMargin: 8
         clip: true
         contentWidth: width
         contentHeight: editor.height
         boundsBehavior: Flickable.StopAtBounds
-        ScrollBar.vertical: ScrollBar { }
+        ScrollBar.vertical: ScrollBar { policy: ScrollBar.AlwaysOff }
         TextArea {
             id: editor
             objectName: "noteEditor"
@@ -173,7 +175,7 @@ Item {
             anchors.verticalCenter: parent.verticalCenter
             height: 1
             color: card.ink
-            opacity: resizeHandle.containsMouse || resizeHandle.pressed ? 0.55 : 0.18
+            opacity: resizeHandle.containsMouse || resizeHandle.pressed ? 0.55 : ResizeTools.isDetached(card) ? 0 : 0.18
         }
         ToolTip.visible: containsMouse && !pressed
         ToolTip.text: "Drag to resize note height"

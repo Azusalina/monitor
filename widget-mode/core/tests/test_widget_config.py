@@ -35,6 +35,15 @@ class ConfigTests(unittest.TestCase):
         self.assertEqual(stat.S_IMODE(self.path.parent.stat().st_mode), 0o700)
         self.assertEqual(list(self.path.parent.glob('.config-*')), [])
 
+    def test_cava_geometry_settings_round_trip_and_bounds(self):
+        saved=self.store.update({'cavaBarCount':64,'cavaBarColor':'#dd8844','cavaHeadroom':35},'')
+        settings=WidgetConfig(self.path).read()['settings']
+        self.assertEqual(settings['cavaBarCount'],64)
+        self.assertEqual(settings['cavaBarColor'],'#dd8844')
+        self.assertEqual(settings['cavaHeadroom'],35)
+        for changes in ({'cavaBarCount':7},{'cavaBarCount':129},{'cavaHeadroom':4},{'cavaHeadroom':61},{'cavaBarColor':'red'}):
+            with self.assertRaises(ValueError):self.store.update(changes,saved['revision'])
+
     def test_manual_partial_profile_uses_defaults_and_can_be_updated(self):
         self.path.parent.mkdir()
         self.path.write_text(json.dumps({'version': 1, 'settings': {'gpuFlowColor': '#123456', 'countdownStyle': 'ring'}}))

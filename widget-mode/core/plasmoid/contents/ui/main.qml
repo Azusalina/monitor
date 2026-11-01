@@ -130,6 +130,7 @@ PlasmoidItem {
         runtimeReady: appletRoot.nativeReady
         detachedModule: desktopBridge.detachedModule
         detachedModules: desktopBridge.detachedModules
+        inheritedTimecountOwner: appletRoot.familyRoot && appletRoot.familyRoot.dashboardControls ? appletRoot.familyRoot.dashboardControls.timecountControls : null
         inheritedTimerOwner: appletRoot.familyRoot && appletRoot.familyRoot.dashboardControls ? appletRoot.familyRoot.dashboardControls.timerControls : null
         inheritedTerminalOwner: appletRoot.familyRoot && appletRoot.familyRoot.dashboardControls ? appletRoot.familyRoot.dashboardControls.terminalControls : null
         inheritedPowerOwner: appletRoot.familyRoot && appletRoot.familyRoot.dashboardControls ? appletRoot.familyRoot.dashboardControls.powerControls : null

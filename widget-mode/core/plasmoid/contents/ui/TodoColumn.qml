@@ -54,7 +54,7 @@ ColumnLayout {
         contentWidth: width
         contentHeight: rows.height
         boundsBehavior: Flickable.StopAtBounds
-        ScrollBar.vertical: ScrollBar { }
+        ScrollBar.vertical: ScrollBar { policy: ScrollBar.AlwaysOff }
         ColumnLayout {
             id: rows
             width: viewport.width

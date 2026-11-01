@@ -1,9 +1,11 @@
 pragma ComponentBehavior: Bound
 import QtQuick
+import "ResizeTools.js" as ResizeTools
 
 Item {
     id: frame
     property color ink: "#f5f5f4"
+    readonly property bool quiet: ResizeTools.isDetached(frame)
     property var edges: ["left", "right", "top", "bottom"]
     signal moved(string edge, real delta)
     signal finished(string edge, real delta)
@@ -37,7 +39,7 @@ Item {
                 width: grip.vertical ? 1 : parent.width
                 height: grip.vertical ? parent.height : 1
                 color: frame.ink
-                opacity: grip.pressed ? 0.6 : grip.containsMouse ? 0.35 : 0.08
+                opacity: grip.pressed ? 0.6 : grip.containsMouse ? 0.35 : frame.quiet ? 0 : 0.08
             }
         }
     }

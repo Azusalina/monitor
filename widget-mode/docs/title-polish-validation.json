@@ -1,0 +1,36 @@
+{
+  "widgets": [
+    {
+      "id": 163,
+      "version": "1.21.1",
+      "settings_preserved": true,
+      "geometry_preserved": true
+    },
+    {
+      "id": 167,
+      "version": "1.21.1",
+      "settings_preserved": true,
+      "geometry_preserved": true
+    },
+    {
+      "id": 169,
+      "version": "1.21.1",
+      "settings_preserved": true,
+      "geometry_preserved": true
+    }
+  ],
+  "installed_matches_source": true,
+  "history_rows_retained": true,
+  "database_integrity": "ok",
+  "services": [
+    "active",
+    "active"
+  ],
+  "backend_checks": 77,
+  "main_qml_checks": 95,
+  "timecount_qml_checks": 9,
+  "all_13_detached_module_surfaces": "passed",
+  "detached_rendered_corner_alpha": 0,
+  "qml_runtime_errors": [],
+  "physical_wayland_gestures": "manual validation boundary"
+}

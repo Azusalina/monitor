@@ -9,6 +9,9 @@ Window {
     QtObject {
         id: prefs
         property int audioRefreshMs: 75
+        property int cavaBarCount: 48
+        property string cavaBarColor: "#99cc55"
+        property int cavaHeadroom: 30
         property int countdownSeconds: 20
         property int stopwatchSeconds: 0
         property string countdownColor: "#aabbcc"

@@ -1,0 +1,12 @@
+********* Start testing of qmltestrunner *********
+Config: Using QtTest library 6.12.0, Qt 6.12.0 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.2.1 20260810), arch unknown
+PASS   : qmltestrunner::FittedCavaWave::initTestCase()
+PASS   : qmltestrunner::FittedCavaWave::test_01_peakAndStrokeStayBelowTopGap()
+PASS   : qmltestrunner::FittedCavaWave::test_02_densityOnlyChangesBlocksNotCurve()
+PASS   : qmltestrunner::FittedCavaWave::test_03_interruptedTransitionPreservesEnvelope()
+PASS   : qmltestrunner::FittedCavaWave::test_045_tinySurfaceDoesNotClipPeaks()
+PASS   : qmltestrunner::FittedCavaWave::test_04_gapAndColorCustomization()
+PASS   : qmltestrunner::FittedCavaWave::test_05_invalidSamplesAndEmptyAreSafe()
+PASS   : qmltestrunner::FittedCavaWave::cleanupTestCase()
+Totals: 8 passed, 0 failed, 0 skipped, 0 blacklisted, 1074ms
+********* Finished testing of qmltestrunner *********

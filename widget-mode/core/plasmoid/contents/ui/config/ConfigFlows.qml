@@ -4,6 +4,7 @@ import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 
 ScrollView {
+    ScrollBar.vertical.policy: ScrollBar.AlwaysOff
     id: page
     property int cfg_flowHistorySeconds: 30
     property int cfg_flowRefreshMs: 200

@@ -1,0 +1,36 @@
+{
+  "widgets": [
+    {
+      "id": 163,
+      "version": "1.23.0",
+      "settings_preserved": true,
+      "geometry_preserved": true
+    },
+    {
+      "id": 167,
+      "version": "1.23.0",
+      "settings_preserved": true,
+      "geometry_preserved": true
+    },
+    {
+      "id": 169,
+      "version": "1.23.0",
+      "settings_preserved": true,
+      "geometry_preserved": true
+    }
+  ],
+  "installed_matches_source": true,
+  "cumulative_rows_retained": true,
+  "database_integrity": "ok",
+  "session_schema_available": true,
+  "services": [
+    "active",
+    "active"
+  ],
+  "backend_checks": 82,
+  "main_qml_checks": 109,
+  "timecount_qml_checks": 10,
+  "right_scrollbar_policy_and_note_wheel_checks": "passed",
+  "qml_runtime_errors": [],
+  "legacy_exact_intervals": "not reconstructed; new sessions record start/end/duration"
+}

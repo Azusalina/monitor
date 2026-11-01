@@ -14,7 +14,7 @@
 static QHash<uint,QPointer<DesktopBridge>> bridges;
 static QHash<uint,QVariantMap> pending;
 static const QString pluginId = QStringLiteral("local.monitor.dashboard");
-static const QStringList modules = {"cpu","ram","ping","gpu","media","note","proton","wifi","bluetooth","terminal","battery","timers"};
+static const QStringList modules = {"cpu","ram","ping","gpu","media","note","proton","wifi","bluetooth","terminal","battery","timers","timecount"};
 DesktopBridge::DesktopBridge(QObject* parent):QObject(parent),m_countdown(new QAction(this)),m_stopwatch(new QAction(this)) {
     connect(&m_timer,&QTimer::timeout,this,&DesktopBridge::refresh);
     connect(this,&DesktopBridge::shortcutsChanged,this,&DesktopBridge::configureShortcuts);

@@ -7,11 +7,13 @@
     <entry name="layoutColumnWeights" type="String"><default>[1,1,1]</default></entry>
     <entry name="detachedModule" type="String"><default></default></entry>
     <entry name="detachedParent" type="Int"><default>0</default><min>0</min><max>2147483647</max></entry>
+    <entry name="timecountProjects" type="String"><default>[{"id":"project","name":"Project"},{"id":"bafs","name":"BAFS"},{"id":"econ","name":"Econ"}]</default></entry>
+    <entry name="timecountColor" type="String"><default></default></entry>
     <entry name="countdownShortcut" type="String"><default>Meta+Ctrl+Alt+C</default></entry>
     <entry name="stopwatchShortcut" type="String"><default>Meta+Ctrl+Alt+S</default></entry>
     <entry name="settingsProfile" type="String"><default>default</default></entry>
-    <entry name="moduleOrder" type="String"><default>cpu,ram,ping,gpu,media,note,proton,wifi,bluetooth,terminal,battery,timers</default></entry>
-    <entry name="enabledModules" type="String"><default>cpu,ram,ping,gpu,media,note,proton,wifi,bluetooth,terminal,battery,timers</default></entry>
+    <entry name="moduleOrder" type="String"><default>cpu,ram,ping,gpu,media,note,proton,wifi,bluetooth,terminal,battery,timers,timecount</default></entry>
+    <entry name="enabledModules" type="String"><default>cpu,ram,ping,gpu,media,note,proton,wifi,bluetooth,terminal,battery,timers,timecount</default></entry>
     <entry name="columns" type="Int"><default>2</default><min>1</min><max>3</max></entry>
     <entry name="targetsText" type="String"><default></default></entry>
     <entry name="todoEnabled" type="Bool"><default>true</default></entry>
@@ -40,6 +42,9 @@
     <entry name="borderWidth" type="Int"><default>0</default><min>0</min><max>4</max></entry>
     <entry name="backgroundOpacity" type="Int"><default>0</default><min>0</min><max>100</max></entry>
     <entry name="mediaService" type="String"><default></default></entry>
+    <entry name="cavaBarCount" type="Int"><default>32</default><min>8</min><max>128</max></entry>
+    <entry name="cavaBarColor" type="String"><default></default></entry>
+    <entry name="cavaHeadroom" type="Int"><default>20</default><min>5</min><max>60</max></entry>
     <entry name="cavaEnabled" type="Bool"><default>true</default></entry>
     <entry name="cavaOpacity" type="Int"><default>40</default><min>0</min><max>100</max></entry>
     <entry name="terminalHeight" type="Int"><default>230</default><min>120</min><max>800</max></entry>

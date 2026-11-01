@@ -33,6 +33,9 @@ Window {
         objectName: "focusAmbient"
         refreshInterval: Math.max(50, Math.min(1000, focusWindow.owner.preferences.audioRefreshMs === undefined ? 100 : focusWindow.owner.preferences.audioRefreshMs))
         anchors.fill: parent
+        blockCount: focusWindow.owner.preferences.cavaBarCount === undefined ? 32 : focusWindow.owner.preferences.cavaBarCount
+        blockInk: /^#[0-9a-fA-F]{6}$/.test(focusWindow.owner.preferences.cavaBarColor || "") ? focusWindow.owner.preferences.cavaBarColor : ink
+        headroomPercent: focusWindow.owner.preferences.cavaHeadroom === undefined ? 20 : focusWindow.owner.preferences.cavaHeadroom
         enabled: focusWindow.owner.preferences.cavaEnabled !== false
         ink: /^#[0-9a-fA-F]{6}$/.test(focusWindow.owner.preferences.cavaFlowColor || "") ? focusWindow.owner.preferences.cavaFlowColor : focusWindow.ink
         opacity: (focusWindow.owner.preferences.cavaOpacity === undefined ? 40 : focusWindow.owner.preferences.cavaOpacity) / 100

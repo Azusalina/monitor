@@ -5,6 +5,7 @@ import QtQuick.Layouts
 import "../TodoTools.js" as TodoTools
 
 ScrollView {
+    ScrollBar.vertical.policy: ScrollBar.AlwaysOff
     id: page
     property bool cfg_todoEnabled: true
     property string cfg_todoPendingTitle: "pending"

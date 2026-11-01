@@ -34,6 +34,9 @@ Item {
         property int backgroundOpacity: 0
         property string mediaService: ""
         property bool cavaEnabled: true
+        property int cavaBarCount: 32
+        property string cavaBarColor: ""
+        property int cavaHeadroom: 20
         property int cavaOpacity: 18
         property int terminalHeight: 230
         property int terminalFontSize: 11
@@ -46,6 +49,7 @@ Item {
         when: windowShown
         function initTestCase() { board.Window.window.color = "transparent" }
         function init() {
+            board.detachedModule="";board.runtimeReady=true
             prefs.moduleOrder = "cpu,ram,ping,gpu,media,note"
             prefs.enabledModules = prefs.moduleOrder
             prefs.targetsText = ""
@@ -59,6 +63,7 @@ Item {
             prefs.backgroundOpacity = 0
             prefs.borderWidth = 0
             prefs.mediaService = ""
+            prefs.cavaBarCount=32;prefs.cavaBarColor="";prefs.cavaHeadroom=20
         }
         function test_01_liveBridge() {
             tryCompare(board, "connected", true, 10000)
@@ -156,6 +161,13 @@ Item {
             prefs.cpuFlowColor = "invalid"
             compare(findChild(findChild(board, "tile_cpu"), "metricFlow").ink, board.ink)
         }
+        function test_0432_cavaBlockGeometryReachesMedia() {
+            prefs.enabledModules="media"
+            prefs.cavaBarCount=64;prefs.cavaBarColor="#dd8844";prefs.cavaHeadroom=35
+            const card=findChild(board,"mediaCard"), wave=findChild(board,"cavaFlow")
+            compare(card.cavaBarCount,64);compare(wave.density,64)
+            compare(wave.blockInk,"#dd8844");compare(wave.headroomPercent,35)
+        }
         function test_0435_refreshIntervalsReachGraphs() {
             prefs.flowRefreshMs=750; prefs.audioRefreshMs=50; prefs.flowHistorySeconds=60
             compare(board.flowRefreshInterval,750)
@@ -244,6 +256,32 @@ Item {
             prefs.borderWidth = 0
             compare(surface.color.a, 0)
             compare(board.surfaceInset, 0)
+        }
+        function test_065_detachedPresentationIsFramelessForEveryModule() {
+            board.runtimeReady=false
+            prefs.backgroundOpacity=85;prefs.borderWidth=3
+            const surface=findChild(board,"dashboardSurface"), header=findChild(board,"dashboardBrandHeader")
+            compare(surface.border.width,3)
+            verify(header.visible)
+            for(const key of LayoutTools.modules) {
+                board.detachedModule=key
+                compare(surface.color.a,0)
+                compare(surface.border.width,0)
+                compare(board.surfaceInset,0)
+                verify(!header.visible)
+                verify(findChild(board,"dashboardResizeGrip").quiet)
+                compare(findChild(board,"dashboardScroll").background,null)
+            }
+            board.detachedModule="note"
+            wait(60)
+            let saved=false
+            verify(board.grabToImage(result=>{verify(result.saveToFile("../docs/title-detached-preview.png"));saved=true}))
+            tryVerify(()=>saved,3000)
+            board.detachedModule=""
+            compare(surface.border.width,3)
+            fuzzyCompare(surface.color.a,0.85,0.01)
+            verify(header.visible)
+            board.runtimeReady=true
         }
         function test_07_realMediaControl() {
             prefs.enabledModules = "media"

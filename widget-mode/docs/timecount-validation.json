@@ -1,0 +1,32 @@
+{
+  "widgets": [
+    {
+      "id": 163,
+      "version": "1.21.0",
+      "prior_settings_preserved": true,
+      "unexpected_changed_keys": [],
+      "geometry_preserved": true,
+      "timecount_enabled": true
+    },
+    {
+      "id": 167,
+      "version": "1.21.0",
+      "prior_settings_preserved": true,
+      "unexpected_changed_keys": [],
+      "geometry_preserved": true,
+      "timecount_enabled": true
+    }
+  ],
+  "installed_matches_source": true,
+  "services": [
+    "active",
+    "active"
+  ],
+  "database_private": true,
+  "projects_received_from_live_widget": 3,
+  "timecount_config_available": true,
+  "backend_tests": 75,
+  "new_timecount_qml_checks": 6,
+  "native_timecount_split_merge": "passed",
+  "physical_wayland_gestures": "manual validation boundary"
+}

@@ -41,7 +41,7 @@ Item {
             compare(findChild(modules, "module_terminal").checked, false)
             mouseClick(findChild(modules, "up_ram"))
             compare(modules.order[0], "ram")
-            compare(modules.order.length, 12)
+            compare(modules.order.length, 13)
         }
         function test_02_dragReorder() {
             const handle = findChild(modules, "configDrag_cpu")
@@ -52,7 +52,7 @@ Item {
             mouseMove(handle, 15, 30, 100)
             mouseMove(handle, point.x, point.y, 150)
             mouseRelease(handle, point.x, point.y)
-            tryCompare(modules, "cfg_moduleOrder", "ram,cpu,ping,gpu,media,note,proton,wifi,bluetooth,terminal,battery,timers", 1500)
+            tryCompare(modules, "cfg_moduleOrder", "ram,cpu,ping,gpu,media,note,proton,wifi,bluetooth,terminal,battery,timers,timecount", 1500)
         }
         function enter(field, value) {
             mouseClick(field)
