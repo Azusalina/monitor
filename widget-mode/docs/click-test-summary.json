@@ -1,0 +1,5 @@
+{
+  "ui_pointer_checks": 9,
+  "qml_lint": "clean",
+  "actual_connection_changes": "none; isolated fixture only"
+}

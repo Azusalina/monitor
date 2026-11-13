@@ -1,0 +1,8 @@
+********* Start testing of qmltestrunner *********
+Config: Using QtTest library 6.12.0, Qt 6.12.0 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.2.1 20260810), arch unknown
+PASS   : qmltestrunner::RadioAndBattery::initTestCase()
+PASS   : qmltestrunner::RadioAndBattery::test_01_catalogReorderToggle()
+PASS   : qmltestrunner::RadioAndBattery::test_02_chargingOnRightAndLarger()
+PASS   : qmltestrunner::RadioAndBattery::cleanupTestCase()
+Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted, 302ms
+********* Finished testing of qmltestrunner *********

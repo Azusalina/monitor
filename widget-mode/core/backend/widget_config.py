@@ -10,6 +10,7 @@ import tempfile
 import threading
 import xml.etree.ElementTree as ET
 from timecount import projects_list
+from liveatc import station_url
 
 MAX_BYTES = 262144
 
@@ -75,6 +76,21 @@ def validate(settings):
             raise ValueError(f'{key} must contain at most 64 characters')
         if key == 'timecountProjects':
             projects_list(json.loads(value))
+        if key == 'liveAtcUrl' and value:
+            station_url(value)
+        if key in ('wifiPins', 'bluetoothPins'):
+            pins = json.loads(value)
+            if not isinstance(pins, list) or len(pins) > 12:
+                raise ValueError('Use at most 12 pinned connections')
+            seen = set()
+            for pin in pins:
+                if not isinstance(pin, dict) or set(pin) != {'id', 'name'} or not all(isinstance(v,str) and 0 < len(v) <= 256 for v in pin.values()):
+                    raise ValueError('Each pin requires id and name')
+                if pin['id'] in seen:
+                    raise ValueError('Pinned IDs must be unique')
+                if key == 'bluetoothPins' and not re.fullmatch(r'(?:[0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}', pin['id']):
+                    raise ValueError('Bluetooth pin ID must be a device address')
+                seen.add(pin['id'])
         if key == 'todoItems':
             try:
                 tasks = json.loads(value)
@@ -100,7 +116,7 @@ def validate(settings):
             raise ValueError('Shortcut must be a single readable key sequence')
         if key.endswith(('Color', 'ColorHex')) and value and not re.fullmatch(r'#[0-9a-fA-F]{6}', value):
             raise ValueError(f'{key} must be empty or #rrggbb')
-        if key.endswith('Style') and value not in ('minimal', 'digital', 'ring'):
+        if key in ('countdownStyle','stopwatchStyle') and value not in ('minimal', 'digital', 'ring'):
             raise ValueError(f'{key} must be minimal, digital or ring')
         if key in ('moduleOrder', 'enabledModules'):
             modules = value.split(',') if value else []
@@ -141,6 +157,16 @@ class WidgetConfig:
             if not isinstance(doc, dict) or set(doc) - {'version', 'settings'} or type(doc.get('version')) is not int or doc['version'] != 1:
                 raise ValueError('Config file requires version 1 and a settings object')
             settings = {**DEFAULTS, **validate(doc.get('settings'))}
+            # Older profiles had radio inside Media. Expose its replacement
+            # once, retaining every other selection and the saved feed URL.
+            if 'liveAtcSeparated' not in doc['settings']:
+                for key in ('moduleOrder','enabledModules'):
+                    if key not in doc['settings']:
+                        continue
+                    modules = settings[key].split(',') if settings[key] else []
+                    if 'media' in modules and 'liveatc' not in modules:
+                        modules.insert(modules.index('media')+1,'liveatc')
+                        settings[key] = ','.join(modules)
             return {'path': str(self.path), 'configured': True, 'revision': hashlib.sha256(raw).hexdigest(), 'settings': settings}
 
     def update(self, changes, revision):

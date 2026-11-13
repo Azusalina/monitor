@@ -1,0 +1,49 @@
+{
+  "widgets": [
+    {
+      "id": 163,
+      "version": "1.25.1",
+      "geometry_preserved": true,
+      "settings_preserved": true
+    },
+    {
+      "id": 167,
+      "version": "1.25.1",
+      "geometry_preserved": true,
+      "settings_preserved": true
+    },
+    {
+      "id": 169,
+      "version": "1.25.1",
+      "geometry_preserved": true,
+      "settings_preserved": true
+    },
+    {
+      "id": 170,
+      "version": "1.25.1",
+      "geometry_preserved": true,
+      "settings_preserved": true
+    }
+  ],
+  "installed_matches_source": true,
+  "cumulative_history_retained": true,
+  "database_integrity": "ok",
+  "services": [
+    "active",
+    "active"
+  ],
+  "qml_runtime_errors": [],
+  "saved_wifi_metadata_available": true,
+  "bluetooth_metadata_available": true,
+  "tests": {
+    "backend_regression_checks": 92,
+    "targeted_history_connectivity_checks": 9,
+    "strict_pin_ui_checks": 3,
+    "media_connection_checks": 9,
+    "preview_pin_apply_cancel": "passed",
+    "qml_lint": "clean",
+    "actual_network_mutations": "none"
+  },
+  "network_mutation_testing": "Mocked only; no real disconnect or connection was performed",
+  "entry_rule": "Previously used Wi-Fi / paired Bluetooth AND configured pin; no automatic entries or unpinned connection-name summary"
+}

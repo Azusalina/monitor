@@ -20,6 +20,12 @@ static bool until(std::function<bool()> predicate,int ms=5000) {
     while(timer.elapsed()<ms){QCoreApplication::processEvents();if(predicate())return true;QThread::msleep(20);}return false;
 }
 static QObject* object(const QVariant& value) {return value.metaType()==QMetaType::fromType<QJSValue>()?value.value<QJSValue>().toQObject():value.value<QObject*>();}
+static QQuickItem* visual(QQuickItem* item,const QString& name) {
+    if(!item)return nullptr;
+    if(item->objectName()==name)return item;
+    for(auto child:item->childItems())if(auto result=visual(child,name))return result;
+    return nullptr;
+}
 #define CHECK(value) do {if(!(value)){std::cerr<<"Failed at line "<<__LINE__<<": "<<#value<<std::endl;return 1;}} while(0)
 int main(int argc,char** argv){
     QTemporaryDir temp;
@@ -39,7 +45,7 @@ int main(int argc,char** argv){
     CHECK(until([&]{return desktop->width()>0;}));
     auto parent=containment->createApplet("local.monitor.dashboard",{},QRectF(20,20,300,500));CHECK(parent);
     auto config=parent->config().group("General");
-    config.writeEntry("countdownShortcut",QString());config.writeEntry("stopwatchShortcut",QString());
+    config.writeEntry("noteShortcut",QString());config.writeEntry("countdownShortcut",QString());config.writeEntry("stopwatchShortcut",QString());
     config.writeEntry("enabledModules",QString("cpu,ram,timers"));config.sync();
     auto root=PlasmaQuick::AppletQuickItem::itemForApplet(parent);CHECK(root);root->setProperty("profileSyncEnabled",false);
     QMetaObject::invokeMethod(root,"applyNativeSettings",Q_ARG(QVariant,QVariant(QVariantMap{{"countdownShortcut",QString()},{"stopwatchShortcut",QString()}})));
@@ -49,8 +55,8 @@ int main(int argc,char** argv){
     auto timer=object(board->property("timerControls"));CHECK(timer);
     CHECK(until([&]{return !timer->property("session").toString().isEmpty();}));
     auto session=timer->property("session").toString();
-    for(const auto& kind:{QString("countdown"),QString("stopwatch")}) {
-        const QString sequence=kind=="countdown" ? "Meta+Ctrl+Alt+F11" : "Meta+Ctrl+Alt+F12";
+    for(const auto& kind:{QString("countdown"),QString("stopwatch"),QString("note")}) {
+        const QString sequence=kind=="countdown" ? "Meta+Ctrl+Alt+F11" : kind=="stopwatch" ? "Meta+Ctrl+Alt+F12" : "Meta+Ctrl+Alt+F10";
         CHECK(KGlobalAccel::isGlobalShortcutAvailable(QKeySequence(sequence)));
         // Simulate a saved inactive action left behind by a previous shell.
         auto saved=new QAction;
@@ -66,11 +72,16 @@ int main(int argc,char** argv){
         for(auto candidate:bridge->findChildren<QAction*>())if(candidate->objectName().endsWith(kind))action=candidate;
         CHECK(action);CHECK(KGlobalAccel::self()->shortcut(action).contains(QKeySequence(sequence)));
         action->trigger();
+        if(kind=="note") {
+            CHECK(board->property("noteCovered").toBool());
+            action->trigger();CHECK(!board->property("noteCovered").toBool());
+        } else {
         CHECK(until([&]{return timer->property("focusOpen").toBool();}));
         CHECK(timer->property("focusKind").toString()==kind);
         auto focus=qobject_cast<QWindow*>(object(timer->property("focusWindow")));CHECK(focus);
         CHECK(focus->visibility()==QWindow::FullScreen);
         timer->setProperty("focusOpen",false);
+        }
         CHECK(bridge->setProperty((kind+"Shortcut").toUtf8(),QString()));
         // Another action in the SAME component is still a genuine conflict.
         QAction foreign;
@@ -85,6 +96,20 @@ int main(int argc,char** argv){
         CHECK(bridge->setProperty((kind+"Shortcut").toUtf8(),QString()));
         KGlobalAccel::self()->removeAllShortcuts(&foreign);
     }
+    // LiveATC is a first-class module with its own native detached host.
+    bridge->release("liveatc",window.mapToGlobal(QPoint(1100,300)));
+    Plasma::Applet* radioChild=nullptr;
+    for(auto candidate:containment->applets())if(!candidate->destroyed() && candidate->config().group("General").readEntry("detachedModule",QString())=="liveatc")radioChild=candidate;
+    CHECK(radioChild);
+    auto radioRoot=PlasmaQuick::AppletQuickItem::itemForApplet(radioChild);CHECK(radioRoot);radioRoot->setProperty("profileSyncEnabled",false);
+    CHECK(until([&]{return radioRoot->property("nativeReady").toBool();}));
+    auto radioBoard=object(radioRoot->property("dashboardControls"));CHECK(radioBoard);
+    CHECK(until([&]{return visual(qobject_cast<QQuickItem*>(radioBoard),"liveAtcCard")!=nullptr;}));
+    CHECK(visual(qobject_cast<QQuickItem*>(radioBoard),"mediaCard")==nullptr);
+    auto radioBridge=radioRoot->findChild<DesktopBridge*>();CHECK(radioBridge);
+    radioBridge->release("liveatc",root->mapToGlobal(QPointF(50,50)));
+    CHECK(until([&]{return radioChild->destroyed();}));
+    std::cout<<"LiveATC native detach/merge independent of music passed."<<std::endl;
     auto count=containment->applets().size();
     bridge->release("bad",QPointF(1100,100));CHECK(containment->applets().size()==count);
     bridge->release("cpu",root->mapToGlobal(QPointF(50,50)));CHECK(containment->applets().size()==count);

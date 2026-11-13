@@ -63,10 +63,16 @@ QT_QPA_PLATFORM=offscreen QT_QUICK_BACKEND=software "$monitor_qt_bin/qmltestrunn
 QT_QPA_PLATFORM=offscreen QT_QUICK_BACKEND=software "$monitor_qt_bin/qmltestrunner" -input tests/tst_scrollbars.qml >> ../docs/qml-tests.log 2>&1
 QT_QPA_PLATFORM=offscreen QT_QUICK_BACKEND=software "$monitor_qt_bin/qmltestrunner" -input tests/tst_hold_drag.qml >> ../docs/qml-tests.log 2>&1
 QT_QPA_PLATFORM=offscreen QT_QUICK_BACKEND=software "$monitor_qt_bin/qmltestrunner" -input tests/tst_native.qml >> ../docs/qml-tests.log 2>&1
+QT_QPA_PLATFORM=offscreen QT_QUICK_BACKEND=software "$monitor_qt_bin/qmltestrunner" -input tests/tst_radio_battery.qml >> ../docs/qml-tests.log 2>&1
+"$monitor_python" tests/note_markdown_fixture.py > ../docs/note-markdown-tests.log 2>&1
+"$monitor_python" tests/media_extensions_fixture.py > ../docs/media-extensions-tests.log 2>&1
+QT_QPA_PLATFORM=offscreen QT_QUICK_BACKEND=software "$monitor_qt_bin/qmltestrunner" -input tests/tst_config_pins.qml > ../docs/config-pins-tests.log 2>&1
 "$monitor_python" tests/timecount_fixture.py > ../docs/timecount-ui-tests.log 2>&1
 "$monitor_python" tests/button_stability.py > ../docs/button-stability-test.log 2>&1
 "$monitor_python" tests/focus_mode.py > ../docs/focus-mode-test.log 2>&1
 "$monitor_python" tests/preview_configuration.py > ../docs/preview-configuration-test.log 2>&1
+QT_QPA_PLATFORM=offscreen QT_QUICK_BACKEND=software "$monitor_qt_bin/qmltestrunner" -input tests/tst_auto_awake.qml > ../docs/auto-awake-ui-tests.log 2>&1
+"$monitor_python" tests/automatic_awake_fixture.py > ../docs/auto-awake-live-tests.log 2>&1
 "$monitor_python" tests/keep_awake_fixture.py > ../docs/keep-awake-test.log 2>&1
 "$monitor_python" tests/cava_playback_fixture.py > ../docs/cava-playback-test.log 2>&1
 "$monitor_python" - <<'PY'

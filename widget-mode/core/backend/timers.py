@@ -80,3 +80,15 @@ class TimerManager:
         with self.lock:
             if isinstance(token, str):
                 self.sessions.pop(token, None)
+
+    def any_running(self):
+        # Observing activity must not renew a lost view's lease.
+        with self.lock:
+            now = self.clock()
+            self.sessions = {key:pair for key,pair in self.sessions.items() if now-pair['seen'] < 60}
+            running = False
+            for pair in self.sessions.values():
+                for kind in ('countdown','stopwatch'):
+                    self._value(pair[kind],kind)
+                    running = running or pair[kind]['start'] is not None
+            return running

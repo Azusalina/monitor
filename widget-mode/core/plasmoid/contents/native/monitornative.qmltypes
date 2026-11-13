@@ -67,47 +67,83 @@ Module {
             lineNumber: 17
         }
         Property {
+            name: "noteShortcut"
+            type: "QString"
+            notify: "shortcutsChanged"
+            index: 6
+            lineNumber: 18
+        }
+        Property {
             name: "error"
             type: "QString"
             read: "error"
             notify: "errorChanged"
-            index: 6
-            lineNumber: 18
+            index: 7
+            lineNumber: 19
             isReadonly: true
         }
-        Signal { name: "initialized"; lineNumber: 36 }
-        Signal { name: "topologyChanged"; lineNumber: 37 }
-        Signal { name: "shortcutsChanged"; lineNumber: 38 }
-        Signal { name: "errorChanged"; lineNumber: 39 }
+        Signal { name: "initialized"; lineNumber: 37 }
+        Signal { name: "topologyChanged"; lineNumber: 38 }
+        Signal { name: "shortcutsChanged"; lineNumber: 39 }
+        Signal { name: "errorChanged"; lineNumber: 40 }
         Signal {
             name: "focusRequested"
-            lineNumber: 40
+            lineNumber: 41
             Parameter { name: "kind"; type: "QString" }
         }
         Method {
             name: "release"
-            lineNumber: 29
+            lineNumber: 30
             Parameter { name: "module"; type: "QString" }
             Parameter { name: "globalPosition"; type: "QPointF" }
         }
-        Method { name: "refresh"; lineNumber: 30 }
+        Method { name: "refresh"; lineNumber: 31 }
         Method {
             name: "prepareFreeHost"
             type: "bool"
-            lineNumber: 31
+            lineNumber: 32
             Parameter { name: "item"; type: "QQuickItem"; isPointer: true }
         }
         Method {
             name: "rememberFreePosition"
-            lineNumber: 32
+            lineNumber: 33
             Parameter { name: "position"; type: "QPointF" }
         }
-        Method { name: "freePosition"; type: "QVariantMap"; isMethodConstant: true; lineNumber: 33 }
+        Method { name: "freePosition"; type: "QVariantMap"; isMethodConstant: true; lineNumber: 34 }
         Method {
             name: "mergeAt"
             type: "bool"
-            lineNumber: 34
+            lineNumber: 35
             Parameter { name: "globalPosition"; type: "QPointF" }
         }
+    }
+    Component {
+        file: "notehighlighter.h"
+        lineNumber: 8
+        name: "NoteHighlighter"
+        accessSemantics: "reference"
+        prototype: "QObject"
+        exports: ["Monitor.Native/NoteHighlighter 1.0"]
+        exportMetaObjectRevisions: [256]
+        Property {
+            name: "document"
+            type: "QQuickTextDocument"
+            isPointer: true
+            read: "document"
+            write: "setDocument"
+            notify: "changed"
+            index: 0
+            lineNumber: 11
+        }
+        Property {
+            name: "dark"
+            type: "bool"
+            read: "dark"
+            write: "setDark"
+            notify: "changed"
+            index: 1
+            lineNumber: 12
+        }
+        Signal { name: "changed"; lineNumber: 20 }
     }
 }

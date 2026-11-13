@@ -1,0 +1,10 @@
+{
+  "backend": 88,
+  "main_qml": 109,
+  "media_extensions": 8,
+  "timecount": 10,
+  "native_note_shortcuts_and_conflicts": "passed",
+  "keep_awake_isolated": "passed",
+  "cava_playback": "passed",
+  "alpha": "passed"
+}

@@ -29,17 +29,26 @@ with tempfile.TemporaryDirectory(prefix='monitor-preview-config-') as temp:
     timers = root.findChild(QObject, 'previewTimersPage')
     media = root.findChild(QObject, 'previewMediaPage')
     timecount = root.findChild(QObject, 'previewTimecountPage')
+    connections = root.findChild(QObject, 'previewConnectionsPage')
+    pin_draft = '[{"id":"Home","name":"Home"}]'
     original_projects = preferences.property('timecountProjects')
     renamed_projects = json.loads(original_projects)
     renamed_projects[0]['name'] = 'BAFS study'
     renamed_projects = json.dumps(renamed_projects)
     todos = root.findChild(QObject, 'previewTodosPage')
+    font_draft = 'monospace'
     buttons = root.findChild(QObject, 'previewConfigurationButtons')
     config_window = root.findChild(QObject, 'previewConfiguration')
     original = preferences.property('enabledModules')
 
     assert QMetaObject.invokeMethod(root, 'configure')
     QTest.qWait(100)
+    connections.setProperty('cfg_wifiStatusFontSize', 22)
+    connections.setProperty('cfg_bluetoothStatusColor', '#aabbcc')
+    assert preferences.property('wifiStatusFontSize') == 12
+    assert preferences.property('bluetoothStatusColor') == ''
+    connections.setProperty('cfg_wifiPins', pin_draft)
+    assert preferences.property('wifiPins') == '[]'
     modules.setProperty('cfg_enabledModules', 'note')
     appearance.setProperty('cfg_textColorHex', '#aabbcc')
     appearance.setProperty('cfg_backgroundColorHex', '#102030')
@@ -56,6 +65,11 @@ with tempfile.TemporaryDirectory(prefix='monitor-preview-config-') as temp:
     timers.setProperty('cfg_countdownSeconds', 42)
     timers.setProperty('cfg_stopwatchColor', '#55cc88')
     timers.setProperty('cfg_countdownStyle', 'ring')
+    todos.setProperty('cfg_noteFontFamily', font_draft)
+    todos.setProperty('cfg_noteFontStyle', 'Regular')
+    todos.setProperty('cfg_noteFontSize', 20)
+    todos.setProperty('cfg_noteMarkdown', False)
+    assert preferences.property('noteFontSize') == 12
     todos.setProperty('cfg_todoPendingTitle', 'Later')
     todos.setProperty('cfg_todoItems', '{"pending":[{"id":"p1","text":"Test task","done":true}],"urgent":[]}')
     assert preferences.property('timecountProjects') == original_projects
@@ -73,6 +87,9 @@ with tempfile.TemporaryDirectory(prefix='monitor-preview-config-') as temp:
     assert not config_window.property('visible')
     assert QMetaObject.invokeMethod(root, 'configure')
     QTest.qWait(100)
+    assert connections.property('cfg_wifiStatusFontSize') == 12
+    assert connections.property('cfg_bluetoothStatusColor') == ''
+    assert connections.property('cfg_wifiPins') == '[]'
     assert modules.property('cfg_enabledModules') == original
     assert appearance.property('cfg_backgroundOpacity') == 0
     assert flows.property('cfg_cpuFlowColor') == ''
@@ -87,9 +104,18 @@ with tempfile.TemporaryDirectory(prefix='monitor-preview-config-') as temp:
     assert timers.property('cfg_countdownSeconds') == 300
     assert timers.property('cfg_stopwatchColor') == ''
     assert timers.property('cfg_countdownStyle') == 'minimal'
+    assert todos.property('cfg_noteFontSize') == 12
+    assert todos.property('cfg_noteMarkdown') is True
+    assert todos.property('cfg_noteFontFamily') == ''
     assert todos.property('cfg_todoPendingTitle') == 'pending'
     assert todos.property('cfg_todoItems') == '{"pending":[],"urgent":[]}'
 
+    connections.setProperty('cfg_wifiStatusFontSize', 22)
+    connections.setProperty('cfg_bluetoothStatusColor', '#aabbcc')
+    assert preferences.property('wifiStatusFontSize') == 12
+    assert preferences.property('bluetoothStatusColor') == ''
+    connections.setProperty('cfg_wifiPins', pin_draft)
+    assert preferences.property('wifiPins') == '[]'
     modules.setProperty('cfg_enabledModules', 'note')
     appearance.setProperty('cfg_textColorHex', '#aabbcc')
     appearance.setProperty('cfg_backgroundColorHex', '#102030')
@@ -106,9 +132,17 @@ with tempfile.TemporaryDirectory(prefix='monitor-preview-config-') as temp:
     timers.setProperty('cfg_countdownSeconds', 42)
     timers.setProperty('cfg_stopwatchColor', '#55cc88')
     timers.setProperty('cfg_countdownStyle', 'ring')
+    todos.setProperty('cfg_noteFontFamily', font_draft)
+    todos.setProperty('cfg_noteFontStyle', 'Regular')
+    todos.setProperty('cfg_noteFontSize', 20)
+    todos.setProperty('cfg_noteMarkdown', False)
+    assert preferences.property('noteFontSize') == 12
     todos.setProperty('cfg_todoPendingTitle', 'Later')
     todos.setProperty('cfg_todoItems', '{"pending":[{"id":"p1","text":"Test task","done":true}],"urgent":[]}')
     assert QMetaObject.invokeMethod(buttons, 'applied')
+    assert preferences.property('wifiStatusFontSize') == 22
+    assert preferences.property('bluetoothStatusColor') == '#aabbcc'
+    assert preferences.property('wifiPins') == pin_draft
     assert preferences.property('enabledModules') == 'note'
     assert preferences.property('textColorHex') == '#aabbcc'
     assert preferences.property('backgroundOpacity') == 70
@@ -124,6 +158,10 @@ with tempfile.TemporaryDirectory(prefix='monitor-preview-config-') as temp:
     assert preferences.property('countdownSeconds') == 42
     assert preferences.property('stopwatchColor') == '#55cc88'
     assert preferences.property('countdownStyle') == 'ring'
+    assert preferences.property('noteFontFamily') == font_draft
+    assert preferences.property('noteFontStyle') == 'Regular'
+    assert preferences.property('noteFontSize') == 20
+    assert preferences.property('noteMarkdown') is False
     assert preferences.property('todoPendingTitle') == 'Later'
     assert 'Test task' in preferences.property('todoItems')
     assert config_window.property('visible'), 'Apply should leave settings open'

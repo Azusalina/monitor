@@ -15,6 +15,7 @@ class DesktopBridge : public QObject {
     Q_PROPERTY(QQuickItem* parentRoot READ parentRoot NOTIFY topologyChanged)
     Q_PROPERTY(QString countdownShortcut MEMBER countdownShortcut NOTIFY shortcutsChanged)
     Q_PROPERTY(QString stopwatchShortcut MEMBER stopwatchShortcut NOTIFY shortcutsChanged)
+    Q_PROPERTY(QString noteShortcut MEMBER noteShortcut NOTIFY shortcutsChanged)
     Q_PROPERTY(QString error READ error NOTIFY errorChanged)
 public:
     explicit DesktopBridge(QObject* parent=nullptr);
@@ -25,7 +26,7 @@ public:
     QStringList detachedModules() const;
     QQuickItem* parentRoot() const;
     QString error() const { return m_error; }
-    QString countdownShortcut, stopwatchShortcut;
+    QString countdownShortcut, stopwatchShortcut, noteShortcut;
     Q_INVOKABLE void release(const QString& module, const QPointF& globalPosition);
     Q_INVOKABLE void refresh();
     Q_INVOKABLE bool prepareFreeHost(QQuickItem* item);
@@ -43,7 +44,7 @@ private:
     void fail(const QString&);
     QPointer<QQuickItem> m_root;
     QPointer<Plasma::Applet> m_applet;
-    QAction *m_countdown, *m_stopwatch;
+    QAction *m_countdown, *m_stopwatch, *m_note;
     QTimer m_timer;
     QString m_error, m_topology;
     bool m_initialized=false;

@@ -1,27 +1,58 @@
 {
-  "verified_at": "2026-10-12T17:39:27",
-  "installed_version": "1.11.0",
   "widgets": [
     {
       "id": 163,
-      "geometry": {
-        "x": 1520,
-        "y": 16,
-        "width": 480,
-        "height": 784
-      }
+      "version": "1.27.0",
+      "settings_preserved": true,
+      "geometry_preserved": true,
+      "raw_note_preserved": true
+    },
+    {
+      "id": 167,
+      "version": "1.27.0",
+      "settings_preserved": true,
+      "geometry_preserved": true,
+      "raw_note_preserved": true
+    },
+    {
+      "id": 169,
+      "version": "1.27.0",
+      "settings_preserved": true,
+      "geometry_preserved": true,
+      "raw_note_preserved": true
+    },
+    {
+      "id": 170,
+      "version": "1.27.0",
+      "settings_preserved": true,
+      "geometry_preserved": true,
+      "raw_note_preserved": true
+    },
+    {
+      "id": 171,
+      "version": "1.27.0",
+      "settings_preserved": true,
+      "geometry_preserved": true,
+      "raw_note_preserved": true
     }
   ],
-  "prior_settings_and_placement_preserved": true,
-  "installed_source_matches": true,
-  "backend_checks": 56,
-  "qml_checks": 52,
-  "qml_lint_diagnostics": 0,
-  "alpha_checks_passed": true,
-  "save_dialog_tested": "Qt Quick non-native dialog with temporary-only export fixture",
-  "physical_native_dialog_selection_tested": false,
-  "test_export_artifact_removed": true,
-  "installed_export_api_verified": true,
-  "live_native_height_persistence_verified": true,
-  "live_height_test_restored": true
+  "installed_matches_source": true,
+  "cumulative_history_retained": true,
+  "database_integrity": "ok",
+  "services": [
+    "active",
+    "active"
+  ],
+  "qml_runtime_errors": [],
+  "new_note_preferences_available": true,
+  "tests": {
+    "backend_checks": 95,
+    "main_qml_checks": 113,
+    "note_markdown_fonts_syntax_curtain": "passed",
+    "font_style_size_apply_cancel": "passed",
+    "media_checks": 9,
+    "timecount_checks": 10,
+    "qml_lint": "clean"
+  },
+  "physical_native_font_dialog": "not manually exercised; installed font and style application verified through Qt font database"
 }

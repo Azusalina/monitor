@@ -23,6 +23,35 @@ class ConfigTests(unittest.TestCase):
         self.path = Path(self.temp.name)/'profile/config.json'
         self.store = WidgetConfig(self.path)
 
+    def test_existing_media_profile_exposes_separate_radio_once(self):
+        self.path.parent.mkdir()
+        original={'moduleOrder':'cpu,media,note','enabledModules':'cpu,media','liveAtcUrl':'https://d.liveatc.net/test','noteText':'Keep me'}
+        self.path.write_text(json.dumps({'version':1,'settings':original}))
+        state=self.store.read()
+        self.assertEqual(state['settings']['moduleOrder'],'cpu,media,liveatc,note')
+        self.assertEqual(state['settings']['enabledModules'],'cpu,media,liveatc')
+        self.assertEqual(state['settings']['noteText'],'Keep me')
+        self.assertEqual(state['settings']['liveAtcUrl'],original['liveAtcUrl'])
+        self.assertEqual(json.loads(self.path.read_text())['settings'],original)
+        self.store.update({'enabledModules':'cpu,media'},state['revision'])
+        self.assertEqual(self.store.read()['settings']['enabledModules'],'cpu,media')
+        self.assertTrue(self.store.read()['settings']['liveAtcSeparated'])
+
+    def test_connection_status_style_roundtrip(self):
+        changes={'wifiStatusFontSize':22,'bluetoothStatusFontSize':16,'wifiStatusColor':'#aabbcc','bluetoothStatusColor':'#ff6600'}
+        self.store.update(changes,'')
+        restored=WidgetConfig(self.path).read()['settings']
+        for key,value in changes.items():self.assertEqual(restored[key],value)
+        for changes in ({'wifiStatusFontSize':7},{'bluetoothStatusFontSize':29},{'wifiStatusColor':'red'}):
+            with self.assertRaises(ValueError):self.store.update(changes,self.store.read()['revision'])
+
+    def test_note_typography_roundtrip(self):
+        changes={'noteFontFamily':'Noto Sans','noteFontStyle':'Bold','noteFontSize':24,'noteMarkdown':False}
+        self.store.update(changes,'');settings=WidgetConfig(self.path).read()['settings']
+        for key,value in changes.items():self.assertEqual(settings[key],value)
+        for changes in ({'noteFontSize':7},{'noteFontSize':49},{'noteMarkdown':'true'}):
+            with self.assertRaises(ValueError):self.store.update(changes,self.store.read()['revision'])
+
     def test_saved_profile_survives_new_store_and_has_private_permissions(self):
         state = self.store.read()
         self.assertFalse(state['configured'])

@@ -1,0 +1,11 @@
+test_automatic_release_retains_manual_lease (test_timer_awake.AutoAwakeTests.test_automatic_release_retains_manual_lease) ... ok
+test_invalidated_helper_lease_is_reacquired (test_timer_awake.AutoAwakeTests.test_invalidated_helper_lease_is_reacquired) ... ok
+test_late_acquire_failure_recovery_and_shutdown (test_timer_awake.AutoAwakeTests.test_late_acquire_failure_recovery_and_shutdown) ... ok
+test_union_of_timer_sessions_and_timecount (test_timer_awake.AutoAwakeTests.test_union_of_timer_sessions_and_timecount) ... ok
+test_countdown_completion_stopwatch_pause_and_expiry (test_timer_awake.TimerActivityTests.test_countdown_completion_stopwatch_pause_and_expiry) ... ok
+test_timecount_activity_does_not_extend_lease_or_change_history (test_timer_awake.TimerActivityTests.test_timecount_activity_does_not_extend_lease_or_change_history) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.068s
+
+OK

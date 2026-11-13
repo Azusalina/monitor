@@ -1,3 +1,4 @@
+pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
@@ -5,6 +6,10 @@ import QtQuick.Layouts
 ScrollView {
     ScrollBar.vertical.policy: ScrollBar.AlwaysOff
     id: page
+    property string cfg_liveAtcUrl: ""
+    property var feeds: []
+    property var searchRequest: null
+    property string searchMessage: ""
     property string cfg_mediaService: ""
     property bool cfg_cavaEnabled: true
     property int cfg_cavaOpacity: 40
@@ -21,6 +26,24 @@ ScrollView {
     width: page.availableWidth
     spacing: 16
     Label { text: "Media player"; font.bold: true }
+    Label { text: "LiveATC · independent broadcast module"; font.bold: true }
+    TextField { objectName:"atcAddress"; Layout.fillWidth:true; text:page.cfg_liveAtcUrl; placeholderText:"LiveATC stream, .pls or hlisten.php URL"; onTextEdited:page.cfg_liveAtcUrl=text.trim() }
+    RowLayout {
+        TextField { id: airport; objectName:"atcAirport"; Layout.fillWidth:true; placeholderText:"Airport code · KJFK"; maximumLength:4; onAccepted:page.searchAirport() }
+        Button { text:"Search"; enabled:!page.searchRequest; onClicked:page.searchAirport() }
+        Button { text:"Website"; onClicked:Qt.openUrlExternally("https://www.liveatc.net/search/?icao="+encodeURIComponent(airport.text.trim().toUpperCase())) }
+    }
+    Label { visible:!!page.searchMessage; text:page.searchMessage; Layout.fillWidth:true; wrapMode:Text.Wrap; textFormat:Text.PlainText }
+    Repeater {
+        model:page.feeds
+        delegate:Button {
+            required property var modelData
+            Layout.fillWidth:true
+            text:modelData.name
+            onClicked:page.cfg_liveAtcUrl=modelData.url
+        }
+    }
+    Label { Layout.fillWidth:true; wrapMode:Text.Wrap; opacity:0.7; text:"Enable LiveATC in Modules; drag it out independently of music. Broadcast and music may play together. Search needs LiveATC access; when unavailable, use Website and paste its feed URL. No broadcast starts automatically." }
     ComboBox {
         Layout.fillWidth: true
         model: page.choices
@@ -57,5 +80,23 @@ ScrollView {
         xhr.setRequestHeader("X-Monitor-Client", "plasma-widget")
         xhr.send()
     }
+    function searchAirport() {
+        if(searchRequest) return
+        feeds=[];searchMessage="Searching…"
+        const xhr=new XMLHttpRequest();searchRequest=xhr;searchTimeout.start()
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState !== XMLHttpRequest.DONE || page.searchRequest !== xhr) return
+            searchTimeout.stop();page.searchRequest=null
+            try {
+                const result=JSON.parse(xhr.responseText)
+                if(xhr.status === 200){ page.feeds=result.feeds || [];page.searchMessage=page.feeds.length ? "Select a feed, then Apply." : "No feeds found. Try Website." }
+                else page.searchMessage=result.error || "Search unavailable. Try Website."
+            }catch(e){page.searchMessage="Search unavailable. Try Website."}
+        }
+        xhr.open("GET","http://127.0.0.1:17341/liveatc/search?code="+encodeURIComponent(airport.text.trim()))
+        xhr.setRequestHeader("X-Monitor-Client","plasma-widget");xhr.send()
+    }
+    Timer { id:searchTimeout;interval:10000;onTriggered:{const pending=page.searchRequest;page.searchRequest=null;if(pending)pending.abort();page.searchMessage="Search timed out. Try Website."} }
+    Component.onDestruction: if(searchRequest) searchRequest.abort()
     Component.onCompleted: loadPlayers()
 }

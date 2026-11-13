@@ -2,11 +2,17 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import QtQuick.Dialogs
 import "../TodoTools.js" as TodoTools
 
 ScrollView {
     ScrollBar.vertical.policy: ScrollBar.AlwaysOff
     id: page
+    property string cfg_noteShortcut: ""
+    property string cfg_noteFontFamily: ""
+    property string cfg_noteFontStyle: ""
+    property int cfg_noteFontSize: 12
+    property bool cfg_noteMarkdown: true
     property bool cfg_todoEnabled: true
     property string cfg_todoPendingTitle: "pending"
     property string cfg_todoUrgentTitle: "urgent"
@@ -31,7 +37,27 @@ ScrollView {
     implicitHeight: 540
     contentWidth: availableWidth
     ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
+    FontDialog {
+        id:fontDialog
+        title:"Choose an installed note font"
+        selectedFont: Qt.font({family:page.cfg_noteFontFamily || Qt.font({pixelSize:page.cfg_noteFontSize}).family,styleName:page.cfg_noteFontStyle,pixelSize:page.cfg_noteFontSize})
+        onAccepted:{page.cfg_noteFontFamily=selectedFont.family;page.cfg_noteFontStyle=selectedFont.styleName;page.cfg_noteFontSize=Math.max(8,Math.min(48,selectedFont.pixelSize>0 ? selectedFont.pixelSize : Math.round(selectedFont.pointSize*96/72)))}
+    }
     ColumnLayout {
+    Label { text:"Note";font.bold:true }
+    RowLayout {
+        Button { text:"Choose installed font…";onClicked:fontDialog.open() }
+        Label { Layout.fillWidth:true;wrapMode:Text.Wrap;text:(page.cfg_noteFontFamily || "System font") + (page.cfg_noteFontStyle ? " · " + page.cfg_noteFontStyle : "") }
+    }
+    RowLayout {
+        Label { text:"Note text size (px)" }
+        SpinBox { from:8;to:48;editable:true;value:page.cfg_noteFontSize;onValueModified:page.cfg_noteFontSize=value }
+    }
+    CheckBox { text:"Render Markdown with code syntax colors";checked:page.cfg_noteMarkdown;onClicked:page.cfg_noteMarkdown=checked }
+    Label { Layout.fillWidth:true;text:"Click the rendered note to edit its Markdown source. Click outside or press Esc to render it. Fenced code blocks use their language label, such as python or javascript. Saved files contain the original text.";wrapMode:Text.Wrap;opacity:0.7 }
+    Label { text: "Note curtain · global shortcut (empty disables)" }
+    TextField { Layout.fillWidth: true; text: page.cfg_noteShortcut; placeholderText: "e.g. Meta+Ctrl+N"; onTextEdited: page.cfg_noteShortcut=text.trim() }
+
         width: page.availableWidth
         spacing: 12
         CheckBox { text: "Show to-do lists below the note"; checked: page.cfg_todoEnabled; onClicked: page.cfg_todoEnabled = checked }

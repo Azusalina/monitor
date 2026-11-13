@@ -56,3 +56,40 @@ class ConnectivityTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+class QuickConnectionTests(unittest.TestCase):
+    def test_wifi_disconnect_targets_only_matching_active_profile(self):
+        uuid='12345678-1234-1234-1234-123456789abc'
+        with patch.object(c,'run',side_effect=[uuid+':802-11-wireless',' Home:WiFi ']) as read,patch.object(c.subprocess,'run') as change:
+            c.connect_saved('wifi',' Home:WiFi ','disconnect')
+            self.assertEqual(read.call_args_list[0].args[0][-1],'--active')
+            self.assertIn('--escape',read.call_args_list[1].args[0])
+            self.assertFalse(read.call_args_list[1].kwargs['trim'])
+            self.assertEqual(change.call_args.args[0],['nmcli','--wait','8','connection','down','uuid',uuid])
+        with patch.object(c,'run',return_value=''),patch.object(c.subprocess,'run') as change:
+            with self.assertRaises(ValueError):c.connect_saved('wifi','Gone','disconnect')
+            change.assert_not_called()
+
+    def test_bluetooth_disconnect_does_not_forget_or_power_off(self):
+        objects={'/org/bluez/hci0/dev_AA':{'org.bluez.Device1':{'Address':'AA:BB:CC:DD:EE:FF','Connected':True,'Paired':True}}}
+        with patch.object(c,'dbus',return_value=objects),patch.object(c.subprocess,'run') as change:
+            c.connect_saved('bluetooth','AA:BB:CC:DD:EE:FF','disconnect')
+            self.assertEqual(change.call_args.args[0][-2:],['org.bluez.Device1','Disconnect'])
+            objects['/org/bluez/hci0/dev_AA']['org.bluez.Device1']['Connected']=False
+            change.reset_mock();c.connect_saved('bluetooth','AA:BB:CC:DD:EE:FF','disconnect');change.assert_not_called()
+        for action in ('toggle','off','; rm'):
+            with self.assertRaises(ValueError):c.connect_saved('wifi','Home',action)
+
+    def test_common_wifi_uses_recent_metadata_and_cache_without_secrets(self):
+        a='12345678-1234-1234-1234-123456789abc';b='23456789-1234-1234-1234-123456789abc'
+        with patch.dict(c._saved_wifi,at=0,rows=[]),patch.object(c,'run',side_effect=[f'{a}:802-11-wireless:5\n{b}:802-11-wireless:99','Recent','Older']) as read:
+            rows=c.saved_wifi_cached();self.assertEqual([r['name'] for r in rows],['Recent','Older'])
+            self.assertEqual(c.saved_wifi_cached(),rows);self.assertEqual(read.call_count,3)
+            self.assertNotIn('secret',str(read.call_args_list).lower())
+
+class HistoryEligibilityTests(unittest.TestCase):
+    def test_never_used_saved_profile_is_not_eligible(self):
+        a='12345678-1234-1234-1234-123456789abc';b='23456789-1234-1234-1234-123456789abc'
+        with patch.dict(c._saved_wifi,at=0,rows=[]),patch.object(c,'run',side_effect=[f'{a}:802-11-wireless:0\n{b}:802-11-wireless:99','Used']) as read:
+            self.assertEqual(c.saved_wifi_cached(),[{'id':'Used','name':'Used'}])
+            self.assertEqual(read.call_count,2)

@@ -5,6 +5,7 @@ AbstractButton {
     id: button
     property color ink: "#f5f5f4"
     property bool outlined: false
+    property int labelElide: Text.ElideNone
     implicitWidth: label.implicitWidth + 16
     implicitHeight: 28
     font.pixelSize: 12
@@ -19,6 +20,8 @@ AbstractButton {
     contentItem: Text {
         id: label
         text: button.text
+        textFormat: Text.PlainText
+        elide: button.labelElide
         color: button.ink
         font: button.font
         horizontalAlignment: Text.AlignHCenter

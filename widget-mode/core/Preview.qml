@@ -15,10 +15,19 @@ ApplicationWindow {
         id: savedPreferences
         objectName: "previewPreferences"
         category: "MonitorPreview"
-        property string moduleOrder: "cpu,ram,ping,gpu,media,note,proton,wifi,bluetooth,terminal,battery,timers,timecount"
-        property string enabledModules: "cpu,ram,ping,gpu,media,note,proton,wifi,bluetooth,terminal,battery,timers,timecount"
+        property string moduleOrder: "cpu,ram,ping,gpu,media,liveatc,note,proton,wifi,bluetooth,terminal,battery,timers,timecount"
+        property string enabledModules: "cpu,ram,ping,gpu,media,liveatc,note,proton,wifi,bluetooth,terminal,battery,timers,timecount"
         property int columns: 2
+        property string liveAtcUrl: ""
+        property int wifiStatusFontSize: 12
+        property int bluetoothStatusFontSize: 12
+        property string wifiStatusColor: ""
+        property string bluetoothStatusColor: ""
+        property string wifiPins: "[]"
+        property string bluetoothPins: "[]"
+        property string noteShortcut: ""
         property string targetsText: ""
+        property bool liveAtcSeparated: true
         property bool todoEnabled: true
         property string todoPendingTitle: "pending"
         property string todoUrgentTitle: "urgent"
@@ -30,6 +39,10 @@ ApplicationWindow {
         property string layoutSplits: "{}"
         property string layoutHeights: "{}"
         property string layoutColumnWeights: "[1,1,1]"
+        property string noteFontFamily: ""
+        property string noteFontStyle: ""
+        property int noteFontSize: 12
+        property bool noteMarkdown: true
         property string noteText: ""
         property int noteHeight: 85
         property string noteExportUrl: ""
@@ -78,10 +91,11 @@ ApplicationWindow {
         transfer(appearancePage, ["textColorHex", "borderColorHex", "backgroundColorHex", "borderWidth", "backgroundOpacity", "darkInk"], save)
         transfer(flowsPage, ["flowHistorySeconds", "flowRefreshMs", "audioRefreshMs", "cpuFlowColor", "ramFlowColor", "gpuFlowColor", "pingFlowColor", "cavaFlowColor"], save)
         transfer(pingPage, ["targetsText"], save)
-        transfer(mediaPage, ["mediaService", "cavaEnabled", "cavaOpacity", "cavaBarCount", "cavaBarColor", "cavaHeadroom"], save)
+        transfer(mediaPage, ["liveAtcUrl", "mediaService", "cavaEnabled", "cavaOpacity", "cavaBarCount", "cavaBarColor", "cavaHeadroom"], save)
         transfer(timecountPage, ["timecountProjects", "timecountColor"], save)
         transfer(timersPage, ["countdownShortcut", "stopwatchShortcut", "countdownSeconds", "stopwatchSeconds", "countdownColor", "stopwatchColor", "countdownStyle", "stopwatchStyle"], save)
-        transfer(todosPage, ["todoEnabled", "todoPendingTitle", "todoUrgentTitle", "todoPendingColor", "todoUrgentColor", "todoFontSize", "todoHeight", "todoItems"], save)
+        transfer(todosPage, ["noteFontFamily", "noteFontStyle", "noteFontSize", "noteMarkdown", "noteShortcut", "todoEnabled", "todoPendingTitle", "todoUrgentTitle", "todoPendingColor", "todoUrgentColor", "todoFontSize", "todoHeight", "todoItems"], save)
+        transfer(connectionsPage, ["wifiPins", "bluetoothPins", "wifiStatusFontSize", "bluetoothStatusFontSize", "wifiStatusColor", "bluetoothStatusColor"], save)
         transfer(terminalPage, ["terminalHeight", "terminalFontSize"], save)
     }
     function configure() { syncConfiguration(false); configWindow.show(); configWindow.requestActivate() }
@@ -122,7 +136,8 @@ ApplicationWindow {
             TabButton { text: "Terminal" }
             TabButton { text: "Timecount" }
             TabButton { text: "Timers" }
-            TabButton { text: "To-do lists" }
+            TabButton { text: "Note & to-do lists" }
+            TabButton { text: "Connections" }
         }
         StackLayout {
             anchors.fill: parent
@@ -137,6 +152,7 @@ ApplicationWindow {
             ConfigTimecount { id: timecountPage; objectName: "previewTimecountPage" }
             ConfigTimers { id: timersPage; objectName: "previewTimersPage" }
             ConfigTodos { id: todosPage; objectName: "previewTodosPage" }
+            ConfigConnections { id: connectionsPage; objectName: "previewConnectionsPage" }
         }
         footer: DialogButtonBox {
             objectName: "previewConfigurationButtons"

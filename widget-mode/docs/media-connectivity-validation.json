@@ -1,0 +1,44 @@
+{
+  "widgets": [
+    {
+      "id": 163,
+      "version": "1.24.0",
+      "settings_preserved": true,
+      "geometry_preserved": true
+    },
+    {
+      "id": 167,
+      "version": "1.24.0",
+      "settings_preserved": true,
+      "geometry_preserved": true
+    },
+    {
+      "id": 169,
+      "version": "1.24.0",
+      "settings_preserved": true,
+      "geometry_preserved": true
+    }
+  ],
+  "installed_matches_source": true,
+  "cumulative_history_retained": true,
+  "database_integrity": "ok",
+  "services": [
+    "active",
+    "active"
+  ],
+  "qml_runtime_errors": [],
+  "mpris_new_capabilities_available": true,
+  "configuration_keys_available": true,
+  "tests": {
+    "backend": 88,
+    "main_qml": 109,
+    "media_extensions": 8,
+    "timecount": 10,
+    "native_note_shortcuts_and_conflicts": "passed",
+    "keep_awake_isolated": "passed",
+    "cava_playback": "passed",
+    "alpha": "passed"
+  },
+  "liveatc_remote": "Unverified: official site returned403; no bypass attempted",
+  "transient_keep_awake": "Cleared by Plasma restart; user informed before install"
+}

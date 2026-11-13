@@ -183,6 +183,11 @@ class TimecountStore:
                 for profile in list(self.running):
                     self._tick(profile)
 
+    def any_running(self):
+        with self.lock:
+            now = self.monotonic()
+            return any(any(expiry > now for expiry in self.clients.get(profile,{}).values()) for profile in self.running)
+
     def shutdown(self):
         self.stop.set()
         if self.thread.is_alive():

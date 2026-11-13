@@ -103,10 +103,14 @@ PlasmoidItem {
         root: appletRoot
         countdownShortcut: appletRoot.configuration.countdownShortcut || ""
         stopwatchShortcut: appletRoot.configuration.stopwatchShortcut || ""
+        noteShortcut: appletRoot.configuration.noteShortcut || ""
         onInitialized: { appletRoot.nativeReady=true; Qt.callLater(appletRoot.configureDetachedHost); restoreFreePosition.start() }
         onTopologyChanged: if (appletRoot.nativeReady) Qt.callLater(appletRoot.configureDetachedHost)
         onFocusRequested: kind => {
-            if (appletRoot.dashboardControls) appletRoot.dashboardControls.timerControls.openFocus(kind)
+            if (kind === "note") {
+                if (!appletRoot.dashboardControls) return
+                appletRoot.dashboardControls.toggleNoteCurtain()
+            } else if (appletRoot.dashboardControls) appletRoot.dashboardControls.timerControls.openFocus(kind)
         }
     }
     property var dashboardControls: fullRepresentationItem
@@ -126,6 +130,7 @@ PlasmoidItem {
                 desktopBridge.rememberFreePosition(Qt.point(item.x,item.y))
             }
         }
+        noteCovered: appletRoot.familyRoot && appletRoot.familyRoot.dashboardControls ? appletRoot.familyRoot.dashboardControls.noteCovered : false
         widgetId: Plasmoid.id
         runtimeReady: appletRoot.nativeReady
         detachedModule: desktopBridge.detachedModule
@@ -142,8 +147,8 @@ PlasmoidItem {
         preferences: appletRoot.configuration
         nativeError: desktopBridge.error
         Layout.minimumWidth: 200
-        Layout.minimumHeight: 120
+        Layout.minimumHeight: desktopBridge.detachedModule === "liveatc" ? 44 : 120
         Layout.preferredWidth: desktopBridge.detachedModule ? 240 : 300
-        Layout.preferredHeight: desktopBridge.detachedModule ? (desktopBridge.detachedModule === "terminal" ? 280 : 180) : 360
+        Layout.preferredHeight: desktopBridge.detachedModule ? (desktopBridge.detachedModule === "terminal" ? 280 : desktopBridge.detachedModule === "liveatc" ? 60 : 180) : 360
     }
 }

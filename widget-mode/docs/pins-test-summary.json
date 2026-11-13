@@ -1,0 +1,9 @@
+{
+  "backend_regression_checks": 92,
+  "targeted_history_connectivity_checks": 9,
+  "strict_pin_ui_checks": 3,
+  "media_connection_checks": 9,
+  "preview_pin_apply_cancel": "passed",
+  "qml_lint": "clean",
+  "actual_network_mutations": "none"
+}

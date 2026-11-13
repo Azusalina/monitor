@@ -1,0 +1,57 @@
+{
+  "widgets": [
+    {
+      "id": 163,
+      "version": "1.28.0",
+      "settings_preserved": true,
+      "geometry_preserved": true,
+      "raw_note_preserved": true
+    },
+    {
+      "id": 167,
+      "version": "1.28.0",
+      "settings_preserved": true,
+      "geometry_preserved": true,
+      "raw_note_preserved": true
+    },
+    {
+      "id": 169,
+      "version": "1.28.0",
+      "settings_preserved": true,
+      "geometry_preserved": true,
+      "raw_note_preserved": true
+    },
+    {
+      "id": 170,
+      "version": "1.28.0",
+      "settings_preserved": true,
+      "geometry_preserved": true,
+      "raw_note_preserved": true
+    },
+    {
+      "id": 171,
+      "version": "1.28.0",
+      "settings_preserved": true,
+      "geometry_preserved": true,
+      "raw_note_preserved": true
+    }
+  ],
+  "installed_matches_source": true,
+  "cumulative_history_retained": true,
+  "database_integrity": "ok",
+  "services": [
+    "active",
+    "active"
+  ],
+  "qml_runtime_errors": [],
+  "tests": {
+    "backend_checks": 101,
+    "automatic_ui_checks": 3,
+    "durable_timecount_checks": 10,
+    "button_stability_checks": 6,
+    "real_kde_automatic_and_manual_ownership": "passed",
+    "qml_lint": "clean"
+  },
+  "installed_backend_live_timer_acquisition_and_close": "passed; disposable timer session closed",
+  "manual_ownership": "separate lease; independent manual preservation verified in isolated KDE fixture"
+}

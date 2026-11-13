@@ -101,11 +101,60 @@ class AwakeManager:
             self._stop()
 
 
+class AutomaticAwake:
+    """One renewable timer lease, independent of every manual UI lease."""
+    def __init__(self, manager, running):
+        self.manager, self.running = manager, running
+        self.token = ''
+        self.lock = threading.Lock()
+        self.status = {'required':False,'active':False,'error':''}
+        self.stop = threading.Event()
+        self.thread = threading.Thread(target=self.collect,daemon=True,name='timer-awake')
+
+    def update(self):
+        required = bool(self.running())
+        with self.lock:
+            self.status['required'] = required
+        try:
+            if required:
+                if self.token:
+                    try:self.manager.control('heartbeat',self.token)
+                    except KeyError:self.token = ''
+                if not self.token:self.token = self.manager.control('enable')['token']
+                # Acquisition includes KDE's activation delay; timers may have
+                # ended meanwhile. Never leave a late request behind.
+                required = bool(self.running()) and not self.stop.is_set()
+            if not required and self.token:
+                token,self.token = self.token,''
+                try:self.manager.control('disable',token)
+                except KeyError:pass
+            with self.lock:self.status = {'required':required,'active':bool(self.token),'error':''}
+        except (OSError,RuntimeError,ValueError,subprocess.SubprocessError):
+            with self.lock:self.status = {'required':required,'active':False,'error':'Automatic timer keep-awake unavailable'}
+
+    def get(self):
+        with self.lock:return dict(self.status)
+
+    def collect(self):
+        while not self.stop.is_set():
+            self.update()
+            self.stop.wait(0.5)
+
+    def shutdown(self):
+        self.stop.set()
+        if self.thread.is_alive():self.thread.join(timeout=12)
+        if self.token:
+            token,self.token = self.token,''
+            try:self.manager.control('disable',token)
+            except KeyError:pass
+
+
 class PowerCollector:
-    def __init__(self):
+    def __init__(self, timer_running=lambda:False):
         self.lock = threading.Lock()
         self.stop = threading.Event()
         self.awake = AwakeManager()
+        self.automatic = AutomaticAwake(self.awake,timer_running)
         self.snapshot = {'battery': {}, 'profiles': [], 'profile': None, 'stale': True}
         self.thread = threading.Thread(target=self.collect, daemon=True, name='power')
 
@@ -135,6 +184,7 @@ class PowerCollector:
         with self.lock:
             value = copy.deepcopy(self.snapshot)
         value['stale'] = not value.get('checked_at') or time.time() - value['checked_at'] > 10
+        value['timer_awake'] = self.automatic.get()
         return value
 
     def set_profile(self, profile):

@@ -37,6 +37,7 @@ Item {
                     objectName: "connectivity_" + column.modelData
                     Layout.fillWidth: true
                     ink: pair.ink
+                    preferences: pair.preferences
                     kind: column.modelData
                     status: kind === "wifi" ? pair.wifiStatus : pair.bluetoothStatus
                     stale: pair.stale

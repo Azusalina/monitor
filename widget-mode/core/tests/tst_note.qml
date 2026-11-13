@@ -68,6 +68,7 @@ Item {
             const editor = findChild(note, "noteEditor")
             compare(editor.text, prefs.noteText)
             verify(editor.height > note.height)
+            note.beginEdit();wait(30)
             mouseClick(editor, 10, 10)
             keyClick(Qt.Key_End, Qt.ControlModifier)
             keyClick("X")
@@ -79,6 +80,7 @@ Item {
         }
         function test_03_saveDialogAcceptanceExportsPendingInput() {
             const editor = findChild(note, "noteEditor")
+            note.beginEdit();wait(30)
             mouseClick(editor, 10, 10)
             for (const ch of "New note") keyClick(ch)
             // Export before the ordinary 400 ms note debounce has completed.

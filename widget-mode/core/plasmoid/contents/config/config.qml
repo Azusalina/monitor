@@ -9,6 +9,7 @@ ConfigModel {
     ConfigCategory { name: "Terminal"; icon: "utilities-terminal"; source: "config/ConfigTerminal.qml" }
     ConfigCategory { name: "Timecount"; icon: "office-calendar"; source: "config/ConfigTimecount.qml" }
     ConfigCategory { name: "Timers"; icon: "chronometer"; source: "config/ConfigTimers.qml" }
-    ConfigCategory { name: "To-do lists"; icon: "view-list-details"; source: "config/ConfigTodos.qml" }
+    ConfigCategory { name: "Note & to-do lists"; icon: "view-list-details"; source: "config/ConfigTodos.qml" }
+    ConfigCategory { name: "Connections"; icon: "network-wireless"; source: "config/ConfigConnections.qml" }
     ConfigCategory { name: "Config file"; icon: "document-save"; source: "config/ConfigFile.qml" }
 }

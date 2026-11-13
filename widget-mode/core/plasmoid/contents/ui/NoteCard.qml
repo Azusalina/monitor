@@ -1,12 +1,26 @@
+pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Dialogs
 import QtCore
 import "ResizeTools.js" as ResizeTools
+import "../native" as Native
 
 Item {
     id: card
     objectName: "noteCard"
+    property bool covered: false
+    onCoveredChanged: if (covered) { flush(); editor.focus = false }
+    property bool editing: false
+    readonly property bool markdown: preferences.noteMarkdown !== false
+    readonly property string noteFamily: preferences.noteFontFamily || Qt.font({pixelSize:noteSize}).family
+    readonly property string noteStyle: preferences.noteFontStyle || ""
+    readonly property int noteSize: preferences.noteFontSize === undefined ? 12 : preferences.noteFontSize
+    function beginEdit() {
+        if(covered)return
+        editing=true
+        Qt.callLater(() => editor.forceActiveFocus())
+    }
     property color ink: "#f5f5f4"
     required property var preferences
     property string endpoint: "http://127.0.0.1:17341/notes/save"
@@ -43,7 +57,7 @@ Item {
         const documents = String(StandardPaths.writableLocation(StandardPaths.DocumentsLocation))
         const folder = documents.startsWith("file:") ? documents : "file://" + documents.split("/").map(encodeURIComponent).join("/")
         saveDialog.currentFolder = previous.startsWith("file:") ? previous.slice(0, previous.lastIndexOf("/")) : folder
-        saveDialog.selectedFile = previous.startsWith("file:") ? previous : folder + "/note.txt"
+        saveDialog.selectedFile = previous.startsWith("file:") ? previous : folder + (markdown ? "/note.md" : "/note.txt")
         saveDialog.open()
     }
     function exportNote(url) {
@@ -82,8 +96,8 @@ Item {
         objectName: "noteSaveDialog"
         title: "Save note"
         fileMode: FileDialog.SaveFile
-        defaultSuffix: "txt"
-        nameFilters: ["Text files (*.txt)", "All files (*)"]
+        defaultSuffix: card.markdown ? "md" : "txt"
+        nameFilters: ["Markdown (*.md)", "Text files (*.txt)", "All files (*)"]
         options: card.useNativeDialog ? 0 : FileDialog.DontUseNativeDialog
         onAccepted: card.exportNote(selectedFile)
     }
@@ -101,17 +115,20 @@ Item {
     }
     Flickable {
         id: viewport
+        visible: !card.covered
+        enabled: !card.covered
         objectName: "noteViewport"
         anchors.fill: parent
         anchors.bottomMargin: 8
         clip: true
         contentWidth: width
-        contentHeight: editor.height
+        contentHeight: editor.visible ? editor.height : rendered.height
         boundsBehavior: Flickable.StopAtBounds
         ScrollBar.vertical: ScrollBar { policy: ScrollBar.AlwaysOff }
         TextArea {
             id: editor
             objectName: "noteEditor"
+            visible: !card.markdown || card.editing || !text.length
             width: viewport.width
             height: Math.max(viewport.height, implicitHeight)
             padding: 0
@@ -120,13 +137,16 @@ Item {
             selectedTextColor: card.ink
             placeholderText: "Leave a thought here…"
             placeholderTextColor: Qt.rgba(card.ink.r, card.ink.g, card.ink.b, 0.4)
-            font.pixelSize: 12
+            font.family: card.noteFamily
+            font.styleName: card.noteStyle
+            font.pixelSize: card.noteSize
             wrapMode: TextEdit.Wrap
             textFormat: TextEdit.PlainText
             selectByMouse: true
             background: null
             onTextChanged: if (card.initialized) { card.dirty = true; save.restart() }
-            onActiveFocusChanged: if (!activeFocus) card.flush()
+            onActiveFocusChanged: { if (!activeFocus) { card.flush(); card.editing=false } else card.editing=true }
+            Keys.onEscapePressed: { card.flush(); focus=false; card.editing=false }
             onCursorRectangleChanged: {
                 if (!activeFocus) return
                 if (cursorRectangle.y < viewport.contentY) viewport.contentY = cursorRectangle.y
@@ -134,6 +154,48 @@ Item {
                     viewport.contentY = cursorRectangle.y + cursorRectangle.height - viewport.height
             }
         }
+        TextEdit {
+            id: rendered
+            objectName: "noteRendered"
+            visible: card.markdown && !editor.visible
+            width: viewport.width
+            height: Math.max(viewport.height,contentHeight)
+            text: card.markdown && !card.editing && !card.covered ? editor.text : ""
+            textFormat: TextEdit.MarkdownText
+            readOnly: true
+            wrapMode: TextEdit.Wrap
+            color: card.ink
+            font.family: card.noteFamily
+            font.styleName: card.noteStyle
+            font.pixelSize: card.noteSize
+            activeFocusOnTab: true
+            Accessible.name: "Note Markdown preview. Click to edit."
+            Keys.onReturnPressed: card.beginEdit()
+            MouseArea {
+                anchors.fill:parent
+                cursorShape:Qt.IBeamCursor
+                onClicked:mouse=> {
+                    const link=rendered.linkAt(mouse.x,mouse.y)
+                    if((mouse.modifiers & Qt.ControlModifier) && /^(https?:|mailto:)/.test(link))Qt.openUrlExternally(link)
+                    else card.beginEdit()
+                }
+            }
+            Native.NoteHighlighter { document: rendered.textDocument; dark:card.ink.hslLightness>0.5 }
+        }
+    }
+    Rectangle {
+        objectName: "noteCurtain"
+        anchors.left: parent.left; anchors.right: parent.right; anchors.top: parent.top
+        height: card.covered ? card.height-8 : 0
+        color: card.ink
+        opacity: 0.8
+        clip: true
+        Behavior on height { NumberAnimation { duration: 220; easing.type: Easing.InOutCubic } }
+        Repeater {
+            model: Math.ceil(parent.width/12)
+            Rectangle { required property int index; x:index*12; width:1; height:parent.height; color:"#171717"; opacity:0.22 }
+        }
+        MouseArea { anchors.fill: parent; acceptedButtons: Qt.AllButtons }
     }
     BorderGrip {
         anchors.fill: parent

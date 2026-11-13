@@ -4,8 +4,8 @@
     "layoutSplits": "{}",
     "layoutHeights": "{}",
     "layoutColumnWeights": "[1,1,1]",
-    "moduleOrder": "cpu,ram,ping,gpu,media,note,proton,wifi,bluetooth,terminal,battery,timers,timecount",
-    "enabledModules": "cpu,ram,ping,gpu,media,note,proton,wifi,bluetooth,terminal,battery,timers,timecount",
+    "moduleOrder": "cpu,ram,ping,gpu,media,liveatc,note,proton,wifi,bluetooth,terminal,battery,timers,timecount",
+    "enabledModules": "cpu,ram,ping,gpu,media,liveatc,note,proton,wifi,bluetooth,terminal,battery,timers,timecount",
     "columns": 2,
     "targetsText": "",
     "todoEnabled": true,
@@ -45,6 +45,19 @@
     "timecountColor": "",
     "cavaBarCount": 32,
     "cavaBarColor": "",
-    "cavaHeadroom": 20
+    "cavaHeadroom": 20,
+    "liveAtcUrl": "",
+    "wifiPins": "[]",
+    "bluetoothPins": "[]",
+    "noteShortcut": "",
+    "liveAtcSeparated": true,
+    "wifiStatusFontSize": 12,
+    "bluetoothStatusFontSize": 12,
+    "wifiStatusColor": "",
+    "bluetoothStatusColor": "",
+    "noteFontFamily": "",
+    "noteFontStyle": "",
+    "noteFontSize": 12,
+    "noteMarkdown": true
   }
 }

@@ -1,0 +1,11 @@
+{
+  "backend_checks": 92,
+  "main_qml_checks": 113,
+  "media_extension_checks": 9,
+  "timecount_checks": 10,
+  "native_liveatc_detach_merge": "passed",
+  "stable_connection_button_identity": "passed",
+  "charging_layout_and_outline_preview": "passed",
+  "live_saved_network_metadata": "read-only check passed; no actual connection changes tested",
+  "remote_liveatc": "not retested; existing remote access limitation unchanged"
+}

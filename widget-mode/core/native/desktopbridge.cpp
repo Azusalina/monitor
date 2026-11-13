@@ -14,17 +14,19 @@
 static QHash<uint,QPointer<DesktopBridge>> bridges;
 static QHash<uint,QVariantMap> pending;
 static const QString pluginId = QStringLiteral("local.monitor.dashboard");
-static const QStringList modules = {"cpu","ram","ping","gpu","media","note","proton","wifi","bluetooth","terminal","battery","timers","timecount"};
-DesktopBridge::DesktopBridge(QObject* parent):QObject(parent),m_countdown(new QAction(this)),m_stopwatch(new QAction(this)) {
+static const QStringList modules = {"cpu","ram","ping","gpu","media","liveatc","note","proton","wifi","bluetooth","terminal","battery","timers","timecount"};
+DesktopBridge::DesktopBridge(QObject* parent):QObject(parent),m_countdown(new QAction(this)),m_stopwatch(new QAction(this)),m_note(new QAction(this)) {
     connect(&m_timer,&QTimer::timeout,this,&DesktopBridge::refresh);
     connect(this,&DesktopBridge::shortcutsChanged,this,&DesktopBridge::configureShortcuts);
     connect(m_countdown,&QAction::triggered,this,[this]{emit focusRequested("countdown");});
     connect(m_stopwatch,&QAction::triggered,this,[this]{emit focusRequested("stopwatch");});
+    connect(m_note,&QAction::triggered,this,[this]{emit focusRequested("note");});
 }
 DesktopBridge::~DesktopBridge() {
     if(m_applet && bridges.value(m_applet->id())==this) bridges.remove(m_applet->id());
     KGlobalAccel::self()->removeAllShortcuts(m_countdown);
     KGlobalAccel::self()->removeAllShortcuts(m_stopwatch);
+    KGlobalAccel::self()->removeAllShortcuts(m_note);
 }
 void DesktopBridge::fail(const QString& text) { if(m_error!=text){m_error=text;emit errorChanged();} }
 void DesktopBridge::setRoot(QQuickItem* item) {
@@ -36,7 +38,9 @@ void DesktopBridge::setRoot(QQuickItem* item) {
     bridges[m_applet->id()]=this;
     m_countdown->setObjectName(QString("monitor-%1-countdown").arg(m_applet->id()));
     m_stopwatch->setObjectName(QString("monitor-%1-stopwatch").arg(m_applet->id()));
-    for(auto action:{m_countdown,m_stopwatch}) action->setProperty("componentName","someProducts-monitor");
+    m_note->setObjectName(QString("monitor-%1-note").arg(m_applet->id()));
+    m_note->setText("Toggle note curtain");
+    for(auto action:{m_countdown,m_stopwatch,m_note}) action->setProperty("componentName","someProducts-monitor");
     m_countdown->setText("Fullscreen countdown");m_stopwatch->setText("Fullscreen stopwatch");
     QTimer::singleShot(0,this,[this]{
         if(!m_applet || !m_root) return;
@@ -70,7 +74,7 @@ void DesktopBridge::configureShortcuts() {
     if(!m_applet || !m_initialized) return;
     QString issue;
     const bool child=!detachedModule().isEmpty();
-    const QList<QPair<QAction*,QString>> actions={{m_countdown,countdownShortcut},{m_stopwatch,stopwatchShortcut}};
+    const QList<QPair<QAction*,QString>> actions={{m_countdown,countdownShortcut},{m_stopwatch,stopwatchShortcut},{m_note,noteShortcut}};
     for(const auto& pair:actions){
         auto action=pair.first;auto text=child ? QString():pair.second.trimmed();
         auto sequence=QKeySequence::fromString(text,QKeySequence::PortableText);
@@ -107,7 +111,7 @@ void DesktopBridge::release(const QString& module,const QPointF& position) {
     auto quick=PlasmaQuick::AppletQuickItem::itemForApplet(containment);
     if(!quick){fail("Desktop containment is unavailable");return;}
     const auto local=quick->mapFromGlobal(position);
-    auto child=containment->createApplet(pluginId,{},QRectF(local,QSizeF(280,module=="terminal"?280:180)));
+    auto child=containment->createApplet(pluginId,{},QRectF(local,QSizeF(280,module=="terminal"?280:module=="liveatc"?60:180)));
     if(!child){fail("Could not create desktop component");return;}
     auto source=m_applet->config().group("General"),target=child->config().group("General");
     source.copyTo(&target);

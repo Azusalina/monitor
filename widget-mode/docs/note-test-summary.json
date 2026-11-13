@@ -1,0 +1,9 @@
+{
+  "backend_checks": 95,
+  "main_qml_checks": 113,
+  "note_markdown_fonts_syntax_curtain": "passed",
+  "font_style_size_apply_cancel": "passed",
+  "media_checks": 9,
+  "timecount_checks": 10,
+  "qml_lint": "clean"
+}

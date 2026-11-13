@@ -1,0 +1,45 @@
+{
+  "widgets": [
+    {
+      "id": 163,
+      "version": "1.26.1",
+      "settings_preserved": true,
+      "geometry_preserved": true
+    },
+    {
+      "id": 167,
+      "version": "1.26.1",
+      "settings_preserved": true,
+      "geometry_preserved": true
+    },
+    {
+      "id": 169,
+      "version": "1.26.1",
+      "settings_preserved": true,
+      "geometry_preserved": true
+    },
+    {
+      "id": 170,
+      "version": "1.26.1",
+      "settings_preserved": true,
+      "geometry_preserved": true
+    }
+  ],
+  "installed_matches_source": true,
+  "cumulative_history_retained": true,
+  "database_integrity": "ok",
+  "services": [
+    "active",
+    "active"
+  ],
+  "qml_runtime_errors": [],
+  "saved_wifi_metadata_available": true,
+  "bluetooth_metadata_available": true,
+  "tests": {
+    "ui_pointer_checks": 9,
+    "qml_lint": "clean",
+    "actual_connection_changes": "none; isolated fixture only"
+  },
+  "network_mutation_testing": "Mocked only; no real disconnect or connection was performed",
+  "temporary_keep_awake": "User notified before reload; re-enable from widget after installation"
+}

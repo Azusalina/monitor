@@ -15,7 +15,7 @@ A transparent modular KDE Plasma 6 desktop widget.
 
 Run these commands from `monitor/widget-mode/core`. Start the bridge and preview in separate terminals. Stop the foreground bridge with Ctrl+C before installing the background service. After installation, add **someProducts-monitor** through the desktop's **Add Widgets** menu. See [../docs/README.md](../docs/README.md) for dependencies, configuration, service checks and removal.
 
-Build/install prerequisites on Arch: `base-devel`, `cmake`, `qt6-declarative`, `kglobalaccel` and `libplasma` (in addition to the existing runtime dependencies). Packaging and installation build the native KDE integration with `scripts/build-native.sh`; rebuild it after a Qt/Plasma upgrade.
+Build/install prerequisites on Arch: `base-devel`, `cmake`, `qt6-declarative`, `qt6-multimedia`, `kglobalaccel`, `syntax-highlighting` and `libplasma` (in addition to the existing runtime dependencies). Packaging and installation build the native KDE integration with `scripts/build-native.sh`; rebuild it after a Qt/Plasma upgrade.
 
 In **Configure → Flows**, set **CPU / RAM / GPU / Ping (ms)** to 100–5000ms (default 200ms), and **CAVA (ms)** to 50–1000ms (default 100ms). **History window (seconds)** sets the visible CPU/RAM/GPU/Ping time range, from 5–120 seconds (default 30); a larger range scrolls more slowly, independently of the refresh interval. These are target intervals; slow GPU/Ping probes can limit the achieved rate. Smaller values refresh faster; Apply saves them to the current profile, including detached widgets and fullscreen audio backgrounds. Multiple views share the fastest active hardware rate while displaying at their own intervals. System metrics and ping default to **200ms** (5 Hz), with timestamped history that scrolls horizontally. Recorded peaks retain their heights; Ping uses a stable automatic scale with headroom. Slow/failed ping probes remain bounded and do not overlap. Approximate measured memory budget for one full widget plus bridge/helpers: **60–100 MiB**, depending on terminal contents and detached views; see [description.md](description.md) for measurement limits.
 
@@ -46,3 +46,22 @@ In **Configure → Media**, set **Block density (count)** (8–128), **Block col
 
 
 Right-side vertical scrollbar indicators are hidden on all widget and configuration pages, including Note and to-do lists. Content still scrolls with the mouse wheel, touchpad and keyboard; the activity heatmap retains its horizontal scrollbar.
+
+
+Detach **Media** to use the outline record (click to choose one or more local audio files), Previous/Next, and a draggable progress bar. Focus the progress bar and press Left/Right to seek five seconds. Before choosing local music, the controls operate the selected MPRIS player when it supports seeking/skipping; choosing files pauses that external player when supported. Multiple selected files form a temporary local queue. In Configure → Media, paste a LiveATC Listen/playlist/direct-stream URL, or search an airport code and select a feed. Apply; enable **LiveATC** in Configure → Modules. Its **ATC** button starts/stops broadcast independently of music; drag the LiveATC handle out to make a separate desktop component. Website opens the official airport search when automated access fails. Streams and local music never autoplay after restart.
+
+In **Configure → Connections**, pin previously connected Wi-Fi networks and paired Bluetooth devices, then Apply/OK. Set Wi-Fi and Bluetooth status text sizes separately (8–28px) and colors (#rrggbb; empty follows widget text). Connected Wi-Fi/devices always appear first, including unpinned connections. When disconnected, an entry appears only if pinned and still present in system connection history/pairings. Click a pinned name to connect or disconnect; editing pins is only in Configure. Native settings handle credentials and pairing. Wi-Fi history is refreshed from NetworkManager metadata (cached for 60 seconds), with never-used saved profiles excluded; Bluetooth requires a current pairing. Pins save with the profile.
+
+In Configure → **Note & to-do lists**, set **Note curtain · global shortcut** (default empty/disabled). It toggles an animated curtain over the Note text in the main and detached family views, retaining edits and scroll position. Conflicting shortcuts are rejected without taking over another application's binding. The curtain is temporary and reopens uncovered after a shell restart. Detailed implementation and validation: [description.md](description.md).
+
+
+The music record now uses only transparent outer/hub outlines; click-to-choose-file behavior is unchanged. Charging appears prominently to the right of the battery percentage, with smaller power/time details underneath.
+
+
+Click either a connection name or its status text to connect/disconnect that entry. Status labels also support keyboard focus with Space/Enter, retaining the configured size/color.
+
+
+In **Configure → Note & to-do lists**, choose an installed font family/style and note size (8–48px). Enable **Render Markdown with code syntax colors** to display headings, lists, emphasis, links, tables and language-tagged fenced code. Click the rendered note to edit the original Markdown; press Esc or move focus away to render again. Ctrl-click an http(s)/mailto link to open it. Disable rendering for the original plain-text editing mode. Save exports original source (new Markdown notes default to .md), and font/rendering preferences persist with the profile.
+
+
+Any running countdown, stopwatch or Timecount automatically keeps the system awake (sleep/screen-off/idle-lock inhibition), including detached/fullscreen views and when Battery is hidden. Battery shows **On · Timer** after KDE confirms activation; **Starting · Timer** covers KDE's activation delay. Pausing/ending all timers releases only the automatic lease; a manual Keep awake request remains independent. Clicking the switch during timing toggles that separate manual request. Closed/crashed views expire by their existing leases (timer pairs up to 60 seconds, Timecount six seconds).

@@ -21,7 +21,8 @@ import threading
 import time
 from urllib.parse import parse_qs, urlsplit, unquote
 
-from connectivity import ConnectivityCollector, open_settings
+from connectivity import ConnectivityCollector, open_settings, connect_saved
+import liveatc
 from cava_audio import AudioCollector
 from terminal_sessions import TerminalManager
 from power import PowerCollector
@@ -95,6 +96,10 @@ def media_snapshot():
                                 'can_control': bool(props.get('CanControl', False)),
                                 'can_pause': bool(props.get('CanPause', False)),
                                 'can_play': bool(props.get('CanPlay', False))})
+                players[-1].update(can_seek=bool(props.get('CanSeek', False)),
+                                   can_next=bool(props.get('CanGoNext', False)),
+                                   can_previous=bool(props.get('CanGoPrevious', False)),
+                                   track_id=meta.get('mpris:trackid', ''))
             except (OSError, subprocess.SubprocessError, ValueError, TypeError, AttributeError):
                 continue
         players.sort(key=lambda p: {'Playing': 0, 'Paused': 1}.get(p['status'], 2))
@@ -269,9 +274,9 @@ class Telemetry:
         self.connectivity = ConnectivityCollector()
         self.audio = AudioCollector()
         self.terminals = TerminalManager()
-        self.power = PowerCollector()
         self.timers = TimerManager()
         self._timecount = None
+        self.power = PowerCollector(self.any_timer_running)
         self.snapshot = {'cpu': {}, 'ram': {}, 'gpus': [], 'media': {'players': []}}
         self.pings = OrderedDict()
         self.sample_clients = {}
@@ -287,6 +292,9 @@ class Telemetry:
             if self._timecount is None:
                 self._timecount = TimecountStore()
             return self._timecount
+
+    def any_timer_running(self):
+        return self.timers.any_running() or (self._timecount is not None and self._timecount.any_running())
 
     def sample_interval(self, target=None):
         with self.lock:
@@ -445,6 +453,16 @@ class Handler(BaseHTTPRequestHandler):
             self.reply(403, {'error': 'Native local client required'})
             return
         parsed = urlsplit(self.path)
+        if parsed.path in ('/liveatc/search', '/liveatc/resolve'):
+            try:
+                query = parse_qs(parsed.query)
+                result = {'feeds':liveatc.search(query.get('code', [''])[0])} if parsed.path.endswith('/search') else {'url':liveatc.resolve(query.get('url', [''])[0])}
+                self.reply(200, result)
+            except ValueError as error:
+                self.reply(400, {'error':str(error)})
+            except OSError:
+                self.reply(503, {'error':'LiveATC unavailable or access denied. Use the official search page or enter a stream address.'})
+            return
         if parsed.path == '/config':
             store = None
             try:
@@ -493,6 +511,18 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         if not self.allowed():
             self.reply(403, {'error': 'Native local client required'})
+            return
+        if self.path == '/connectivity/connect':
+            try:
+                length = int(self.headers.get('Content-Length', '0'))
+                if not 0 < length <= 4096: raise ValueError('Invalid payload size')
+                value = json.loads(self.rfile.read(length))
+                connect_saved(value.get('kind'), value.get('id'), value.get('action','connect'))
+                self.reply(200, {'ok':True})
+            except (ValueError, TypeError, AttributeError):
+                self.reply(400, {'error':'Invalid connection'})
+            except (OSError, subprocess.SubprocessError, RuntimeError):
+                self.reply(503, {'error':'Connection failed; open native settings to pair or enter credentials'})
             return
         if self.path == '/notes/save':
             try:
@@ -616,7 +646,7 @@ class Handler(BaseHTTPRequestHandler):
             except (OSError, RuntimeError):
                 self.reply(503, {'error': 'Native settings could not be opened'})
             return
-        if self.path != '/media/toggle':
+        if self.path not in ('/media/toggle', '/media/control'):
             self.reply(404, {'error': 'Not found'})
             return
         try:
@@ -629,11 +659,26 @@ class Handler(BaseHTTPRequestHandler):
                 self.reply(409, {'error': 'Player is no longer available'})
                 return
             props = bus('call', service, OBJECT, 'org.freedesktop.DBus.Properties', 'GetAll', 's', PLAYER)
-            capability = 'CanPause' if props.get('PlaybackStatus') == 'Playing' else 'CanPlay'
+            action = value.get('action', 'toggle') if self.path == '/media/control' else 'toggle'
+            commands = {'toggle':'PlayPause', 'pause':'Pause', 'next':'Next', 'previous':'Previous', 'position':'SetPosition'}
+            if action not in commands:
+                raise ValueError('Unknown media action')
+            capability = {'pause':'CanPause','next':'CanGoNext','previous':'CanGoPrevious','position':'CanSeek'}.get(action, 'CanPause' if props.get('PlaybackStatus') == 'Playing' else 'CanPlay')
             if not props.get('CanControl') or not props.get(capability):
                 self.reply(409, {'error': 'Player does not allow this control'})
                 return
-            command(['busctl', '--user', '--timeout=1', 'call', service, OBJECT, PLAYER, 'PlayPause'])
+            arguments = []
+            if action == 'position':
+                seconds = value.get('position')
+                track = props.get('Metadata', {}).get('mpris:trackid', '')
+                if type(seconds) not in (int, float) or not math.isfinite(seconds) or seconds < 0 or seconds > 604800:
+                    raise ValueError('Invalid position')
+                # Stale drag events must never seek a newly selected track.
+                if not track or track != value.get('track_id') or track == '/org/mpris/MediaPlayer2/TrackList/NoTrack':
+                    self.reply(409, {'error':'Track changed; try again'})
+                    return
+                arguments = ['ox', track, str(round(seconds * 1_000_000))]
+            command(['busctl', '--user', '--timeout=1', 'call', service, OBJECT, PLAYER, commands[action], *arguments])
             self.reply(200, {'ok': True})
         except (ValueError, TypeError, AttributeError):
             self.reply(400, {'error': 'Invalid payload'})
@@ -656,6 +701,7 @@ def main():
     telemetry.connectivity.thread.start()
     telemetry.audio.thread.start()
     telemetry.power.thread.start()
+    telemetry.power.automatic.thread.start()
     telemetry.timecount.thread.start()
     telemetry.terminals.thread.start()
     def stop_requested(*_):
@@ -668,6 +714,7 @@ def main():
         pass
     finally:
         telemetry.stop.set()
+        telemetry.power.automatic.shutdown()
         telemetry.timecount.shutdown()
         telemetry.connectivity.stop.set()
         telemetry.audio.stop.set()

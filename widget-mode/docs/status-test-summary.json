@@ -1,0 +1,9 @@
+{
+  "backend_checks": 94,
+  "connected_first_and_status_ui_checks": 3,
+  "media_and_connection_checks": 9,
+  "style_apply_cancel": "passed",
+  "style_profile_roundtrip": "passed",
+  "qml_lint": "clean",
+  "actual_network_mutations": "none"
+}

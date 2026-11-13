@@ -1,0 +1,24 @@
+********* Start testing of qmltestrunner *********
+Config: Using QtTest library 6.12.0, Qt 6.12.0 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.2.1 20260810), arch unknown
+PASS   : qmltestrunner::MediaExtensions::initTestCase()
+PASS   : qmltestrunner::MediaExtensions::test_01_externalSeekArrowsAndSkip()
+PASS   : qmltestrunner::MediaExtensions::test_02_curtainNeverAltersDraft()
+PASS   : qmltestrunner::MediaExtensions::test_035_commonQuickConnectAndDisconnect()
+PASS   : qmltestrunner::MediaExtensions::test_03_pinsAndAvailability()
+PASS   : qmltestrunner::MediaExtensions::test_04_detachedOnlyElements()
+PASS   : qmltestrunner::MediaExtensions::test_05_parallelDecodedAudioAndLocalQueue()
+PASS   : qmltestrunner::MediaExtensions::test_06_detachedPreview()
+PASS   : qmltestrunner::MediaExtensions::cleanupTestCase()
+Totals: 9 passed, 0 failed, 0 skipped, 0 blacklisted, 2206ms
+********* Finished testing of qmltestrunner *********
+
+Input #0, wav, from 'http://127.0.0.1:17345/music.wav':
+  Duration: 00:00:12.00, bitrate: 128 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, 1 channels, s16, 128 kb/s
+Input #0, wav, from 'http://127.0.0.1:17345/radio.wav':
+  Duration: 00:00:12.00, bitrate: 128 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, 1 channels, s16, 128 kb/s
+Input #0, wav, from 'http://127.0.0.1:17345/second.wav':
+  Duration: 00:00:12.00, bitrate: 128 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, 1 channels, s16, 128 kb/s
+

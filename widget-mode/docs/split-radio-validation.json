@@ -1,0 +1,48 @@
+{
+  "widgets": [
+    {
+      "id": 163,
+      "version": "1.25.0",
+      "settings_preserved_except_requested_module_split": true,
+      "geometry_preserved": true,
+      "radio_enabled": true
+    },
+    {
+      "id": 167,
+      "version": "1.25.0",
+      "settings_preserved_except_requested_module_split": true,
+      "geometry_preserved": true,
+      "radio_enabled": true
+    },
+    {
+      "id": 169,
+      "version": "1.25.0",
+      "settings_preserved_except_requested_module_split": true,
+      "geometry_preserved": true,
+      "radio_enabled": true
+    }
+  ],
+  "installed_matches_source": true,
+  "cumulative_history_retained": true,
+  "database_integrity": "ok",
+  "services": [
+    "active",
+    "active"
+  ],
+  "qml_runtime_errors": [],
+  "saved_wifi_metadata_available": true,
+  "bluetooth_metadata_available": true,
+  "tests": {
+    "backend_checks": 92,
+    "main_qml_checks": 113,
+    "media_extension_checks": 9,
+    "timecount_checks": 10,
+    "native_liveatc_detach_merge": "passed",
+    "stable_connection_button_identity": "passed",
+    "charging_layout_and_outline_preview": "passed",
+    "live_saved_network_metadata": "read-only check passed; no actual connection changes tested",
+    "remote_liveatc": "not retested; existing remote access limitation unchanged"
+  },
+  "network_mutation_testing": "Mocked only; no real disconnect or connection was performed",
+  "remote_liveatc": "Existing remote access limitation unchanged; independent playback verified using local audio fixture"
+}

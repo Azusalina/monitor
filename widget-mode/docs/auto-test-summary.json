@@ -1,0 +1,8 @@
+{
+  "backend_checks": 101,
+  "automatic_ui_checks": 3,
+  "durable_timecount_checks": 10,
+  "button_stability_checks": 6,
+  "real_kde_automatic_and_manual_ownership": "passed",
+  "qml_lint": "clean"
+}
